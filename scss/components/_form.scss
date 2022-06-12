@@ -1,0 +1,95 @@
+.container-sidebar-form{
+    font-size: $font-small;
+    width: 300px;
+    height: auto;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    background-color: $orange-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & h1 {
+        font-family: $regular;
+        font-weight: $regular-weight;
+        font-size: $font-medium;
+        color: $white;
+        text-align: left;
+    }
+
+    & .buttons {
+        display: flex;
+        margin-right: auto;
+    }
+}
+
+.form-group{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: auto;
+    display: flex;
+
+    & label{
+        display: inline-block;
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    & input{
+        border: none;
+        flex-grow: 1;
+    }
+
+    & .error {
+        width: auto;
+        color: $primary;
+
+    }
+}
+#valiDate{
+    & input {
+        width: 100%;
+    }
+}
+
+.form-group-dates{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+
+    & label{
+        display: inline-block;
+        width: auto;
+        text-align: left;
+    }
+
+    & input{
+        border: none;
+        width: 30%;
+    }
+
+    & .error {
+        width: 150px;
+        align-items: center;
+        background-attachment: $white;
+        color: $primary;
+    }
+
+}
+
+.valid {
+    background: green;
+    color: #fff;
+  }
+  .error {
+    background: red;
+    color: #fff;
+  }

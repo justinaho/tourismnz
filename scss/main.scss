@@ -1,0 +1,15 @@
+@import '../scss/mixin/mixins';
+
+//abstracts
+@import 'abstracts/colour';
+@import 'abstracts/font';
+@import 'abstracts/reset';
+@import 'abstracts/scrollbar';
+@import 'abstracts/helpers';
+@import 'abstracts/type';
+
+//componenets
+@import 'components/sidebar';
+@import 'components/form';
+@import 'components/results';
+

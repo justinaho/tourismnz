@@ -1,0 +1,48 @@
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    &-sidebar {
+        display: flex;
+        flex-grow: 1;
+        background: $primary;
+        padding: 5px;
+        width: 300px;
+        height: 100vh;
+        color: white;
+        font-weight: bold;
+        font-size: 2em;
+        text-align: center;
+        position: relative;
+
+        &-logo{
+            width: 300px;
+            height: auto;
+            margin: 0;
+            left: 0;
+            right: 0;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+            align-items: center;
+        }
+
+    }
+    
+    &-img {
+        display: flex;
+        flex-grow: 1;
+        padding: 5px;
+        width: 1100px;
+        font-weight: bold;
+        height: 100vh;
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}
+
