@@ -1,48 +1,155 @@
+.logo { grid-area: logo; }
+.form { grid-area: form; }
+.content { grid-area: main; }
+
 .container {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
+display: grid;
+grid-template-areas:
+    'logo main main main main'
+    'form main main main main';
+}
 
-    &-sidebar {
-        display: flex;
-        flex-grow: 1;
-        background: $primary;
-        padding: 5px;
+.container > div {
+text-align: center;
+padding: 20px 0;
+font-size: 30px;    
+}
+
+.logo {
+    background-color: $primary;
+
+    & img {
+        margin-left: auto;
+        align-items: center;
+        font-size: 30px;
         width: 300px;
-        height: 100vh;
-        color: white;
-        font-weight: bold;
-        font-size: 2em;
         text-align: center;
-        position: relative;
-
-        &-logo{
-            width: 200px;
-            height: auto;
-            margin: 0;
-            left: 0;
-            right: 0;
-            margin-top: 100px;
-            margin-left: auto;
-            margin-right: auto;
-            position: absolute;
-            align-items: center;
-        }
-
-    }
-    
-    &-img {
-        display: flex;
-        flex-grow: 1;
-        padding: 5px;
-        width: 1100px;
-        font-weight: bold;
-        height: 100vh;
-        object-fit: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
     }
 }
 
+.form {
+    background-color: $primary;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+    &-info{
+        font-size: $font-small;
+        height: auto;
+        margin: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $orange-dark;
+    
+        & h1 {
+            font-family: $regular;
+            font-weight: $regular-weight;
+            font-size: $font-medium;
+            color: $white;
+            text-align: left;
+        }
+    
+        & .buttons {
+            display: flex;
+            margin-right: auto;
+        }
+    }
+
+
+    .form-info-group{
+        margin-bottom: 5px;
+        margin-top: 5px;
+        width: auto;
+        display: flex;
+
+        & label{
+            display: inline-block;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        & input{
+            border: none;
+            flex-grow: 0.1;
+            text-align: center;
+        }
+
+        & .error {
+            width: auto;
+            color: $primary;
+
+        }
+    }
+
+
+    .form-info-dates{
+        margin-bottom: 5px;
+        margin-top: 5px;
+        width: auto;
+        display: flex;
+
+        & label{
+            display: inline-block;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        & input{
+            border: none;
+            flex-grow: 4;
+            text-align: center;
+        }
+
+        & .error {
+            width: 150px;
+            align-items: center;
+            background-attachment: $white;
+            color: $primary;
+        }
+
+    }
+
+    
+}
+
+.content{
+    padding: 5px;
+    font-weight: bold;
+    height: 100vh;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+      
+    &-results {
+        display: flex;
+        background-color: $white;
+        flex-wrap: wrap;
+        width: 100%;
+    
+        div {
+        background-color: transparent;
+        border: 1px solid $orange-dark;
+        width: 98%;
+        padding: 10px;
+        margin: 1%;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+        }
+    }
+    
+}
+
+.valid {
+    background: green;
+    color: #fff;
+  }
+  .error {
+    background: red;
+    color: #fff;
+  }

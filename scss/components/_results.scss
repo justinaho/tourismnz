@@ -1,27 +1,27 @@
-.container-img {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-  padding: 0;
+// .content-img {
+//   position: relative;
+//   display: flex;
+//   flex-direction: row;
+//   margin: 0;
+//   padding: 0;
 
-  &-results {
-    display: flex;
-    background-color: $white;
-    flex-wrap: wrap;
-    width: 100%;
+//   &-results {
+//     display: flex;
+//     background-color: $white;
+//     flex-wrap: wrap;
+//     width: 100%;
 
-    div {
-      background-color: transparent;
-      border: 1px solid $orange-dark;
-      width: 98%;
-      padding: 10px;
-      margin: 1%;
-      text-align: center;
-      line-height: 75px;
-      font-size: 30px;
+//     div {
+//       background-color: transparent;
+//       border: 1px solid $orange-dark;
+//       width: 98%;
+//       padding: 10px;
+//       margin: 1%;
+//       text-align: center;
+//       line-height: 75px;
+//       font-size: 30px;
 
-    }
-  }
-}
+//     }
+//   }
+// }
 

@@ -31,58 +31,153 @@ html {
   margin: 0 auto;
 }
 
+.logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+.form {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: form;
+}
+
+.content {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: main;
+}
+
 .container {
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  position: relative;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'logo main main main main' 'form main main main main';
 }
 
-.container-sidebar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  background: #292929;
-  padding: 5px;
-  width: 300px;
-  height: 100vh;
-  color: white;
-  font-weight: bold;
-  font-size: 2em;
+.container > div {
   text-align: center;
-  position: relative;
+  padding: 20px 0;
+  font-size: 30px;
 }
 
-.container-sidebar-logo {
-  width: 200px;
+.logo {
+  background-color: #292929;
+}
+
+.logo img {
+  margin-left: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  width: 300px;
+  text-align: center;
+}
+
+.form {
+  background-color: #292929;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.form-info {
+  font-size: 0.875rem;
   height: auto;
   margin: 0;
   left: 0;
   right: 0;
-  margin-top: 100px;
+  padding: 10px;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background-color: #C9684B;
 }
 
-.container-img {
+.form-info h1 {
+  font-family: runda;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.form-info .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-right: auto;
+}
+
+.form .form-info-group {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form .form-info-group label {
+  display: inline-block;
+  text-align: left;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.form .form-info-group input {
+  border: none;
+  -webkit-box-flex: 0.1;
+      -ms-flex-positive: 0.1;
+          flex-grow: 0.1;
+  text-align: center;
+}
+
+.form .form-info-group .error {
+  width: auto;
+  color: #292929;
+}
+
+.form .form-info-dates {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form .form-info-dates label {
+  display: inline-block;
+  text-align: left;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.form .form-info-dates input {
+  border: none;
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+  text-align: center;
+}
+
+.form .form-info-dates .error {
+  width: 150px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-attachment: #ffffff;
+  color: #292929;
+}
+
+.content {
   padding: 5px;
-  width: 1100px;
   font-weight: bold;
   height: 100vh;
   -o-object-fit: cover;
@@ -92,112 +187,25 @@ html {
   background-size: cover;
 }
 
-.container-sidebar-form {
-  font-size: 0.875rem;
-  width: 300px;
-  height: auto;
-  margin: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 5px;
-  margin-bottom: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  background-color: #C9684B;
+.content-results {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.container-sidebar-form h1 {
-  font-family: runda;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #ffffff;
-  text-align: left;
-}
-
-.container-sidebar-form .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: auto;
-}
-
-.form-group {
-  margin-bottom: 5px;
-  margin-top: 5px;
-  width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.form-group label {
-  display: inline-block;
-  text-align: left;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-.form-group input {
-  border: none;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-.form-group .error {
-  width: auto;
-  color: #292929;
-}
-
-#valiDate input {
+  background-color: #ffffff;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
 }
 
-.form-group-dates {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.form-group-dates label {
-  display: inline-block;
-  width: auto;
-  text-align: left;
-}
-
-.form-group-dates input {
-  border: none;
-  width: 30%;
-}
-
-.form-group-dates .error {
-  width: 150px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-attachment: #ffffff;
-  color: #292929;
+.content-results div {
+  background-color: transparent;
+  border: 1px solid #C9684B;
+  width: 98%;
+  padding: 10px;
+  margin: 1%;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
 }
 
 .valid {
@@ -208,39 +216,5 @@ html {
 .error {
   background: red;
   color: #fff;
-}
-
-.container-img {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin: 0;
-  padding: 0;
-}
-
-.container-img-results {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #ffffff;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-}
-
-.container-img-results div {
-  background-color: transparent;
-  border: 1px solid #C9684B;
-  width: 98%;
-  padding: 10px;
-  margin: 1%;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
 }
 /*# sourceMappingURL=main.css.map */

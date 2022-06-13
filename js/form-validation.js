@@ -1,11 +1,8 @@
 $(document).ready(function () {
 
-    $('#myForm').validate({ // initialize the plugin
+    $('#myForm').validate({ 
         rules: {
-            date1: {
-                required: true,
-            },
-            date2: {
+            datetimes: {
                 required: true,
             },
             guests: {
@@ -19,11 +16,7 @@ $(document).ready(function () {
         },
 
         messages: {
-            date1: {
-                required: "Please pick a date",
-            },
-
-            date2: {
+            datetimes: {
                 required: "Please pick a date",
             },
             guests: {
@@ -37,7 +30,7 @@ $(document).ready(function () {
 
         },
 
-        submitHandler: function (form) { // for demo
+        submitHandler: function (form) { 
              toggleResults();
             return false; 
         }
