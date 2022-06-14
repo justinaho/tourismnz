@@ -6,9 +6,11 @@
 @import 'abstracts/reset';
 @import 'abstracts/scrollbar';
 @import 'abstracts/helpers';
-@import 'abstracts/type';
+@import 'abstracts/buttons';
+@import 'abstracts/popUp';
 
 //componenets
 @import 'components/sidebar';
 @import 'components/results';
+@import 'components/main';
 

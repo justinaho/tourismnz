@@ -7,14 +7,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
-  
+
   <!-- date picker-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  
+
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-  
+
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
   <script src="../js/form-validation.js"></script>
   <script src="../js/date-picker.js"></script>
@@ -31,60 +31,110 @@
 </head>
 
 <body>
+  <div class="container">
+    <div class="sidebar">
+      <img class="logo" src="../img/logo.png">
+      <form class="form" id="myForm" action="" method="GET">
+        <h1>Kia Ora</h1>
 
+        <div class="form-groups">
+          <label>Destination</label>
+          <select name="country" class="destination" tabindex="2">
+            <option value="DS">Select</option>
+            <option value="AK">Auckland</option>
+            <option value="WLG">Wellington</option>
+            <option value="CH">Christchurch</option>
+            <option value="QST">Queenstown</option>
+            <option value="DN">Dunedin</option>
+          </select>
+        </div>
 
-    <div class="container">
-      <div class="logo">
-        <img class="container-sidebar-logo" src="../img/logo.png">
-      </div>
-      <div class="form">
-        <form class="form-info" id="myForm" action="" method="GET">
-          <h1>Kia Ora</h1>
-  
-          <div class="form-info-group">
-            <label>Destination</label>
-            <select name="country" class="destination" tabindex="2">
-              <option value="DS">Select</option>
-              <option value="AK">Auckland</option>
-              <option value="WLG">Wellington</option>
-              <option value="CH">Christchurch</option>
-              <option value="QST">Queenstown</option>
-              <option value="DN">Dunedin</option>
-            </select>
-          </div>
+        <div class="form-dates">
+          <label for="daterange">Check In/Check Out</label>
+          <input type="text" name="datetimes" />
+        </div>
 
-          <div class="form-info-dates">
-            <label for="daterange">Check In/Check Out</label>
-            <input type="text" name="datetimes" />
-          </div>
-  
-          <div class="form-info-group">
-            <label for="guests">No. of guests</label>
-            <input type="text" name="guests" id="guests">
-          </div>
-  
-          <div class="form-info-group">
-            <label for="rooms">No. of rooms</label>
-            <input type="text" name="rooms" id="rooms">
-          </div>
-  
-          <div class="buttons">
-            <button type="reset" onclick="this.form.reset();">Reset</button>
-            <button type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
+        <div class="form-groups">
+          <label for="guests">No. of guests</label>
+          <input type="text" name="guests" id="guests">
+        </div>
 
-      <div class="content" style="background-image: url('../img/cover.jpg');">
-          <div class="content-results" id="content-results-js" style="display:block;">
-            <div>Hostel</div>
-            <div>Hotel</div>
-            <div>Motel</div>
-            <div>House</div>
+        <div class="form-groups">
+          <label for="rooms">No. of rooms</label>
+          <input type="text" name="rooms" id="rooms">
+        </div>
+
+        <div class="form-buttons">
+          <button class="button--secondary" type="reset" onclick="this.form.reset();">Reset</button>
+          <button class="button--primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="content" style="background-image: url('../img/cover.jpg');">
+      <div class="content-results" id="content-results-js" style="display:none;">
+        <div class="hostel place">
+          <img src="/img/hostel.jpg">
+          <div class="title">
+            <h1>Hostel</h1>
+            <p>min 1 night, max 10 nights</p>
+            <p>1 person</p>
           </div>
+          <p class="price">$30/night</p>
+          <div class="action-btns">
+            <button class="button--secondary-action">More info</button>
+            <button class="button--primary" onclick="bookHostel()">Book now</button>
+          </div>
+        </div>
+        <div class="hotel place">
+          <img src="/img/hotel.jpg">
+          <div class="title">
+            <h1>Hotel</h1>
+            <p>min 1 night, max 5 nights</p>
+            <p>1-2 people</p>
+          </div>
+          <p class="price">$157/night</p>
+          <div class="action-btns">
+            <button class="button--secondary-action">More info</button>
+            <button class="button--primary">Book now</button>
+          </div>
+        </div>
+        <div class="motel place">
+          <img src="/img/motel.jpg">
+          <div class="title">
+            <h1>Motel</h1>
+            <p>min 3 night, max 10 nights</p>
+            <p>2-4 people</p>
+          </div>
+          <p class="price">$90/night</p>
+          <div class="action-btns">
+            <button class="button--secondary-action">More info</button>
+            <button class="button--primary">Book now</button>
+          </div>
+        </div>
+        <div class="house place">
+          <img src="/img/house.jpg">
+          <div class="title">
+            <h1>House</h1>
+            <p>min 2 night, max 15 nights</p>
+            <p>1-4 people</p>
+          </div>
+          <p class="price">$240/night</p>
+          <div class="action-btns">
+            <button class="button--secondary-action">More info</button>
+            <button class="button--primary">Book now</button>
+          </div>
+        </div>
       </div>
     </div>
-    
+    <div class="popUpHostel" id="popUpHostel-js" style="display:block;">
+      <div class="popUp-black"></div>
+      <div class="popUp">
+        <div class="cross" onclick="cross()">✖</div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

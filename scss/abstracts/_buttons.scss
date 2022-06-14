@@ -1,0 +1,45 @@
+.button {
+    grid-area: action;
+    align-items: right;
+}
+
+.button--primary {
+    background-color: $blue-dark;
+    color: $white;
+    border: $white solid 1px;
+    padding: 10px 0 10px 0;
+    width: 150px;
+    font-size: medium;
+
+    &:hover {
+        background-color: $blue-light;
+    }
+}
+
+.button--secondary {
+    font-size: medium;
+    background-color: transparent;
+    color: $white;
+    border: $white solid 1px;
+    padding: 10px 0 10px 0;
+    width: 150px;
+    &:hover {
+        border: $blue-light solid 1px;
+        color:  $blue-light;
+    }
+}
+
+.button--secondary-action {
+    font-size: medium;
+    background-color: transparent;
+    color: $blue-dark;
+    border: $blue-dark solid 1px;
+    padding: 10px 0 10px 0;
+    width: 150px;
+
+    &:hover {
+        border: $blue-light solid 1px;
+        color:  $blue-light;
+    }
+}
+

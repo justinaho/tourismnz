@@ -1,27 +1,75 @@
-// .content-img {
-//   position: relative;
-//   display: flex;
-//   flex-direction: row;
-//   margin: 0;
-//   padding: 0;
+.content {
+    font-weight: bold;
+    position: relative;
+    margin-top: 0;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
-//   &-results {
-//     display: flex;
-//     background-color: $white;
-//     flex-wrap: wrap;
-//     width: 100%;
+    &-results {
+        background-color: $white;
+        height: 100vh;
+        position: absolute;
 
-//     div {
-//       background-color: transparent;
-//       border: 1px solid $orange-dark;
-//       width: 98%;
-//       padding: 10px;
-//       margin: 1%;
-//       text-align: center;
-//       line-height: 75px;
-//       font-size: 30px;
+        .place {
+            background-color: transparent;
+            border: 1px solid $orange-dark;
+            width: 70%;
+            padding: 10px;
+            margin: 10px;
+            font-size: 30px;
+        }
+    }
 
-//     }
-//   }
-// }
+    & .hostel,
+    & .hotel,
+    & .motel,
+    & .house {
+        width: 70%;
+        display: grid;
+        grid-template-columns: 40% 30% 30%;
+        grid-template-rows: 85% 15%;
+        grid-template-areas: 'pic title price'
+            'pic action action';
 
+
+        & .title {
+            text-align: left;
+            margin-top: 0;
+            padding: 0;
+            margin-left: 20px;
+            grid-area: title;
+
+
+            h1 {
+                font-size: $font-xlarge;
+            }
+
+            p {
+                font-size: $font-medium;
+            }
+        }
+
+        .price {
+            text-align: right;
+            font-size: $font-large;
+            grid-area: price;
+            color: $orange-dark;
+        }
+
+        & img {
+            width: 100%;
+            grid-area: pic;
+        }
+
+        & .action-btns {
+            grid-area: action;
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+
+}

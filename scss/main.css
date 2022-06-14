@@ -31,44 +31,109 @@ html {
   margin: 0 auto;
 }
 
-.logo {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: logo;
-}
-
-.form {
+.button {
   -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: form;
-}
-
-.content {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
-  grid-area: main;
+  -ms-grid-column-span: 2;
+  grid-area: action;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
 }
 
-.container {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: 'logo main main main main' 'form main main main main';
+.button--primary {
+  background-color: #21627C;
+  color: #ffffff;
+  border: #ffffff solid 1px;
+  padding: 10px 0 10px 0;
+  width: 150px;
+  font-size: medium;
 }
 
-.container > div {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+.button--primary:hover {
+  background-color: #529FBE;
+}
+
+.button--secondary {
+  font-size: medium;
+  background-color: transparent;
+  color: #ffffff;
+  border: #ffffff solid 1px;
+  padding: 10px 0 10px 0;
+  width: 150px;
+}
+
+.button--secondary:hover {
+  border: #529FBE solid 1px;
+  color: #529FBE;
+}
+
+.button--secondary-action {
+  font-size: medium;
+  background-color: transparent;
+  color: #21627C;
+  border: #21627C solid 1px;
+  padding: 10px 0 10px 0;
+  width: 150px;
+}
+
+.button--secondary-action:hover {
+  border: #529FBE solid 1px;
+  color: #529FBE;
+}
+
+.popUp {
+  background-color: #C9684B;
+  border: 10px solid #ffffff;
+  width: 600px;
+  height: 700px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+.popUp .cross {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+  background-color: #ffffff;
+  font-size: 1.75rem;
+}
+
+.popUp .cross:hover {
+  background-color: #529FBE;
+}
+
+.popUpHostel {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popUp-black {
+  background-color: #292929;
+  opacity: 0.8;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo {
-  background-color: #292929;
-}
-
-.logo img {
   margin-left: auto;
+  margin-right: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -78,26 +143,22 @@ html {
 }
 
 .form {
-  background-color: #292929;
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
-
-.form-info {
   font-size: 0.875rem;
-  height: auto;
   margin: 0;
   left: 0;
   right: 0;
   padding: 10px;
-  width: 70%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #C9684B;
+  background-color: #292929;
+  border: 1px #ffffff solid;
+  display: -ms-grid;
+  display: grid;
+  gap: 15px;
 }
 
-.form-info h1 {
+.form h1 {
   font-family: runda;
   font-weight: 400;
   font-size: 1rem;
@@ -105,44 +166,47 @@ html {
   text-align: left;
 }
 
-.form-info .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: auto;
+.form-buttons {
+  margin-left: auto;
 }
 
-.form .form-info-group {
+.form-groups {
   margin-bottom: 5px;
   margin-top: 5px;
-  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.form .form-info-group label {
+.form-groups select {
+  padding: 0 5px 5px 0;
+  text-align: left;
+}
+
+.form-groups label {
   display: inline-block;
   text-align: left;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  color: #ffffff;
 }
 
-.form .form-info-group input {
+.form-groups input {
   border: none;
   -webkit-box-flex: 0.1;
       -ms-flex-positive: 0.1;
           flex-grow: 0.1;
   text-align: center;
+  padding: 0 5px 5px 0;
 }
 
-.form .form-info-group .error {
+.form-groups .error {
   width: auto;
   color: #292929;
 }
 
-.form .form-info-dates {
+.form-dates {
   margin-bottom: 5px;
   margin-top: 5px;
   width: auto;
@@ -151,23 +215,25 @@ html {
   display: flex;
 }
 
-.form .form-info-dates label {
+.form-dates label {
   display: inline-block;
   text-align: left;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  color: #ffffff;
 }
 
-.form .form-info-dates input {
+.form-dates input {
   border: none;
   -webkit-box-flex: 4;
       -ms-flex-positive: 4;
           flex-grow: 4;
   text-align: center;
+  padding: 0 5px 5px 0;
 }
 
-.form .form-info-dates .error {
+.form-dates .error {
   width: 150px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -177,9 +243,11 @@ html {
 }
 
 .content {
-  padding: 5px;
   font-weight: bold;
+  position: relative;
+  margin-top: 0;
   height: 100vh;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   background-repeat: no-repeat;
@@ -188,24 +256,132 @@ html {
 }
 
 .content-results {
+  background-color: #ffffff;
+  height: 100vh;
+  position: absolute;
+}
+
+.content-results .place {
+  background-color: transparent;
+  border: 1px solid #C9684B;
+  width: 70%;
+  padding: 10px;
+  margin: 10px;
+  font-size: 30px;
+}
+
+.content .hostel,
+.content .hotel,
+.content .motel,
+.content .house {
+  width: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 30% 30%;
+      grid-template-columns: 40% 30% 30%;
+  -ms-grid-rows: 85% 15%;
+      grid-template-rows: 85% 15%;
+      grid-template-areas: 'pic title price' 'pic action action';
+}
+
+.content .hostel .title,
+.content .hotel .title,
+.content .motel .title,
+.content .house .title {
+  text-align: left;
+  margin-top: 0;
+  padding: 0;
+  margin-left: 20px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
+}
+
+.content .hostel .title h1,
+.content .hotel .title h1,
+.content .motel .title h1,
+.content .house .title h1 {
+  font-size: 2.5rem;
+}
+
+.content .hostel .title p,
+.content .hotel .title p,
+.content .motel .title p,
+.content .house .title p {
+  font-size: 1rem;
+}
+
+.content .hostel .price,
+.content .hotel .price,
+.content .motel .price,
+.content .house .price {
+  text-align: right;
+  font-size: 1.75rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: price;
+  color: #C9684B;
+}
+
+.content .hostel img,
+.content .hotel img,
+.content .motel img,
+.content .house img {
+  width: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: pic;
+}
+
+.content .hostel .action-btns,
+.content .hotel .action-btns,
+.content .motel .action-btns,
+.content .house .action-btns {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: action;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.sidebar {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+  background-color: #292929;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #ffffff;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100vh;
 }
 
-.content-results div {
-  background-color: transparent;
-  border: 1px solid #C9684B;
-  width: 98%;
-  padding: 10px;
-  margin: 1%;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+.content {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: main;
+  position: relative;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+      grid-template-areas: 'sidebar main' 'sidebar main';
 }
 
 .valid {
