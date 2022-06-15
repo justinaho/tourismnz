@@ -1,46 +1,44 @@
 .content {
-    font-weight: bold;
     position: relative;
     margin-top: 0;
     height: 100vh;
-    width: 100%;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+
+
+    img {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
 
     &-results {
         background-color: $white;
         height: 100vh;
-        position: absolute;
 
         .place {
             background-color: transparent;
             border: 1px solid $orange-dark;
-            width: 70%;
             padding: 10px;
-            margin: 10px;
             font-size: 30px;
+            margin: 20px;
         }
+    }
+
+    &-places {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
 
     & .hostel,
     & .hotel,
     & .motel,
     & .house {
-        width: 70%;
-        display: grid;
-        grid-template-columns: 40% 30% 30%;
-        grid-template-rows: 85% 15%;
-        grid-template-areas: 'pic title price'
-            'pic action action';
-
-
         & .title {
             text-align: left;
             margin-top: 0;
             padding: 0;
-            margin-left: 20px;
             grid-area: title;
 
 
@@ -54,9 +52,10 @@
         }
 
         .price {
-            text-align: right;
+            text-align: left;
             font-size: $font-large;
-            grid-area: price;
+            margin-top: 20px;
+            margin-bottom: 20px;
             color: $orange-dark;
         }
 
@@ -64,12 +63,14 @@
             width: 100%;
             grid-area: pic;
         }
-
-        & .action-btns {
-            grid-area: action;
-            margin-left: auto;
-            margin-right: 0;
-        }
     }
 
+}
+
+.action-btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: left;
+    gap: 10px;
 }

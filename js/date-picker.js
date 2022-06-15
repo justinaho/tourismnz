@@ -1,12 +1,15 @@
+
+
 $(function() {
   $('input[name="datetimes"]').daterangepicker({
-    
     timePicker: true,
-    startDate: moment().startOf('hour'),
-    endDate: moment().startOf('hour').add(32, 'hour'),
+    minDate: new Date(moment()),
+    startDate: moment().endOf('hour'),
+    endDate: moment().endOf('hour').add(24, 'hour'),
     drops: "up",
     locale: {
       format: 'DD/MM/YYYY hh:mm A'
     }
   });
 });
+

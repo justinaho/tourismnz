@@ -18,7 +18,6 @@
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
   <script src="../js/form-validation.js"></script>
   <script src="../js/date-picker.js"></script>
-  <script src="../js/reset.js"></script>
   <script src="../js/main.js"></script>
 
   <link rel="stylesheet" href="../scss/main.css" />
@@ -32,97 +31,104 @@
 
 <body>
   <div class="container">
-    <div class="sidebar">
+    <div class="sidebar section1">
       <img class="logo" src="../img/logo.png">
-      <form class="form" id="myForm" action="" method="GET">
-        <h1>Kia Ora</h1>
-
-        <div class="form-groups">
-          <label>Destination</label>
-          <select name="country" class="destination" tabindex="2">
-            <option value="DS">Select</option>
-            <option value="AK">Auckland</option>
-            <option value="WLG">Wellington</option>
-            <option value="CH">Christchurch</option>
-            <option value="QST">Queenstown</option>
-            <option value="DN">Dunedin</option>
-          </select>
+      <h1 class="searchForm-title">Kia Ora</h1>
+      <form id="searchForm" class="searchForm" action="" method="GET">
+        <div class="flex-grid-thirds">
+          <div class="col">
+            <label class="searchForm-label">Destination</label>
+          </div>
+          <div class="col">
+            <select name="city" class="searchForm-select" id="city">
+              <option value="AK">Auckland</option>
+              <option value="WLG">Wellington</option>
+              <option value="CH">Christchurch</option>
+              <option value="QST">Queenstown</option>
+              <option value="DN">Dunedin</option>
+            </select>
+          </div>
         </div>
 
-        <div class="form-dates">
-          <label for="daterange">Check In/Check Out</label>
-          <input type="text" name="datetimes" />
+        <div class="flex-grid-thirds">
+          <div class="col"><label class="searchForm-label" for="daterange">Check In/Check Out</label></div>
+          <div class="col"><input class="searchForm-input" id="dateTime" type="text" name="datetimes" /></div>
         </div>
 
-        <div class="form-groups">
-          <label for="guests">No. of guests</label>
-          <input type="text" name="guests" id="guests">
+        <div class="flex-grid-thirds">
+          <div class="col"><label class="searchForm-label" for="guests">No. of guests</label></div>
+          <div class="col"><input class="searchForm-input" type="text" name="guests" id="guests"></div>
         </div>
 
-        <div class="form-groups">
-          <label for="rooms">No. of rooms</label>
-          <input type="text" name="rooms" id="rooms">
+        <div class="flex-grid-thirds">
+          <div class="col"><label class="searchForm-label" for="rooms">No. of rooms</label></div>
+          <div class="col"><input class="searchForm-input" type="text" name="rooms" id="rooms"></div>
         </div>
 
-        <div class="form-buttons">
-          <button class="button--secondary" type="reset" onclick="this.form.reset();">Reset</button>
+        <div class="formButtons">
+          <button class="button--secondary" type="reset" id='clear' onclick="clearForm()">Reset</button>
           <button class="button--primary" type="submit">Submit</button>
         </div>
       </form>
     </div>
 
-    <div class="content" style="background-image: url('../img/cover.jpg');">
-      <div class="content-results" id="content-results-js" style="display:none;">
-        <div class="hostel place">
-          <img src="/img/hostel.jpg">
-          <div class="title">
-            <h1>Hostel</h1>
-            <p>min 1 night, max 10 nights</p>
-            <p>1 person</p>
-          </div>
-          <p class="price">$30/night</p>
-          <div class="action-btns">
-            <button class="button--secondary-action">More info</button>
-            <button class="button--primary" onclick="bookHostel()">Book now</button>
-          </div>
-        </div>
-        <div class="hotel place">
-          <img src="/img/hotel.jpg">
-          <div class="title">
-            <h1>Hotel</h1>
-            <p>min 1 night, max 5 nights</p>
-            <p>1-2 people</p>
-          </div>
-          <p class="price">$157/night</p>
-          <div class="action-btns">
-            <button class="button--secondary-action">More info</button>
-            <button class="button--primary">Book now</button>
-          </div>
-        </div>
-        <div class="motel place">
-          <img src="/img/motel.jpg">
-          <div class="title">
-            <h1>Motel</h1>
-            <p>min 3 night, max 10 nights</p>
-            <p>2-4 people</p>
-          </div>
-          <p class="price">$90/night</p>
-          <div class="action-btns">
-            <button class="button--secondary-action">More info</button>
-            <button class="button--primary">Book now</button>
-          </div>
-        </div>
-        <div class="house place">
-          <img src="/img/house.jpg">
-          <div class="title">
-            <h1>House</h1>
-            <p>min 2 night, max 15 nights</p>
-            <p>1-4 people</p>
-          </div>
-          <p class="price">$240/night</p>
-          <div class="action-btns">
-            <button class="button--secondary-action">More info</button>
-            <button class="button--primary">Book now</button>
+
+    <div class="content section2">
+      <div class="cover-img">
+        <div class="content-results" id="content-results-js" style="display:none;">
+          <div class="content-places">
+            <div class="hostel place">
+              <img src="/img/hostel.jpg">
+              <div class="title">
+                <h1>Hostel</h1>
+                <p>min 1 night, max 10 nights</p>
+                <p>1 person</p>
+              </div>
+              <p class="price">$30/night</p>
+              <div class="action-btns">
+                <button class="button--secondary-action">More info</button>
+                <button class="button--primary" onclick="bookHostel()">Book now</button>
+              </div>
+            </div>
+            <div class="hotel place">
+              <img src="/img/hotel.jpg">
+              <div class="title">
+                <h1>Hotel</h1>
+                <p>min 1 night, max 5 nights</p>
+                <p>1-2 people</p>
+              </div>
+              <p class="price">$157/night</p>
+              <div class="action-btns">
+                <button class="button--secondary-action">More info</button>
+                <button class="button--primary">Book now</button>
+              </div>
+            </div>
+            <div class="motel place">
+              <img src="/img/motel.jpg">
+              <div class="title">
+                <h1>Motel</h1>
+                <p>min 3 night, max 10 nights</p>
+                <p>2-4 people</p>
+              </div>
+              <p class="price">$90/night</p>
+              <div class="action-btns">
+                <button class="button--secondary-action">More info</button>
+                <button class="button--primary">Book now</button>
+              </div>
+            </div>
+            <div class="house place">
+              <img src="/img/house.jpg">
+              <div class="title">
+                <h1>House</h1>
+                <p>min 2 night, max 15 nights</p>
+                <p>1-4 people</p>
+              </div>
+              <p class="price">$240/night</p>
+              <div class="action-btns">
+                <button class="button--secondary-action">More info</button>
+                <button class="button--primary">Book now</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -130,7 +136,107 @@
     <div class="popUpHostel" id="popUpHostel-js" style="display:block;">
       <div class="popUp-black"></div>
       <div class="popUp">
-        <div class="cross" onclick="cross()">✖</div>
+        <ul class="progress">
+          <div class="cross">
+            <img src="/img/close.png" onclick="cross()">
+            <img src="/img/close_hover.png" class="hover" onclick="cross()">
+          </div>
+          <li><img src="/img/tick.png"></li>
+          <li>
+            <p>Selected Accomodation</p>
+          </li>
+          <li class="step2" style="visibility: show"><img src="/img/tick.png"></li>
+          <li>
+            <p>Your Details</p>
+          </li>
+          <li class="step3" style="visibility: show"><img src="/img/tick.png"></li>
+          <li>
+            <p>Review Booking</p>
+          </li>
+        </ul>
+        <div class="bookingForm">
+          <form id="bookingForm" class="searchForm" action="" method="GET">
+
+            <div class="flex-grid-thirds">
+              <div class="col"><label for="fname">First name *</label></div>
+              <div class="col"><input type="text" name="firstname" id="firstname"></div>
+            </div>
+
+            <div class="flex-grid-thirds">
+              <div class="col"><label for="lname">Last name *</label></div>
+              <div class="col"><input type="text" name="lastname" id="lastname"></div>
+            </div>
+
+            <div class="flex-grid-thirds">
+              <div class="col"><label for="email">Email *</label></div>
+              <div class="col"><input type="email" name="email" id="email"></div>
+            </div>
+
+            <div class="flex-grid-thirds">
+              <div class="col"><label for="phone">Phone number *</label></div>
+              <div class="col"><input type="phone" name="phone" id="phone"></div>
+            </div>
+
+            <div class="flex-grid-thirds">
+              <div class="col"><label for="meals">Complimentary meals *</label></div>
+              <div class="col">
+                <input type="radio" id="yes" name="meals" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="meals" value="no">
+                <label for="no">No</label><br>
+              </div>
+           
+
+            <!-- <div class="flex-grid-thirds">
+              <div class="col"><input type="checkbox" id="breakfast" name="meals" value="breakfast">
+                <label for="breakfast">Buffet breakfast</label>
+              </div>
+              <div class="col"><input type="checkbox" id="lunch" name="meals" value="lunch">
+                <label for="lunch">Lunch</label>
+              </div>
+              <div class="col"><input type="checkbox" id="dinner" name="meals" value="dinner">
+                <label for="dinner">Dinner</label>
+              </div>
+            </div> -->
+            <div>
+              <label>
+                <input type="checkbox" name="colorCheckbox" value="C"> C</label>
+              <label>
+                <input type="checkbox" name="colorCheckbox" value="Cplus"> C++</label>
+              <label>
+                <input type="checkbox" name="colorCheckbox" value="Python"> Python</label>
+              <label>
+                <input type="checkbox" name="colorCheckbox" value="Java"> Java</label>
+            </div>
+            <div class="C selectt">
+              <strong>C</strong>
+              is a procedural programming language
+            </div>
+            <div class="Cplus selectt">
+              <strong>C++</strong>
+              is a general purpose programming language
+            </div>
+            <div class="Python selectt">
+              <strong>Python</strong>
+              is a widely used general-purpose, high level
+              programming language.
+            </div>
+            <div class="Java selectt">
+              <strong>Java</strong>
+              is a most popular programming language for
+              many years.
+            </div>
+          </div>
+
+            <div class="details-btns">
+              <button class="button--secondary">Cancel</button>
+              <button class="button--primary">Review</button>
+            </div>
+
+          </form>
+
+        </div>
+
       </div>
     </div>
   </div>

@@ -1,37 +1,80 @@
 .popUp {
     background-color: $orange-dark;
     border: 10px solid $white;
-    width: 600px;
+    width: 700px;
     height: 700px;
     position: relative;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
+    left: 0;
+    right: 0;
+    margin-left: auto;
     margin-right: auto;
-    margin-top: 10%; 
+    margin-top: 10%;
+    display: grid;
+    grid-template-rows: 50px 1fr 1fr 50px;
 
-    & .cross {
-        width: 30px;
-        height: 30px;
-        margin-top: 10px;
-        margin-right: 10px;
-        float: right;
-        background-color: $white;
-        font-size: $font-large;
+    & .progress {
+        list-style-type: none;
+        text-align: center;
+        width: 100%;
+        position: relative;
 
-       &:hover {
-           background-color: $blue-light;
-       }
+        & li {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 2.5;
+
+            p {
+                font-size: $font-small;
+                padding-right: 20px;
+            }
+        }
+
+        img {
+            height: 20px;
+            align-items: center;
+            vertical-align: middle;
+            padding-right: 5px;
+
+        }
+
+    }
+
+    & .details-btns {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+}
+
+.cross {
+    width: auto;
+    margin-top: 5px;
+
+    & img {
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 10;
+        right: 0;
+    }
+
+    & .hover {
+        display: none;
+    }
+
+    &:hover .hover {
+        display: block;
     }
 }
+
 
 .popUpHostel {
     width: 100%;
     height: 100vh;
     position: absolute;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
+    left: 0;
+    right: 0;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -41,8 +84,21 @@
     width: 100%;
     height: 100vh;
     position: absolute;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
+    left: 0;
+    right: 0;
+    margin-left: auto;
     margin-right: auto;
+}
+
+.selectt {
+    color: #fff;
+    padding: 30px;
+    display: none;
+    margin-top: 30px;
+    width: 60%;
+    background: green
+}
+  
+label {
+    margin-right: 20px;
 }

@@ -1,36 +1,77 @@
-.sidebar{
-    grid-area: sidebar;
+.sidebar {
     background-color: $primary;
     padding: 20px;
-    font-size: 30px;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     height: 100vh;
 }
 
-.content {
-    grid-area: main;
-    position: relative;
-}
-
 .container {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    // grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    grid-template-areas:
-        'sidebar main'
-        'sidebar main';
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & .section1 {
+        flex: 1;
+    }
+
+    & .section2 {
+        flex: 2;
+        background-image: url('/img/cover.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
 }
 
-.valid {
-    background: green;
-    color: #fff;
-}
 
 .error {
-    background: red;
-    color: #fff;
+
+    color: red;
+    display: flex;
+
+}
+
+#rooms-error {
+    visibility: visible;
+}
+
+//mobile
+@media only screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .hostel,
+    .hotel,
+    .motel,
+    .house {
+        width: 400px;
+    }
+
+    .flex-grid-thirds {
+        display: flex;
+        padding-bottom: 10px;
+        justify-content: space-between;
+        flex-direction: column;    
+    }
+
+}
+
+//desktop
+@media only screen and (min-width: 1200px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .hostel,
+    .hotel,
+    .motel,
+    .house {
+        width: 400px;
+    }
+
 }
