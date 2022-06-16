@@ -503,7 +503,6 @@ label {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  background-image: url("/img/cover.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
