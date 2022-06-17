@@ -8,6 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
   <script src="js/form-validation.js"></script>
 
+
   <!-- date picker-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -34,7 +35,7 @@
     <div class="sidebar section1">
       <img class="logo" src="img/logo.png">
       <h1 class="searchForm-title">Kia Ora</h1>
-      <form id="searchForm" class="searchForm" action="" >
+      <form id="searchForm" class="searchForm" action="">
         <div class="flex-grid-thirds">
           <div class="col">
             <label class="searchForm-label">Destination</label>
@@ -73,7 +74,7 @@
     </div>
 
 
-    <div class="content section2" style="background-image: url(img/cover.jpg);" >
+    <div class="content section2" style="background-image: url(img/cover.jpg);">
       <div class="cover-img">
         <div class="content-results" id="content-results-js" style="display:none;">
           <div class="content-places">
@@ -138,7 +139,7 @@
       <div class="popUp">
         <ul class="progress">
           <div class="cross">
-            <img src="img/close.png" onclick="cross()">
+            <img class="cross-img" src="img/close.png" onclick="cross()">
             <img src="img/close_hover.png" class="hover" onclick="cross()">
           </div>
           <li><img src="img/tick.png"></li>
@@ -155,7 +156,7 @@
           </li>
         </ul>
         <div class="bookingForm">
-          <form id="bookingForm" class="searchForm" action="">
+          <form id="bookingForm" class="bookingForm" action="">
 
             <div class="flex-grid-thirds">
               <div class="col"><label for="fname">First name *</label></div>
@@ -177,80 +178,101 @@
               <div class="col"><input type="phone" name="phone" id="phone"></div>
             </div>
 
+            <!-- Complimentary Meals -->
             <div class="flex-grid-thirds">
               <div class="col"><label for="meals">Complimentary meals *</label></div>
               <div class="col">
-                <label>
-                  <input type="checkbox" id="yes" name="meals" value="meals">Yes</label>
-                <label>
-                <!-- <input type="radio" value="yes" id="yes" name="meals" value="yes">
-                <label for="yes">Yes</label> -->
-                <input type="radio" id="no" name="meals" value="no">
-                <label for="no">No</label><br>
-              </div>
-              </div>
+                <label><input type="radio" name="meals" value="meals" onclick="show2();">
+                  Yes</label>
 
-
-              <!-- <div class="flex-grid-thirds">
-              <div class="col"><input type="checkbox" id="breakfast" name="meals" value="breakfast">
-                <label for="breakfast">Buffet breakfast</label>
-              </div>
-              <div class="col"><input type="checkbox" id="lunch" name="meals" value="lunch">
-                <label for="lunch">Lunch</label>
-              </div>
-              <div class="col"><input type="checkbox" id="dinner" name="meals" value="dinner">
-                <label for="dinner">Dinner</label>
-              </div>-->
-              <div class="flex-grid-thirds">
-              <div class="meals selectt">
-                <label>
-                  <input type="checkbox" name="colorCheckbox" value="buffet-breakfast">Buffet breakfast</label>
-                <label>
-                  <input type="checkbox" name="colorCheckbox" value="lunch">Lunch</label>
-                <label>
-                  <input type="checkbox" name="colorCheckbox" value="dinner">Dinner</label>
-                <div class="buffet-breakfast selectt">
-                  <strong>Buffet breakfast</strong>
-                </div>
-                <div class="lunch selectt">
-                  <input type="radio" id="1" name="lunch" value="1">
-                  <label for="1">Beef Lasagna</label>
-                  <input type="radio" id="2" name="lunch" value="2">
-                  <label for="2">Pumpkin ravioli (vg)</label><br>
-                </div>
-                <div class="dinner selectt">
-                  <strong>Starter</strong><br><br>
-                  <input type="radio" id="1" name="starter" value="1">
-                  <label for="1">Beef Lasagna</label>
-                  <input type="radio" id="2" name="starter" value="2">
-                  <label for="2">Pumpkin ravioli (vg)</label><br>
-                  <strong>Main</strong><br><br>
-                  <input type="radio" id="1" name="main" value="1">
-                  <label for="1">Beef Lasagna</label>
-                  <input type="radio" id="2" name="main" value="2">
-                  <label for="2">Pumpkin ravioli (vg)</label><br>
-                  <strong>Dessert</strong><br><br>
-                  <input type="radio" id="1" name="dessert" value="1">
-                  <label for="1">Beef Lasagna</label>
-                  <input type="radio" id="2" name="dessert" value="2">
-                  <label for="2">Pumpkin ravioli (vg)</label><br>
-                </div>
+                <label><input type="radio" name="meals" value="meals" onclick="show1();" />
+                  No</label>
               </div>
             </div>
+       
+            <div class="flex-grid-thirds">
+              <div id="div1" class="hide">
+                <label><input type="checkbox" name="colorCheckbox" value="red"> Buffet breakfast</label>
+                <label><input type="checkbox" name="colorCheckbox" value="green"> Lunch</label>
+                <label><input type="checkbox" name="colorCheckbox" value="blue"> Dinner</label>
+              </div>
+            </div>
+            <div class="flex-grid-thirds">
+              <div class="red box">
+                <h2>Buffet breakfast</h2>
+                <p>Our famous buffet breakfast is available from 6am – 10am Monday-Friday </p>
+                <p>and 7am – 10.30am weekends and public holidays.</p>
+                <p>Fuel-up on scrumptious hot or cold dishes.</p>
+              </div>
+              <div class="green box">
+                <h2>Lunch</h2>
+                <label><input type="radio" value="Yes" name="lunch">
+                  Beef Lasagna</label>
+                <label><input type="radio" value="Yes" name="lunch">
+                  Pumpkin ravioli (vg)</label>
+              </div>
+              <div class="blue box">
+                <h2>Dinner</h2>
+                <h3>Starter</h3>
+                <label><input type="radio" value="Yes" name="starter">
+                  Salt and pepper squid</label>
+                <label><input type="radio" value="Yes" name="starter">
+                  Garlic bread (vg)</label>
+                <h3>Main</h3>
+                <label><input type="radio" value="Yes" name="main">
+                  Angus scotch fillet</label>
+                <label><input type="radio" value="Yes" name="main">
+                  Grilled portobello mushroom steak (v)</label>
+                <h3>Dessert</h3>
+                <label><input type="radio" value="Yes" name="dessert">
+                  Tiramisu</label>
+                <label><input type="radio" value="Yes" name="dessert">
+                  Salted caramel chocolate tart (v)</label>
+              </div>
 
             </div>
 
-            <div class="details-btns">
-              <button class="button--secondary">Cancel</button>
-              <button class="button--primary">Review</button>
-            </div>
 
-          </form>
+            <!-- Dietary Requirements -->
+            <div class="flex-grid-thirds">
+              <div class="col"><label for="meals">Dietary requirements *</label></div>
+              <div class="col">
+                <label><input type="radio" name="dietary" value="dietary" onclick="noDietaryOptions();">
+                  Yes</label>
+
+                <label><input type="radio" name="dietary" value="dietary" onclick="dietaryOptions();" />
+                  No</label>
+              </div>
+            </div>
+            <div class="flex-grid-thirds">
+              <div id="dietaryOptions" class="hide">
+                <input type="checkbox" id="yes" name="dietary" value="1">
+                <label for="1">Gluten Free</label>
+                <input type="checkbox" id="yes" name="dietary" value="2">
+                <label for="2">Vegan</label>
+                <input type="checkbox" id="yes" name="dietary" value="2">
+                <label for="2">Vegetarian</label><br><br>
+                <input type="checkbox" id="yes" name="dietary" value="2">
+                <label for="2">Diabetic</label>
+                <input type="checkbox" id="yes" name="dietary" value="2">
+                <label for="2">Other</label>
+                <input type="text" id="yes" name="dietary">
+              </div>
+            </div>
 
         </div>
+        <div class="details-btns">
+          <div class="col"><button class="button--secondary">Cancel</button></div>
+          <div class="col"><button class="button--primary">Review</button></div>
+        </div>
+
+
+        </form>
 
       </div>
+
     </div>
+  </div>
   </div>
 
 </body>

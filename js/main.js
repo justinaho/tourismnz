@@ -45,10 +45,70 @@ function reviewBooking() {
   }
 }
 
-$(document).ready(function() {
-  $('input[type="checkbox"]').click(function() {
+// $(document).ready(function() {
+//   $('input[type="checkbox"]').click(function() {
+//       var inputValue = $(this).attr("value");
+//       $("." + inputValue).toggle();
+//       // return("Checkbox " + inputValue + " is selected");
+//   });
+
+
+// });
+
+// $("[id^='radio']").on("click", function() {
+//   var divElements = $("[class^=radio]")
+//   var radioBtn = this.id;
+//   divElements.each(function(index, element) {
+//     if (element.classList.contains(radioBtn)) {
+//       $(element).show();
+//     } else {
+//       $(element).hide();
+//     }
+//   })
+// });
+
+// $("[id^='check']").on("change", function() {
+//   var divElements = $("[class^=check]")
+//   var checkBtn = this.id;
+//   var isChecked = this.checked;
+//   divElements.each(function(index, element) {
+//     if (isChecked && element.classList.contains(checkBtn)) {
+//       $(element).show();
+//     } else if (!isChecked && element.classList.contains(checkBtn)) {
+//       $(element).hide();
+//     }
+//   })
+// });
+
+var isChecked = this.checked;
+
+function show1(){
+  document.getElementById('div1').style.display ='none';
+}
+function show2(){
+  document.getElementById('div1').style.display = 'block';
+}
+
+// function buffetBreakfast(){
+//   document.getElementById('buffetBreakfast').style.display = 'block';
+// }
+
+// function lunchOptions(){
+//   document.getElementById('lunchOptions').style.display = 'block';
+// }
+// function dinnerOptions(){
+//   document.getElementById('dinnerOptions').style.display = 'block';
+// }
+
+function dietaryOptions(){
+  document.getElementById('dietaryOptions').style.display ='none';
+}
+function noDietaryOptions(){
+  document.getElementById('dietaryOptions').style.display = 'block';
+}
+$(document).ready(function(){
+  $('input[type="checkbox"]').click(function(){
       var inputValue = $(this).attr("value");
       $("." + inputValue).toggle();
-      // return("Checkbox " + inputValue + " is selected");
   });
 });

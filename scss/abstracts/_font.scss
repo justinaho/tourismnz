@@ -8,3 +8,21 @@ $font-medium: 1rem;
 $font-large: 1.75rem;
 $font-xlarge: 2.5rem;
 $font-xxlarge: 5rem;
+
+h2 {
+    font-size: $font-medium;
+    color: $white;
+    border-bottom: 1px solid  $white;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: $font-small;
+    color: $primary;
+    margin: 5px;
+}
+
+p {
+    font-size: $font-xsmall;
+}
