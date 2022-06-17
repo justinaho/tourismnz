@@ -65,11 +65,12 @@ $(document).ready(function () {
                 email: true,
 
             },
-            // phone: {
-            //     required: true,
-            //     minLength: 2,
-            //     maxLength: 5,
-            // },
+            meals: {
+                required: true,
+            },
+            dietaryRequirements: {
+                required: true,
+            },
         },
 
         messages: {
@@ -85,10 +86,12 @@ $(document).ready(function () {
                 required: "Please enter an email address",
                 email: "Please enter a valid email address"
             },
-            // phone: {
-            //     required: "This field is required",
-            //     minLength: "A mobile digit number is required"
-            // }
+            meals: {
+                required: "This field is required",
+            },
+            dietaryRequirements: {
+                required: "This field is required",
+            },
 
         },
 

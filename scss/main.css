@@ -16,6 +16,11 @@ p {
   font-size: 0.75rem;
 }
 
+.currentStep {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
 *, *:before, *:after {
   margin: 0;
   padding: 0;
@@ -218,15 +223,15 @@ label {
   margin-top: 20px;
 }
 
-.red {
+.buffet-breakfast {
   background: #21627C;
 }
 
-.green {
+.lunch {
   background: #529FBE;
 }
 
-.blue {
+.dinner {
   background: #21627C;
 }
 
@@ -294,6 +299,116 @@ label {
   width: auto;
 }
 
+.reviewBooking {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review {
+  background-color: #C9684B;
+  border: 10px solid #ffffff;
+  width: 700px;
+  height: 790px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.review-progress {
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.review-progress li {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 2.5;
+}
+
+.review-progress li p {
+  font-size: 0.875rem;
+  padding-right: 20px;
+}
+
+.review-progress img {
+  height: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+.review .details-btns {
+  margin-left: auto;
+  margin-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.popUp-black2 {
+  background-color: #292929;
+  opacity: 0.8;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bookingDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bookingResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  height: 660px;
+}
+
 .logo {
   margin-left: auto;
   margin-right: auto;
@@ -344,6 +459,7 @@ label {
 
 .formButtons {
   margin-left: auto;
+  margin-right: auto;
 }
 
 #correctDates {

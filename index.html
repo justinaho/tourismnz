@@ -8,7 +8,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
   <script src="js/form-validation.js"></script>
 
-
   <!-- date picker-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -134,7 +133,49 @@
         </div>
       </div>
     </div>
-    <div class="popUpHostel" id="popUpHostel-js" style="display:none;">
+
+   <!-- Review booking -->
+    <div class="reviewBooking" id="reviewBooking" style="display:none">
+      <div class="popUp-black2"></div>
+      <div class="review">
+        <ul class="review-progress">
+          <div class="cross">
+            <img class="cross-img" src="img/close.png" onclick="crossReview()">
+            <img src="img/close_hover.png" class="hover" onclick="crossReview()">
+          </div>
+          <li><img src="img/tick.png"></li>
+          <li><p>Selected Accomodation</p</li>
+
+          <li><img src="img/tick.png"></li>
+          <li><p>Your Details</p></li>
+
+          <li><img class="step3" style="display: none" src="img/tick.png"></li> 
+          <li><p class="currentStep">Review Booking</p></li>
+        </ul>
+
+
+        <div class="bookingResults">
+
+          <h2> Booking details</h2>
+          <div id="guestDetails"></div>
+          <div id="result"></div>
+          <div id="lunchResult"></div>
+          <div id="starterResult"></div>
+          <div id="mainResult"></div>
+          <div id="dessertResult"></div>
+          <div id="dietaryRequirementsResult"></div>
+          <div id="dietaryResult"></div>
+        </div>
+
+        <div class="details-btns">
+          <div class="col"><button class="button--secondary">Cancel</button></div>
+          <div class="col"><button class="button--primary">Review</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hostel booking form -->
+    <div class="popUpHostel" id="popUpHostel-js" style="display:block">
       <div class="popUp-black"></div>
       <div class="popUp">
         <ul class="progress">
@@ -146,11 +187,11 @@
           <li>
             <p>Selected Accomodation</p>
           </li>
-          <li class="step2" style="visibility: show"><img src="img/tick.png"></li>
+          <li class="step2" style="display: none;"><img src="img/tick.png"></li>
           <li>
-            <p>Your Details</p>
+            <p class="currentStep">Your Details</p>
           </li>
-          <li class="step3" style="visibility: show"><img src="img/tick.png"></li>
+          <li class="step3" style="display: none"><img src="img/tick.png"></li>
           <li>
             <p>Review Booking</p>
           </li>
@@ -180,7 +221,7 @@
 
             <!-- Complimentary Meals -->
             <div class="flex-grid-thirds">
-              <div class="col"><label for="meals">Complimentary meals *</label></div>
+              <div class="col"><label for="meals" name="complimentaryMeals">Complimentary meals *</label></div>
               <div class="col">
                 <label><input type="radio" name="meals" value="meals" onclick="show2();">
                   Yes</label>
@@ -189,44 +230,44 @@
                   No</label>
               </div>
             </div>
-       
+
             <div class="flex-grid-thirds">
               <div id="div1" class="hide">
-                <label><input type="checkbox" name="colorCheckbox" value="red"> Buffet breakfast</label>
-                <label><input type="checkbox" name="colorCheckbox" value="green"> Lunch</label>
-                <label><input type="checkbox" name="colorCheckbox" value="blue"> Dinner</label>
+                <label><input type="checkbox" name="mealOptions" value="buffet-breakfast"> Buffet breakfast</label>
+                <label><input type="checkbox" name="mealOptions" value="lunch"> Lunch</label>
+                <label><input type="checkbox" name="mealOptions" value="dinner"> Dinner</label>
               </div>
             </div>
             <div class="flex-grid-thirds">
-              <div class="red box">
+              <div class="buffet-breakfast box">
                 <h2>Buffet breakfast</h2>
                 <p>Our famous buffet breakfast is available from 6am – 10am Monday-Friday </p>
                 <p>and 7am – 10.30am weekends and public holidays.</p>
                 <p>Fuel-up on scrumptious hot or cold dishes.</p>
               </div>
-              <div class="green box">
+              <div class="lunch box">
                 <h2>Lunch</h2>
-                <label><input type="radio" value="Yes" name="lunch">
+                <label><input type="radio" value="Beef Lasagna" name="lunch">
                   Beef Lasagna</label>
-                <label><input type="radio" value="Yes" name="lunch">
+                <label><input type="radio" value="Pumpkin ravioli (vg)" name="lunch">
                   Pumpkin ravioli (vg)</label>
               </div>
-              <div class="blue box">
+              <div class="dinner box">
                 <h2>Dinner</h2>
                 <h3>Starter</h3>
-                <label><input type="radio" value="Yes" name="starter">
+                <label><input type="radio" value="Salt and pepper squid" name="starter">
                   Salt and pepper squid</label>
-                <label><input type="radio" value="Yes" name="starter">
+                <label><input type="radio" value="Garlic bread (vg)" name="starter">
                   Garlic bread (vg)</label>
                 <h3>Main</h3>
-                <label><input type="radio" value="Yes" name="main">
+                <label><input type="radio" value="Angus scotch fillet" name="main">
                   Angus scotch fillet</label>
-                <label><input type="radio" value="Yes" name="main">
+                <label><input type="radio" value="Grilled portobello mushroom steak (v)" name="main">
                   Grilled portobello mushroom steak (v)</label>
                 <h3>Dessert</h3>
-                <label><input type="radio" value="Yes" name="dessert">
+                <label><input type="radio" value="Tiramisu" name="dessert">
                   Tiramisu</label>
-                <label><input type="radio" value="Yes" name="dessert">
+                <label><input type="radio" value="Salted caramel chocolate tart (v)" name="dessert">
                   Salted caramel chocolate tart (v)</label>
               </div>
 
@@ -235,26 +276,26 @@
 
             <!-- Dietary Requirements -->
             <div class="flex-grid-thirds">
-              <div class="col"><label for="meals">Dietary requirements *</label></div>
+              <div class="col"><label for="meals" name="diet">Dietary requirements *</label></div>
               <div class="col">
-                <label><input type="radio" name="dietary" value="dietary" onclick="noDietaryOptions();">
+                <label><input type="radio" name="dietaryRequirements" value="yes" onclick="noDietaryOptions();">
                   Yes</label>
 
-                <label><input type="radio" name="dietary" value="dietary" onclick="dietaryOptions();" />
+                <label><input type="radio" name="dietaryRequirements" value="no" onclick="dietaryOptions();" />
                   No</label>
               </div>
             </div>
             <div class="flex-grid-thirds">
               <div id="dietaryOptions" class="hide">
-                <input type="checkbox" id="yes" name="dietary" value="1">
+                <input type="checkbox" id="yes" name="dietary" value="Gluten Free">
                 <label for="1">Gluten Free</label>
-                <input type="checkbox" id="yes" name="dietary" value="2">
+                <input type="checkbox" id="yes" name="dietary" value="Vegan">
                 <label for="2">Vegan</label>
-                <input type="checkbox" id="yes" name="dietary" value="2">
+                <input type="checkbox" id="yes" name="dietary" value="Vegetarian">
                 <label for="2">Vegetarian</label><br><br>
-                <input type="checkbox" id="yes" name="dietary" value="2">
+                <input type="checkbox" id="yes" name="dietary" value="Diabetic">
                 <label for="2">Diabetic</label>
-                <input type="checkbox" id="yes" name="dietary" value="2">
+                <input type="checkbox" id="yes" name="dietary" value="Other">
                 <label for="2">Other</label>
                 <input type="text" id="yes" name="dietary">
               </div>
@@ -263,15 +304,18 @@
         </div>
         <div class="details-btns">
           <div class="col"><button class="button--secondary">Cancel</button></div>
-          <div class="col"><button class="button--primary">Review</button></div>
+          <div class="col"><button class="button--primary" onclick="guestDetails()" id="display">Review</button></div>
         </div>
 
 
-        </form>
-
       </div>
-
     </div>
+
+
+
+  </div>
+
+
   </div>
   </div>
 

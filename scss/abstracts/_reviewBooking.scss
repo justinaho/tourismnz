@@ -1,4 +1,14 @@
-.popUp {
+.reviewBooking {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review{
     background-color: $orange-dark;
     border: 10px solid $white;
     width: 700px;
@@ -12,7 +22,8 @@
     display: flex;
     flex-direction: column;
 
-    & .progress {
+
+    &-progress {
         list-style-type: none;
         text-align: center;
         width: 100%;
@@ -48,39 +59,7 @@
 
 }
 
-.cross {
-    width: auto;
-    margin-top: 5px;
-
-    &-img {
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: 10;
-        right: 0;
-    }
-
-    & .hover {
-        display: none;
-    }
-
-    &-img:hover .hover {
-        display: block;
-    }
-}
-
-
-.popUpHostel {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.popUp-black {
+.popUp-black2 {
     background-color: $primary;
     opacity: 0.8;
     width: 100%;
@@ -92,42 +71,21 @@
     margin-right: auto;
 }
 
-.selectt {
-    color: #fff;
-    padding: 5px;
-    display: none;
-    margin-top: 5px;
-
+.bookingDetails {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-label {
-    margin-right: 20px;
+.bookingResults {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    height: 660px;
 }
 
-
-.hide {
-    display: none;
-}
-
-.box {
-    color: #fff;
-    padding: 20px;
-    display: none;
-    margin-top: 20px;
-}
-
-.buffet-breakfast {
-    background: $blue-dark;
-}
-
-.lunch {
-    background: $blue-light;
-}
-
-.dinner {
-    background: $blue-dark;
-}
-
-label {
-    margin-right: 15px;
-}

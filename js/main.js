@@ -38,77 +38,155 @@ function cross() {
   }
 };
 
+function crossReview() {
+  var popUp = document.getElementById('reviewBooking');
+  if (popUp.style.display === "block") {
+    popUp.style.display = "none";
+  } else {
+    popUp.style.display = "block";
+  }
+};
+
+
 function reviewBooking() {
   var review = document.getElementById("popUpHostel-js");
   if (review.style.display === "block") {
     review.style.display = "none";
+    document.getElementById('reviewBooking').style.display = 'block';
   }
 }
 
-// $(document).ready(function() {
-//   $('input[type="checkbox"]').click(function() {
-//       var inputValue = $(this).attr("value");
-//       $("." + inputValue).toggle();
-//       // return("Checkbox " + inputValue + " is selected");
-//   });
 
-
-// });
-
-// $("[id^='radio']").on("click", function() {
-//   var divElements = $("[class^=radio]")
-//   var radioBtn = this.id;
-//   divElements.each(function(index, element) {
-//     if (element.classList.contains(radioBtn)) {
-//       $(element).show();
-//     } else {
-//       $(element).hide();
-//     }
-//   })
-// });
-
-// $("[id^='check']").on("change", function() {
-//   var divElements = $("[class^=check]")
-//   var checkBtn = this.id;
-//   var isChecked = this.checked;
-//   divElements.each(function(index, element) {
-//     if (isChecked && element.classList.contains(checkBtn)) {
-//       $(element).show();
-//     } else if (!isChecked && element.classList.contains(checkBtn)) {
-//       $(element).hide();
-//     }
-//   })
-// });
-
-var isChecked = this.checked;
-
-function show1(){
-  document.getElementById('div1').style.display ='none';
+function show1() {
+  document.getElementById('div1').style.display = 'none';
 }
-function show2(){
+function show2() {
   document.getElementById('div1').style.display = 'block';
 }
 
-// function buffetBreakfast(){
-//   document.getElementById('buffetBreakfast').style.display = 'block';
-// }
-
-// function lunchOptions(){
-//   document.getElementById('lunchOptions').style.display = 'block';
-// }
-// function dinnerOptions(){
-//   document.getElementById('dinnerOptions').style.display = 'block';
-// }
-
-function dietaryOptions(){
-  document.getElementById('dietaryOptions').style.display ='none';
+function dietaryOptions() {
+  document.getElementById('dietaryOptions').style.display = 'none';
 }
-function noDietaryOptions(){
+function noDietaryOptions() {
   document.getElementById('dietaryOptions').style.display = 'block';
 }
-$(document).ready(function(){
-  $('input[type="checkbox"]').click(function(){
-      var inputValue = $(this).attr("value");
-      $("." + inputValue).toggle();
+
+
+$(document).ready(function () {
+  $('input[type="checkbox"]').click(function () {
+    var inputValue = $(this).attr("value");
+    $("." + inputValue).toggle();
   });
 });
+
+
+$(document).ready(function () {
+  $("#display").click(function () {
+    var meals = [];
+    $.each($("input[name='mealOptions']:checked"), function () {
+      meals.push($(this).val());
+      if ($(this).is(':checked')) {
+        document.getElementById('result').innerHTML = "Complimentary meals: " + meals.join(", ");
+      }
+    });
+
+  });
+
+  $("#display").click(function () {
+    var lunchOptions = [];
+    $.each($("input[name='lunch']:checked"), function () {
+      lunchOptions.push($(this).val());
+
+      if ($(this).is(':checked')) {
+        document.getElementById('lunchResult').innerHTML = "Lunch: " + lunchOptions.join(", ");
+      }
+    });
+
+  });
+
+  $("#display").click(function () {
+    var mainOptions = [];
+    $.each($("input[name='main']:checked"), function () {
+      mainOptions.push($(this).val());
+
+      if ($(this).is(':checked')) {
+        document.getElementById('mainResult').innerHTML = "Main: " + mainOptions.join(", ");
+      }
+    });
+
+  });
+
+  $("#display").click(function () {
+    var dessertOptions = [];
+    $.each($("input[name='dessert']:checked"), function () {
+      dessertOptions.push($(this).val());
+      if ($(this).is(':checked')) {
+        document.getElementById('dessertResult').innerHTML = "Dessert: " + dessertOptions.join(", ");
+      }
+    });
+  });
+
+  $("#display").click(function () {
+    var dietaryRequirementsOptions = [];
+    $.each($("input[name='dietaryRequirements']:checked"), function () {
+      dietaryRequirementsOptions.push($(this).val());
+      if ($(this).is(':checked')) {
+        document.getElementById('dietaryRequirementsResult').innerHTML = "Dietary requirements: " + dietaryRequirementsOptions.join(", ");
+      }
+    });
+  });
+
+  $("#display").click(function () {
+    var dietaryOptions = [];
+    $.each($("input[name='dietary']:checked"), function () {
+      dietaryOptions.push($(this).val());
+      if ($(this).is(':checked')) {
+        document.getElementById('dietaryResult').innerHTML = "Dietary requirements: " + dietaryOptions;
+      }
+    });
+
+  });
+
+
+});
+
+function guestDetails() {
+  var x = document.getElementById("bookingForm").elements[0].value;
+  document.getElementById("guestDetails").innerHTML = x;
+}
+// window.onload = function () {
+
+//   document.querySelector("#bookingForm").addEventListener('submit', function (event) {
+//     event.preventDefault();
+//     var obj = {};
+//     event.target.querySelectorAll('input', 'select', 'textarea')
+//       .forEach((v) => {
+//         if (v.type !== 'sumbit' && v.name) {
+//           obj[v.name] = v.value;
+//         }
+//         console.log(obj);
+//         document.getElementById("guestDetails").innerHTML = obj;
+//       });
+
+
+//   obj
+//         {
+//             firstname: "",  
+//             lastname: "",
+//         }
+   
+//   });
+// }
+
+// function guestDetails() {
+//   var elements = document.getElementById("bookingForm").elements;
+//   var obj = {};
+//   for(var i = 0 ; i < elements.length ; i++){
+//       var item = elements.item(i);
+//       obj[item.name] = item.value;
+//   }
+//   console.log(JSON.stringify(obj));
+//   document.getElementById("guestDetails").innerHTML = JSON.stringify(obj);
+// }
+
+
