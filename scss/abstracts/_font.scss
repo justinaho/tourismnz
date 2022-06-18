@@ -23,6 +23,7 @@ h3 {
     margin: 5px;
 }
 
+
 p {
     font-size: $font-xsmall;
 }
@@ -30,4 +31,11 @@ p {
 .currentStep {
     font-size: $font-xsmall;
     font-weight: $heavy-weight;
+}
+
+h1{
+    color: $white;
+    font-weight: $heavy-weight;
+    font-size: large;
+    text-align: center;
 }

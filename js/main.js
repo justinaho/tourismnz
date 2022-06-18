@@ -1,160 +1,200 @@
-
 window.addEventListener('load', (event) => {
   clearForm();
 });
 
+
 function clearForm() {
-  document.getElementById('city').value = "";
-  document.getElementById('dateTime').value = "";
-  document.getElementById('content-results-js').style.display = "none";
+  document.getElementById('city').value = '';
+  document.getElementById('dateTime').value = '';
+  document.getElementById('content-results-js').style.display = 'none';
 }
 
+const userDetailsHostel = document.getElementById('popUpHostel-js');
+const reviewBookingHostel = document.getElementById('reviewBooking');
+const bookBookingHostel = document.getElementById('bookBooking');
 
 function toggleResults() {
-  var results = document.getElementById("content-results-js");
-  if (results.style.display === "none") {
-    results.style.display = "block";
+  const results = document.getElementById('content-results-js');
+  if (results.style.display === 'none') {
+    results.style.display = 'block';
   }
 }
 
 
 function bookHostel() {
-  var hostel = document.getElementById('popUpHostel-js');
-
-  if (hostel.style.display === "none") {
-    hostel.style.display = "block";
-  } else {
-    hostel.style.display = "none";
+  if (userDetailsHostel.style.display === 'none') {
+    userDetailsHostel.style.display = 'block';
   }
 }
 
 
 function cross() {
-  var popUp = document.getElementById('popUpHostel-js');
-  if (popUp.style.display === "block") {
-    popUp.style.display = "none";
+  if (userDetailsHostel.style.display === 'block') {
+    userDetailsHostel.style.display = 'none';
   } else {
-    popUp.style.display = "block";
+    userDetailsHostel.style.display = 'block';
   }
 };
 
+
 function crossReview() {
-  var popUp = document.getElementById('reviewBooking');
-  if (popUp.style.display === "block") {
-    popUp.style.display = "none";
+  if (reviewBookingHostel.style.display === 'block') {
+    reviewBookingHostel.style.display = 'none';
   } else {
-    popUp.style.display = "block";
+    reviewBookingHostel.style.display = 'block';
   }
 };
 
 
 function reviewBooking() {
-  var review = document.getElementById("popUpHostel-js");
-  if (review.style.display === "block") {
-    review.style.display = "none";
+  if (userDetailsHostel.style.display === 'block') {
+    userDetailsHostel.style.display = 'none';
     document.getElementById('reviewBooking').style.display = 'block';
   }
 }
 
+// function backToHostel() {
+//   if (userDetailsHostel.style.display === 'none') {
+//    userDetailsHostel.style.display = 'block';
+//     document.getElementById('reviewBooking').style.display = 'none';
+//   }
+// }
 
+function backToHostel() {
+  if (reviewBookingHostel.style.display === 'block') {
+    reviewBookingHostel.style.display = 'none';
+    userDetailsHostel.style.display = 'block';
+  }
+}
+
+
+function bookBooking() {
+  if (reviewBookingHostel.style.display === 'block') {
+    reviewBookingHostel.style.display = 'none';
+    bookBookingHostel.style.display = 'block';
+  }
+}
+
+function exitBooking() {
+  if (bookBookingHostel.style.display === 'block') {
+    bookBookingHostel.style.display = 'none';
+  }
+}
+
+
+// eslint-disable-next-line require-jsdoc
 function show1() {
   document.getElementById('div1').style.display = 'none';
 }
+
+// eslint-disable-next-line require-jsdoc
 function show2() {
   document.getElementById('div1').style.display = 'block';
 }
 
+// eslint-disable-next-line require-jsdoc
 function dietaryOptions() {
   document.getElementById('dietaryOptions').style.display = 'none';
 }
+// eslint-disable-next-line require-jsdoc
 function noDietaryOptions() {
   document.getElementById('dietaryOptions').style.display = 'block';
 }
 
 
-$(document).ready(function () {
-  $('input[type="checkbox"]').click(function () {
-    var inputValue = $(this).attr("value");
-    $("." + inputValue).toggle();
+$(document).ready(function() {
+  $('input[type="checkbox"]').click(function() {
+    const inputValue = $(this).attr('value');
+    $('.' + inputValue).toggle();
   });
 });
 
 
-$(document).ready(function () {
-  $("#display").click(function () {
+$(document).ready(function() {
+  $('#display').click(function() {
     var meals = [];
-    $.each($("input[name='mealOptions']:checked"), function () {
+    $.each($('input[name=\'mealOptions\']:checked'), function() {
       meals.push($(this).val());
       if ($(this).is(':checked')) {
-        document.getElementById('result').innerHTML = "Complimentary meals: " + meals.join(", ");
+        document.getElementById('result').innerHTML = 'Complimentary meals: ' + meals.join(', ');
       }
     });
 
-  });
-
-  $("#display").click(function () {
     var lunchOptions = [];
-    $.each($("input[name='lunch']:checked"), function () {
+    $.each($('input[name=\'lunch\']:checked'), function() {
       lunchOptions.push($(this).val());
 
       if ($(this).is(':checked')) {
-        document.getElementById('lunchResult').innerHTML = "Lunch: " + lunchOptions.join(", ");
+        document.getElementById('lunchResult').innerHTML = 'Lunch: ' + lunchOptions.join(', ');
       }
     });
 
-  });
+    var starterOptions = [];
+    $.each($('input[name=\'starter\']:checked'), function() {
+      starterOptions.push($(this).val());
 
-  $("#display").click(function () {
+      if ($(this).is(':checked')) {
+        document.getElementById('starterResult').innerHTML = 'Starter: ' + starterOptions.join(', ');
+      }
+    });
+
+    var dessertOptions = [];
+    $.each($('input[name=\'dessert\']:checked'), function() {
+      dessertOptions.push($(this).val());
+      if ($(this).is(':checked')) {
+        document.getElementById('dessertResult').innerHTML = 'Dessert: ' + dessertOptions.join(', ');
+      }
+    });
+
     var mainOptions = [];
-    $.each($("input[name='main']:checked"), function () {
+    $.each($('input[name=\'main\']:checked'), function() {
       mainOptions.push($(this).val());
 
       if ($(this).is(':checked')) {
-        document.getElementById('mainResult').innerHTML = "Main: " + mainOptions.join(", ");
+        document.getElementById('mainResult').innerHTML = 'Main: ' + mainOptions.join(', ');
       }
     });
 
-  });
-
-  $("#display").click(function () {
-    var dessertOptions = [];
-    $.each($("input[name='dessert']:checked"), function () {
-      dessertOptions.push($(this).val());
-      if ($(this).is(':checked')) {
-        document.getElementById('dessertResult').innerHTML = "Dessert: " + dessertOptions.join(", ");
-      }
-    });
-  });
-
-  $("#display").click(function () {
-    var dietaryRequirementsOptions = [];
-    $.each($("input[name='dietaryRequirements']:checked"), function () {
+    let dietaryResult = document.getElementById('dietaryRequirementsResult').innerHTML;
+    const dietaryRequirementsOptions = [];
+    $.each($('input[name=\'dietaryRequirements\']:checked'), function() {
       dietaryRequirementsOptions.push($(this).val());
       if ($(this).is(':checked')) {
-        document.getElementById('dietaryRequirementsResult').innerHTML = "Dietary requirements: " + dietaryRequirementsOptions.join(", ");
+        dietaryResult = 'Dietary requirements: ' + dietaryRequirementsOptions.join(', ');
       }
     });
-  });
 
-  $("#display").click(function () {
-    var dietaryOptions = [];
-    $.each($("input[name='dietary']:checked"), function () {
+    const dietaryOptions = [];
+    $.each($('input[name=\'dietary\']:checked'), function() {
       dietaryOptions.push($(this).val());
       if ($(this).is(':checked')) {
-        document.getElementById('dietaryResult').innerHTML = "Dietary requirements: " + dietaryOptions;
+        document.getElementById('dietaryResult').innerHTML = dietaryOptions;
       }
     });
-
   });
-
-
 });
 
 function guestDetails() {
-  var x = document.getElementById("bookingForm").elements[0].value;
-  document.getElementById("guestDetails").innerHTML = x;
+  const firstName = document.getElementById('bookingForm').elements['firstname'].value;
+  const lastName = document.getElementById('bookingForm').elements['lastname'].value;
+  const email = document.getElementById('bookingForm').elements['email'].value;
+  const phone = document.getElementById('bookingForm').elements['phone'].value;
+  document.getElementById('guestFirstName').innerHTML = 'First name: ' + firstName;
+  document.getElementById('guestLastName').innerHTML = 'Last name: ' + lastName;
+  document.getElementById('guestEmail').innerHTML = 'Email: ' + email;
+  document.getElementById('guestPhone').innerHTML = 'Phone: ' + phone;
+  
+  const destination = document.getElementById('searchForm').elements['city'].value;
+  const dateTimes = document.getElementById('searchForm').elements['dateTimes'].value;
+  const guests = document.getElementById('searchForm').elements['guests'].value;
+  const rooms = document.getElementById('searchForm').elements['rooms'].value;
+  document.getElementById('searchDestination').innerHTML = 'Destination: ' + destination;
+  document.getElementById('searchDateTimes').innerHTML = 'Check in/Check out: ' + dateTimes;
+  document.getElementById('searchGuests').innerHTML = 'No. of guests: ' + guests;
+  document.getElementById('searchRooms').innerHTML = 'No. of rooms: ' + rooms;
 }
-// window.onload = function () {
+
+//window.onload = function () {
 
 //   document.querySelector("#bookingForm").addEventListener('submit', function (event) {
 //     event.preventDefault();
@@ -171,22 +211,22 @@ function guestDetails() {
 
 //   obj
 //         {
-//             firstname: "",  
+//             firstname: "",
 //             lastname: "",
 //         }
-   
 //   });
 // }
 
+// eslint-disable-next-line require-jsdoc
 // function guestDetails() {
-//   var elements = document.getElementById("bookingForm").elements;
-//   var obj = {};
-//   for(var i = 0 ; i < elements.length ; i++){
-//       var item = elements.item(i);
-//       obj[item.name] = item.value;
+//   const elements = document.getElementById('bookingForm').elements;
+//   const obj = {};
+//   for (let i = 0; i < elements.length; i++) {
+//     const item = elements.item(i);
+//     obj[item.name] = item.value;
 //   }
 //   console.log(JSON.stringify(obj));
-//   document.getElementById("guestDetails").innerHTML = JSON.stringify(obj);
+//   document.getElementById('guestDetails').innerHTML = JSON.stringify(obj);
 // }
 
 

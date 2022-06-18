@@ -21,6 +21,13 @@ p {
   font-weight: 700;
 }
 
+h1 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: large;
+  text-align: center;
+}
+
 *, *:before, *:after {
   margin: 0;
   padding: 0;
@@ -407,6 +414,139 @@ label {
   margin-left: auto;
   margin-right: auto;
   height: 660px;
+}
+
+.bookBooking {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.book {
+  background-color: #292929;
+  border: 10px solid #ffffff;
+  width: 700px;
+  height: 790px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.book-progress {
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.book-progress li {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 2.5;
+}
+
+.book-progress li p {
+  font-size: 0.875rem;
+  padding-right: 20px;
+}
+
+.book-progress img {
+  height: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+.book .details-btns {
+  margin-left: auto;
+  margin-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.popUp-black3 {
+  background-color: #292929;
+  opacity: 0.8;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bookingDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bookingMessage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  height: 660px;
+}
+
+.bookingMessage .tick {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.confirm {
+  color: #ffffff;
+}
+
+.logoConfirm {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booked {
+  font-size: 0.875rem;
+  color: #ffffff;
+  margin: 5px;
 }
 
 .logo {

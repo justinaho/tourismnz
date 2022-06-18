@@ -18,7 +18,6 @@
   <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 
   <script src="js/date-picker.js"></script>
-  <script src="js/main.js"></script>
 
   <link rel="stylesheet" href="scss/main.css" />
   <link rel="stylesheet" href="https://use.typekit.net/nge1zlk.css">
@@ -41,18 +40,18 @@
           </div>
           <div class="col">
             <select name="city" class="searchForm-select" id="city">
-              <option value="AK">Auckland</option>
-              <option value="WLG">Wellington</option>
-              <option value="CH">Christchurch</option>
-              <option value="QST">Queenstown</option>
-              <option value="DN">Dunedin</option>
+              <option value="Auckland">Auckland</option>
+              <option value="Wellington">Wellington</option>
+              <option value="Christchurch">Christchurch</option>
+              <option value="Queenstown">Queenstown</option>
+              <option value="Dunedin">Dunedin</option>
             </select>
           </div>
         </div>
 
         <div class="flex-grid-thirds">
           <div class="col"><label class="searchForm-label" for="daterange">Check In/Check Out</label></div>
-          <div class="col"><input class="searchForm-input" id="dateTime" type="text" name="datetimes" /></div>
+          <div class="col"><input class="searchForm-input" id="dateTime" type="text" name="dateTimes" /></div>
         </div>
 
         <div class="flex-grid-thirds">
@@ -71,7 +70,6 @@
         </div>
       </form>
     </div>
-
 
     <div class="content section2" style="background-image: url(img/cover.jpg);">
       <div class="cover-img">
@@ -134,48 +132,8 @@
       </div>
     </div>
 
-   <!-- Review booking -->
-    <div class="reviewBooking" id="reviewBooking" style="display:none">
-      <div class="popUp-black2"></div>
-      <div class="review">
-        <ul class="review-progress">
-          <div class="cross">
-            <img class="cross-img" src="img/close.png" onclick="crossReview()">
-            <img src="img/close_hover.png" class="hover" onclick="crossReview()">
-          </div>
-          <li><img src="img/tick.png"></li>
-          <li><p>Selected Accomodation</p</li>
-
-          <li><img src="img/tick.png"></li>
-          <li><p>Your Details</p></li>
-
-          <li><img class="step3" style="display: none" src="img/tick.png"></li> 
-          <li><p class="currentStep">Review Booking</p></li>
-        </ul>
-
-
-        <div class="bookingResults">
-
-          <h2> Booking details</h2>
-          <div id="guestDetails"></div>
-          <div id="result"></div>
-          <div id="lunchResult"></div>
-          <div id="starterResult"></div>
-          <div id="mainResult"></div>
-          <div id="dessertResult"></div>
-          <div id="dietaryRequirementsResult"></div>
-          <div id="dietaryResult"></div>
-        </div>
-
-        <div class="details-btns">
-          <div class="col"><button class="button--secondary">Cancel</button></div>
-          <div class="col"><button class="button--primary">Review</button></div>
-        </div>
-      </div>
-    </div>
-
     <!-- Hostel booking form -->
-    <div class="popUpHostel" id="popUpHostel-js" style="display:block">
+    <div class="popUpHostel" id="popUpHostel-js" style="display:none">
       <div class="popUp-black"></div>
       <div class="popUp">
         <ul class="progress">
@@ -311,14 +269,104 @@
       </div>
     </div>
 
+    <!-- Review booking -->
+    <div class="reviewBooking" id="reviewBooking" style="display:none">
+      <div class="popUp-black2"></div>
+      <div class="review">
+        <ul class="review-progress">
+          <div class="cross">
+            <img class="cross-img" src="img/close.png" onclick="crossReview()">
+            <img src="img/close_hover.png" class="hover" onclick="crossReview()">
+          </div>
+          <li><img src="img/tick.png"></li>
+          <li>
+            <p>Selected Accomodation</p>
+          </li>
+          <li><img src="img/tick.png"></li>
+          <li>
+            <p>Your Details</p>
+          </li>
 
+          <li><img class="step3" style="display: none" src="img/tick.png"></li>
+          <li>
+            <p class="currentStep">Review Booking</p>
+          </li>
+        </ul>
+
+        <div class="bookingResults">
+          <h2>Booking details</h2>
+          <div id="searchDestination"></div>
+          <div>Accomodation: Hostel</div>
+          <div id="searchDateTimes"></div>
+          <div id="searchGuests"></div>
+          <div id="searchRooms"></div>
+          <h2>Personal Details</h2>
+          <div id="guestFirstName"></div>
+          <div id="guestLastName"></div>
+          <div id="guestEmail"></div>
+          <div id="guestPhone"></div>
+          <h2>Complimentary Meals</h2>
+          <div id="result"></div>
+          <div id="lunchResult"></div>
+          <div id="starterResult"></div>
+          <div id="mainResult"></div>
+          <div id="dessertResult"></div>
+          <h2>Dietary Requirements</h2>
+          <div id="dietaryRequirementsResult"></div>
+          <div id="dietaryResult"></div>
+        </div>
+
+        <div class="details-btns">
+          <div class="col"><button class="button--secondary" onclick="backToHostel()">Back</button></div>
+          <div class="col"><button class="button--primary" onclick="bookBooking()">Book</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book booking -->
+    <div class="bookBooking" id="bookBooking" style="display:none">
+      <div class="popUp-black3"></div>
+      <div class="book">
+        <ul class="review-progress">
+          <div class="cross">
+            <img class="cross-img" src="img/close.png" onclick="crossReview()">
+            <img src="img/close_hover.png" class="hover" onclick="crossReview()">
+          </div>
+          <li><img src="img/tick.png"></li>
+          <li>
+            <p class="confirm">Selected Accomodation</p>
+          </li>
+          <li><img src="img/tick.png"></li>
+          <li>
+            <p class="confirm">Your Details</p>
+          </li>
+          <li><img src="img/tick.png"></li>
+          <li>
+            <p class="confirm">Review Booking</p>
+          </li>
+        </ul>
+
+        <div class="bookingMessage">
+         <img class="tick" src="img/tick.png">
+         <div class="col"><h1>Booking confirmed!</h1></div>
+         <div class="col"><h3 class="booked">Your itinerary will be sent to your email address<h3></div>
+         <div class="col"><h3 class="booked">Thank you for booking with</h3></div>
+         <img class="logoConfirm" src="img/logo.png">
+
+        </div>
+
+        <div class="details-btns">
+          <div class="col"><button class="button--primary" onclick="exitBooking()">Exit</button></div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
 
   </div>
   </div>
-
+  <script src="js/main.js"></script>
 </body>
 
 </html>
