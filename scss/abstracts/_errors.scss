@@ -1,0 +1,14 @@
+.bookingform .error {
+    color: $primary;
+}
+
+
+.error {
+    color: red;
+    display: flex;
+}
+
+#meals-error{
+    display: flex;
+    justify-content: end;
+}

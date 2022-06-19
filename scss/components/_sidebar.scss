@@ -1,25 +1,26 @@
-.logo {
+.sidebar-logo {
     margin-left: auto;
     margin-right: auto;
     align-items: center;
     width: 300px;
 }
 
-.searchForm {
+.sidebar-title {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: center;
+    flex-direction: row;
+    color: $white;
+    font-weight: $heavy-weight;
+}
+
+.sidebar-searchform {
     display: flex;
     align-items: center;
     width: 100%;
     position: relative;
     height: auto;
     flex-direction: column;
-
-
-    &-input {
-        width: 100%;
-        border: none;
-        padding: 5px 4px 5px 4px;
-        align-items: right;
-    }
 
     &-label {
         display: inline-block;
@@ -35,40 +36,20 @@
         padding: 2px 4px 2px 4px;
     }
 
-}
+    &-input {
+        width: 100%;
+        border: none;
+        padding: 5px 4px 5px 4px;
+        align-items: right;
+    }
 
-.formButtons {
-   margin-left: auto;
-   margin-right: auto;
-
-}
-
-#correctDates {
-    margin-left: 10px;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    background-color: $orange-dark;
-    border-radius: 50px;
-}
-
-.searchForm-title {
-    display: flex;
-    padding-bottom: 10px;
-    justify-content: center;
-    flex-direction: row;
-    color: $white;
-    font-weight: $heavy-weight;
-}
-
-.flex-grid-thirds {
-    display: flex;
-    padding-bottom: 10px;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.flex-grid-thirds .col {
-    width: 250px;
+    &-buttons {
+        margin-left: auto;
+     
+    }
 
 }
+
+
+
+

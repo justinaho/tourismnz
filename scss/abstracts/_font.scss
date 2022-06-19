@@ -39,3 +39,22 @@ h1{
     font-size: large;
     text-align: center;
 }
+
+.name{
+    color: $primary;
+    font-weight: $regular-weight;
+    font-size: large;
+    text-align: left;
+}
+
+.price {
+    text-align: left;
+    font-size: $font-large;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: $orange-dark;
+}
+
+label {
+    margin-right: 20px;
+}

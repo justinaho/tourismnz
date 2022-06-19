@@ -1,13 +1,3 @@
-.sidebar {
-    background-color: $primary;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    height: 100vh;
-}
-
 .container {
     display: flex;
     flex-direction: row;
@@ -27,16 +17,16 @@
 }
 
 
-.error {
-
-    color: red;
+.sidebar {
+    background-color: $primary;
+    padding: 20px;
     display: flex;
-
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    height: 100vh;
 }
 
-#rooms-error {
-    visibility: visible;
-}
 
 //mobile
 @media only screen and (max-width: 1200px) {
@@ -44,14 +34,14 @@
         flex-direction: column;
     }
 
-    .hostel,
-    .hotel,
-    .motel,
-    .house {
+    .hostel-card,
+    .hotel-card,
+    .motel-card,
+    .house-card {
         width: 400px;
     }
 
-    .flex-grid-thirds {
+    .flex-layout {
         display: flex;
         padding-bottom: 10px;
         justify-content: space-between;
@@ -77,10 +67,10 @@
         flex-direction: row;
     }
 
-    .hostel,
-    .hotel,
-    .motel,
-    .house {
+    .hostel-card,
+    .hotel-card,
+    .motel-card,
+    .house-card{
         width: 400px;
     }
 

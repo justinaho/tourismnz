@@ -1,14 +1,12 @@
 $(document).ready(function () {
-
-
-    $('#searchForm').validate({
+    $('#sidebar-searchform-js').validate({
 
         rules: {
             city: {
                 required: true,
             },
 
-            datetimes: {
+            dateTimes: {
                 required: true,
             },
             guests: {
@@ -29,12 +27,12 @@ $(document).ready(function () {
                 required: "Please select a city"
             },
 
-            datetimes: {
+            dateTimes: {
                 required: "Please pick a date and time",
             },
             guests: {
                 required: "This field is required",
-                min: "A number greater than 0 is required"
+                min: "A number greater than 0 is required",
             },
             rooms: {
                 required: "This field is required",
@@ -50,7 +48,7 @@ $(document).ready(function () {
     });
 
 
-    $('#bookingForm').validate({
+    $('#bookingform-js').validate({
 
         rules: {
             firstname: {
@@ -63,7 +61,12 @@ $(document).ready(function () {
             email: {
                 required: true,
                 email: true,
-
+            },
+            phone:  {
+                required: true,
+                digits: true,
+                minlength: 8,
+                maxlength: 10
             },
             meals: {
                 required: true,
@@ -86,6 +89,10 @@ $(document).ready(function () {
                 required: "Please enter an email address",
                 email: "Please enter a valid email address"
             },
+            phone:{
+                required: "Please enter your phone number",
+                digits: "Please enter digits",
+            },
             meals: {
                 required: "This field is required",
             },
@@ -96,59 +103,9 @@ $(document).ready(function () {
         },
 
         submitHandler: function (form) {
-            reviewBooking();
+            review();
             return false;
         }
     });
-
-
-
-
-    // $('#bookingForm').validate({
-    //     rules: {
-    //         firstname: {
-    //             required: true,
-    //         },
-
-    //         lastname: {
-    //             required: true,
-    //         },
-    //         email: {
-    //             required: true,
-    //             email: true,
-
-    //         },
-    //         phone: {
-    //             required: true,
-    //             minLength: 9,
-    //             digits: true,
-    //         },
-    //     },
-
-    //     messages: {
-
-    //         fname: {
-    //             required: "Please enter your first name",
-    //         },
-
-    //         lname: {
-    //             required: "Please enter your last name",
-    //         },
-    //         email: {
-    //             required: "Please enter an email address",
-    //             email: "Please enter a valid email address"
-    //         },
-    //         phone: {
-    //             required: "This field is required",
-    //             minLength: "A mobile digit number is required"
-    //         }
-
-    //     },
-
-    //     submitHandler: function () {
-    //         reviewBooking();
-    //         return false;
-    //     }
-    // });
 
 });

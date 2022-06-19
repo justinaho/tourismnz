@@ -6,13 +6,12 @@
 @import 'abstracts/reset';
 @import 'abstracts/helpers';
 @import 'abstracts/buttons';
-@import 'abstracts/popUp';
-@import 'abstracts/bookingForm';
-@import 'abstracts/reviewBooking';
+@import 'abstracts/bookingform';
+@import 'abstracts/reviewbooking';
 @import 'abstracts/bookBooking';
-
+@import 'abstracts/errors';
 //componenets
 @import 'components/sidebar';
-@import 'components/results';
+@import 'components/content';
 @import 'components/main';
 

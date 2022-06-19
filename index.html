@@ -31,15 +31,15 @@
 <body>
   <div class="container">
     <div class="sidebar section1">
-      <img class="logo" src="img/logo.png">
-      <h1 class="searchForm-title">Kia Ora</h1>
-      <form id="searchForm" class="searchForm" action="">
-        <div class="flex-grid-thirds">
-          <div class="col">
-            <label class="searchForm-label">Destination</label>
+      <img class="sidebar-logo" src="img/logo.png">
+      <h1 class="sidebar-title">Kia Ora</h1>
+      <form id="sidebar-searchform-js" class="sidebar-searchform" action="">
+        <div class="flex-layout">
+          <div class="flex-col">
+            <label class="sidebar-searchform-label">Destination</label>
           </div>
-          <div class="col">
-            <select name="city" class="searchForm-select" id="city">
+          <div class="flex-col">
+            <select name="city" class="sidebar-searchform-select" id="city">
               <option value="Auckland">Auckland</option>
               <option value="Wellington">Wellington</option>
               <option value="Christchurch">Christchurch</option>
@@ -49,82 +49,83 @@
           </div>
         </div>
 
-        <div class="flex-grid-thirds">
-          <div class="col"><label class="searchForm-label" for="daterange">Check In/Check Out</label></div>
-          <div class="col"><input class="searchForm-input" id="dateTime" type="text" name="dateTimes" /></div>
+        <div class="flex-layout">
+          <div class="flex-col"><label class="sidebar-searchform-label" for="daterange">Check In/Check Out</label></div>
+          <div class="flex-col"><input class="sidebar-searchform-input" id="dateTimes" type="text" name="dateTimes" /></div>
         </div>
 
-        <div class="flex-grid-thirds">
-          <div class="col"><label class="searchForm-label" for="guests">No. of guests</label></div>
-          <div class="col"><input class="searchForm-input" type="text" name="guests" id="guests"></div>
+        <div class="flex-layout">
+          <div class="flex-col"><label class="sidebar-searchform-label" for="guests">No. of guests</label></div>
+          <div class="flex-col"><input class="sidebar-searchform-input" type="text" name="guests" id="guests"></div>
         </div>
 
-        <div class="flex-grid-thirds">
-          <div class="col"><label class="searchForm-label" for="rooms">No. of rooms</label></div>
-          <div class="col"><input class="searchForm-input" type="text" name="rooms" id="rooms"></div>
+        <div class="flex-layout">
+          <div class="flex-col"><label class="sidebar-searchform-label" for="rooms">No. of rooms</label></div>
+          <div class="flex-col"><input class="sidebar-searchform-input" type="text" name="rooms" id="rooms"></div>
         </div>
 
-        <div class="formButtons">
-          <button class="button--secondary" type="reset" id='clear' onclick="clearForm()">Reset</button>
+        <div class="sidebar-searchform-buttons">
+          <button class="button--secondary" type="reset" onclick="clearForm()">Reset</button>
           <button class="button--primary" type="submit">Submit</button>
         </div>
       </form>
     </div>
 
     <div class="content section2" style="background-image: url(img/cover.jpg);">
-      <div class="cover-img">
+      <div class="content-image">
         <div class="content-results" id="content-results-js" style="display:none;">
-          <div class="content-places">
-            <div class="hostel place">
+          <div class="content-results-accomodations">
+            <div class="hostel-card" name="hostel">
               <img src="img/hostel.jpg">
               <div class="title">
-                <h1>Hostel</h1>
+                <h1 class="name">Hostel</h1>
                 <p>min 1 night, max 10 nights</p>
                 <p>1 person</p>
               </div>
               <p class="price">$30/night</p>
-              <div class="action-btns">
+              <div class="card-buttons">
                 <button class="button--secondary-action">More info</button>
-                <button class="button--primary" onclick="bookHostel()">Book now</button>
+                <button class="button--primary type" id="hostelBtn" value="Hostel" onclick="bookHostel()">Book
+                  now</button>
               </div>
             </div>
-            <div class="hotel place">
+            <div class="hotel-card" name="hotel">
               <img src="img/hotel.jpg">
               <div class="title">
-                <h1>Hotel</h1>
+                <h1 class="name">Hotel</h1>
                 <p>min 1 night, max 5 nights</p>
                 <p>1-2 people</p>
               </div>
               <p class="price">$157/night</p>
-              <div class="action-btns">
+              <div class="card-buttons">
                 <button class="button--secondary-action">More info</button>
-                <button class="button--primary">Book now</button>
+                <button class="button--primary type" value="Hotel" onclick="bookHostel()">Book now</button>
               </div>
             </div>
-            <div class="motel place">
+            <div class="motel-card" name="motel">
               <img src="img/motel.jpg">
               <div class="title">
-                <h1>Motel</h1>
+                <h1 class="name">Motel</h1>
                 <p>min 3 night, max 10 nights</p>
                 <p>2-4 people</p>
               </div>
               <p class="price">$90/night</p>
-              <div class="action-btns">
+              <div class="card-buttons">
                 <button class="button--secondary-action">More info</button>
-                <button class="button--primary">Book now</button>
+                <button class="button--primary type" value="Motel" onclick="bookHostel()">Book now</button>
               </div>
             </div>
-            <div class="house place">
+            <div class="house-card" name="house">
               <img src="img/house.jpg">
               <div class="title">
-                <h1>House</h1>
+                <h1 class="name">House</h1>
                 <p>min 2 night, max 15 nights</p>
                 <p>1-4 people</p>
               </div>
               <p class="price">$240/night</p>
-              <div class="action-btns">
+              <div class="card-buttons">
                 <button class="button--secondary-action">More info</button>
-                <button class="button--primary">Book now</button>
+                <button class="button--primary type" value="House" onclick="bookHostel()">Book now</button>
               </div>
             </div>
           </div>
@@ -132,14 +133,14 @@
       </div>
     </div>
 
-    <!-- Hostel booking form -->
-    <div class="popUpHostel" id="popUpHostel-js" style="display:none">
-      <div class="popUp-black"></div>
-      <div class="popUp">
-        <ul class="progress">
+    <!-- Booking form -->
+    <div class="screen" id="screen-js" style="display:none">
+      <div class="screen-darkenBackground"></div>
+      <div class="screen-details">
+        <ul class="screen-details-progress">
           <div class="cross">
-            <img class="cross-img" src="img/close.png" onclick="cross()">
-            <img src="img/close_hover.png" class="hover" onclick="cross()">
+            <img class="cross-img" src="img/close.png" onclick="cancelFormStep1()">
+            <img src="img/close_hover.png" class="hover" onclick="cancelFormStep1()">
           </div>
           <li><img src="img/tick.png"></li>
           <li>
@@ -154,50 +155,49 @@
             <p>Review Booking</p>
           </li>
         </ul>
-        <div class="bookingForm">
-          <form id="bookingForm" class="bookingForm" action="">
-
-            <div class="flex-grid-thirds">
-              <div class="col"><label for="fname">First name *</label></div>
-              <div class="col"><input type="text" name="firstname" id="firstname"></div>
+        <div class="screen-details-bookingform">
+          <form id="bookingform-js" class="bookingform" action="">
+            <div class="flex-layout">
+              <div class="flex-col"><label for="fname">First name *</label></div>
+              <div class="flex-col"><input type="text" name="firstname" id="firstname"></div>
             </div>
 
-            <div class="flex-grid-thirds">
-              <div class="col"><label for="lname">Last name *</label></div>
-              <div class="col"><input type="text" name="lastname" id="lastname"></div>
+            <div class="flex-layout">
+              <div class="flex-col"><label for="lname">Last name *</label></div>
+              <div class="flex-col"><input type="text" name="lastname" id="lastname"></div>
             </div>
 
-            <div class="flex-grid-thirds">
-              <div class="col"><label for="email">Email *</label></div>
-              <div class="col"><input type="email" name="email" id="email"></div>
+            <div class="flex-layout">
+              <div class="flex-col"><label for="email">Email *</label></div>
+              <div class="flex-col"><input type="email" name="email" id="email"></div>
             </div>
 
-            <div class="flex-grid-thirds">
-              <div class="col"><label for="phone">Phone number *</label></div>
-              <div class="col"><input type="phone" name="phone" id="phone"></div>
+            <div class="flex-layout">
+              <div class="flex-col"><label for="phone">Phone number *</label></div>
+              <div class="flex-col"><input type="phone" name="phone" id="phone"></div>
             </div>
 
             <!-- Complimentary Meals -->
-            <div class="flex-grid-thirds">
-              <div class="col"><label for="meals" name="complimentaryMeals">Complimentary meals *</label></div>
-              <div class="col">
-                <label><input type="radio" name="meals" value="meals" onclick="show2();">
+            <div class="flex-layout" id="meals-error">
+              <div class="flex-col"><label for="meals" name="complimentaryMeals">Complimentary meals *</label></div>
+              <div class="flex-col">
+                <label><input type="radio" name="meals" value="meals" onclick="showMealOptions();">
                   Yes</label>
 
-                <label><input type="radio" name="meals" value="meals" onclick="show1();" />
+                <label><input type="radio" name="meals" value="meals" onclick="hideMealOptions();" />
                   No</label>
               </div>
             </div>
 
-            <div class="flex-grid-thirds">
-              <div id="div1" class="hide">
+            <div class="flex-layout">
+              <div id="mealOptions" class="hide">
                 <label><input type="checkbox" name="mealOptions" value="buffet-breakfast"> Buffet breakfast</label>
                 <label><input type="checkbox" name="mealOptions" value="lunch"> Lunch</label>
                 <label><input type="checkbox" name="mealOptions" value="dinner"> Dinner</label>
               </div>
             </div>
-            <div class="flex-grid-thirds">
-              <div class="buffet-breakfast box">
+            <div class="flex-layout" id="menuOptions">
+              <div class="buffet-breakfast box" name="buffet-breakfast">
                 <h2>Buffet breakfast</h2>
                 <p>Our famous buffet breakfast is available from 6am – 10am Monday-Friday </p>
                 <p>and 7am – 10.30am weekends and public holidays.</p>
@@ -233,17 +233,17 @@
 
 
             <!-- Dietary Requirements -->
-            <div class="flex-grid-thirds">
-              <div class="col"><label for="meals" name="diet">Dietary requirements *</label></div>
-              <div class="col">
-                <label><input type="radio" name="dietaryRequirements" value="yes" onclick="noDietaryOptions();">
+            <div class="flex-layout">
+              <div class="flex-col"><label for="meals" name="diet">Dietary requirements *</label></div>
+              <div class="flex-col">
+                <label><input type="radio" name="dietaryRequirements" value="yes" onclick="showDietaryOptions();">
                   Yes</label>
 
-                <label><input type="radio" name="dietaryRequirements" value="no" onclick="dietaryOptions();" />
+                <label><input type="radio" name="dietaryRequirements" value="no" onclick="hideDietaryOptions();" />
                   No</label>
               </div>
             </div>
-            <div class="flex-grid-thirds">
+            <div class="flex-layout">
               <div id="dietaryOptions" class="hide">
                 <input type="checkbox" id="yes" name="dietary" value="Gluten Free">
                 <label for="1">Gluten Free</label>
@@ -260,9 +260,10 @@
             </div>
 
         </div>
-        <div class="details-btns">
-          <div class="col"><button class="button--secondary">Cancel</button></div>
-          <div class="col"><button class="button--primary" onclick="guestDetails()" id="display">Review</button></div>
+        <div class="screen-details-buttons">
+          <div class="flex-col"><button type="button" value="Cancel" class="button--secondary"
+              onclick="cancelFormStep1()">Cancel</button></div>
+          <div class="flex-col"><button class="button--primary" onclick="guestDetails()" id="display">Review</button></div>
         </div>
 
 
@@ -270,13 +271,13 @@
     </div>
 
     <!-- Review booking -->
-    <div class="reviewBooking" id="reviewBooking" style="display:none">
-      <div class="popUp-black2"></div>
+    <div class="reviewScreen" id="reviewScreen-js" style="display:none">
+      <div class="screen-darkenBackground"></div>
       <div class="review">
         <ul class="review-progress">
           <div class="cross">
-            <img class="cross-img" src="img/close.png" onclick="crossReview()">
-            <img src="img/close_hover.png" class="hover" onclick="crossReview()">
+            <img class="cross-img" src="img/close.png" onclick="cancelFormStep2()">
+            <img src="img/close_hover.png" class="hover" onclick="cancelFormStep2()">
           </div>
           <li><img src="img/tick.png"></li>
           <li>
@@ -295,8 +296,8 @@
 
         <div class="bookingResults">
           <h2>Booking details</h2>
+          <div id="acommodationType"></div>
           <div id="searchDestination"></div>
-          <div>Accomodation: Hostel</div>
           <div id="searchDateTimes"></div>
           <div id="searchGuests"></div>
           <div id="searchRooms"></div>
@@ -317,8 +318,8 @@
         </div>
 
         <div class="details-btns">
-          <div class="col"><button class="button--secondary" onclick="backToHostel()">Back</button></div>
-          <div class="col"><button class="button--primary" onclick="bookBooking()">Book</button></div>
+          <div class="flex-col"><button class="button--secondary" onclick="backToHostel()">Back</button></div>
+          <div class="flex-col"><button class="button--primary" onclick="book()" onclick="clearBookingFields()">Book</button></div>
         </div>
       </div>
     </div>
@@ -329,8 +330,8 @@
       <div class="book">
         <ul class="review-progress">
           <div class="cross">
-            <img class="cross-img" src="img/close.png" onclick="crossReview()">
-            <img src="img/close_hover.png" class="hover" onclick="crossReview()">
+            <img class="cross-img" src="img/close.png" onclick="cancelFormStep3()">
+            <img src="img/close_hover.png" class="hover" onclick="cancelFormStep3()">
           </div>
           <li><img src="img/tick.png"></li>
           <li>
@@ -347,16 +348,22 @@
         </ul>
 
         <div class="bookingMessage">
-         <img class="tick" src="img/tick.png">
-         <div class="col"><h1>Booking confirmed!</h1></div>
-         <div class="col"><h3 class="booked">Your itinerary will be sent to your email address<h3></div>
-         <div class="col"><h3 class="booked">Thank you for booking with</h3></div>
-         <img class="logoConfirm" src="img/logo.png">
+          <img class="tick" src="img/tick.png">
+          <div class="flex-col">
+            <h1>Booking confirmed!</h1>
+          </div>
+          <div class="flex-col">
+            <h3 class="booked">Your itinerary will be sent to your email address<h3>
+          </div>
+          <div class="flex-col">
+            <h3 class="booked">Thank you for booking with</h3>
+          </div>
+          <img class="logoConfirm" src="img/logo.png">
 
         </div>
 
         <div class="details-btns">
-          <div class="col"><button class="button--primary" onclick="exitBooking()">Exit</button></div>
+          <div class="flex-col"><button class="button--primary" onclick="exitBooking()">Exit</button></div>
         </div>
       </div>
     </div>

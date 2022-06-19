@@ -13,3 +13,15 @@
         margin: 0 auto;
     }
 }
+
+.flex-layout {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.flex-col {
+    width: 250px;
+
+}

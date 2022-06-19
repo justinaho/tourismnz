@@ -1,0 +1,66 @@
+.content {
+    position: relative;
+    margin-top: 0;
+    height: 100vh;
+
+    &-image {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    &-results {
+        background-color: $white;
+        height: 100vh;
+
+        &-accomodations {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        
+    }
+   
+}
+
+
+.hostel-card,
+.hotel-card,
+.motel-card,
+.house-card {
+    background-color: transparent;
+    border: 1px solid $orange-dark;
+    padding: 10px;
+    font-size: 30px;
+    margin: 20px;
+
+    & .title {
+        text-align: left;
+        margin-top: 0;
+        padding: 0;
+        grid-area: title;
+
+        h1 {
+            font-size: $font-xlarge;
+        }
+
+        p {
+            font-size: $font-medium;
+        }
+    }
+
+    & img {
+        width: 100%;
+        grid-area: pic;
+    }
+}
+
+
+.card-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: left;
+    gap: 10px;
+}
