@@ -7,7 +7,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    &-darkenBackground {
+    &__darkenBackground {
         background-color: $primary;
         opacity: 0.8;
         width: 100%;
@@ -20,7 +20,7 @@
     }
 }
 
-.screen-details {
+.screen__details {
     background-color: $orange-dark;
     border: 10px solid $white;
     width: 700px;
@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
 
-    &-buttons {
+    &__buttons {
         margin-left: auto;
         margin-right: 15px;
         display: flex;
@@ -42,7 +42,7 @@
     }
 }
 
-.screen-details-progress {
+.screen__details__progress {
     list-style-type: none;
     text-align: center;
     width: 100%;
@@ -73,7 +73,7 @@
     width: auto;
     margin-top: 5px;
 
-    &-img {
+    &__img {
         width: auto;
         height: auto;
         position: absolute;
@@ -85,7 +85,7 @@
         display: none;
     }
 
-    &-img:hover .hover {
+    &__img:hover .hover {
         display: block;
     }
 }

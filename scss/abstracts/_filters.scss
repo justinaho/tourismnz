@@ -1,0 +1,30 @@
+.filterDiv, .ratingFilter {
+    float: left;
+    color: $primary;
+    width: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+.btn, .ratingBtn{
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.btn:hover, .ratingBtn:hover {
+    background-color: $orange-light;
+}
+
+.btn.active, .ratingBtn.active {
+    background-color: $orange-dark;
+    color: white;
+}

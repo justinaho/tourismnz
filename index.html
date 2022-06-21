@@ -19,6 +19,7 @@
 
   <script src="js/date-picker.js"></script>
 
+
   <link rel="stylesheet" href="scss/main.css" />
   <link rel="stylesheet" href="https://use.typekit.net/nge1zlk.css">
 
@@ -31,15 +32,15 @@
 <body>
   <div class="container">
     <div class="sidebar section1">
-      <img class="sidebar-logo" src="img/logo.png">
-      <h1 class="sidebar-title">Kia Ora</h1>
-      <form id="sidebar-searchform-js" class="sidebar-searchform" action="">
+      <img class="sidebar__logo" src="img/logo.png">
+      <h1 class="sidebar__title">Kia Ora</h1>
+      <form id="sidebar__searchform-js" class="sidebar__searchform" action="">
         <div class="flex-layout">
           <div class="flex-col">
-            <label class="sidebar-searchform-label">Destination</label>
+            <label class="sidebar__searchform__label">Destination</label>
           </div>
           <div class="flex-col">
-            <select name="city" class="sidebar-searchform-select" id="city">
+            <select name="city" class="sidebar__searchform__select" id="city">
               <option value="Auckland">Auckland</option>
               <option value="Wellington">Wellington</option>
               <option value="Christchurch">Christchurch</option>
@@ -50,21 +51,22 @@
         </div>
 
         <div class="flex-layout">
-          <div class="flex-col"><label class="sidebar-searchform-label" for="daterange">Check In/Check Out</label></div>
-          <div class="flex-col"><input class="sidebar-searchform-input" id="dateTimes" type="text" name="dateTimes" /></div>
+          <div class="flex-col"><label class="sidebar__searchform__label" for="daterange">Check In/Check Out</label></div>
+          <div class="flex-col"><input class="sidebar__searchform__input" id="dateTimes" type="text" name="dateTimes" />
+          </div>
         </div>
 
         <div class="flex-layout">
-          <div class="flex-col"><label class="sidebar-searchform-label" for="guests">No. of guests</label></div>
-          <div class="flex-col"><input class="sidebar-searchform-input" type="text" name="guests" id="guests"></div>
+          <div class="flex-col"><label class="sidebar__searchform__label" for="guests">No. of guests</label></div>
+          <div class="flex-col"><input class="sidebar__searchform__input" type="text" name="guests" id="guests"></div>
         </div>
 
         <div class="flex-layout">
-          <div class="flex-col"><label class="sidebar-searchform-label" for="rooms">No. of rooms</label></div>
-          <div class="flex-col"><input class="sidebar-searchform-input" type="text" name="rooms" id="rooms"></div>
+          <div class="flex-col"><label class="sidebar__searchform__label" for="rooms">No. of rooms</label></div>
+          <div class="flex-col"><input class="sidebar__searchform__input" type="text" name="rooms" id="rooms"></div>
         </div>
 
-        <div class="sidebar-searchform-buttons">
+        <div class="sidebar__searchform__buttons">
           <button class="button--secondary" type="reset" onclick="clearForm()">Reset</button>
           <button class="button--primary" type="submit">Submit</button>
         </div>
@@ -72,10 +74,19 @@
     </div>
 
     <div class="content section2" style="background-image: url(img/cover.jpg);">
-      <div class="content-image">
-        <div class="content-results" id="content-results-js" style="display:none;">
-          <div class="content-results-accomodations">
-            <div class="hostel-card" name="hostel">
+      <div class="content__image">
+        <div class="content__results" id="content__results-js" style="display:block;">
+
+          <div id="content__filter">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('hostel')"> Hostel</button>
+            <button class="btn" onclick="filterSelection('hotel')"> Hotel</button>
+            <button class="btn" onclick="filterSelection('motel')"> Motel</button>
+            <button class="btn" onclick="filterSelection('house')"> House</button>
+          </div>
+
+          <div class="content__results__accomodations">
+            <div class="hostel__card filterDiv hostel" data-hostel="hostel" name="hostel">
               <img src="img/hostel.jpg">
               <div class="title">
                 <h1 class="name">Hostel</h1>
@@ -83,13 +94,14 @@
                 <p>1 person</p>
               </div>
               <p class="price">$30/night</p>
-              <div class="card-buttons">
-                <button class="button--secondary-action">More info</button>
-                <button class="button--primary type" id="hostelBtn" value="Hostel" onclick="bookHostel()">Book
+              <div class="card__buttons">
+                <button class="button--secondary-action accordion">More info</button>
+                <button class="button--primary type" id="hostelBtn" value="Hostel" onclick="showBookingForm()">Book
                   now</button>
               </div>
+                <p id="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-            <div class="hotel-card" name="hotel">
+            <div class="hotel__card filterDiv hotel" data-hotel="hotel" name="hotel">
               <img src="img/hotel.jpg">
               <div class="title">
                 <h1 class="name">Hotel</h1>
@@ -97,12 +109,13 @@
                 <p>1-2 people</p>
               </div>
               <p class="price">$157/night</p>
-              <div class="card-buttons">
-                <button class="button--secondary-action">More info</button>
-                <button class="button--primary type" value="Hotel" onclick="bookHostel()">Book now</button>
+              <div class="card__buttons">
+                <button class="button--secondary-action accordion">More info</button>
+                <button class="button--primary type" value="Hotel" onclick="showBookingForm()">Book now</button>
               </div>
+              <p id="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-            <div class="motel-card" name="motel">
+            <div class="motel__card filterDiv motel" data-motel="motel" name="motel">
               <img src="img/motel.jpg">
               <div class="title">
                 <h1 class="name">Motel</h1>
@@ -110,23 +123,25 @@
                 <p>2-4 people</p>
               </div>
               <p class="price">$90/night</p>
-              <div class="card-buttons">
-                <button class="button--secondary-action">More info</button>
-                <button class="button--primary type" value="Motel" onclick="bookHostel()">Book now</button>
+              <div class="card__buttons">
+                <button class="button--secondary-action accordion">More info</button>
+                <button class="button--primary type" value="Motel" onclick="showBookingForm()">Book now</button>
               </div>
+              <p id="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-            <div class="house-card" name="house">
+            <div class="house__card filterDiv house" data-house="house" name="house">
               <img src="img/house.jpg">
               <div class="title">
                 <h1 class="name">House</h1>
                 <p>min 2 night, max 15 nights</p>
                 <p>1-4 people</p>
               </div>
-              <p class="price">$240/night</p>
-              <div class="card-buttons">
-                <button class="button--secondary-action">More info</button>
-                <button class="button--primary type" value="House" onclick="bookHostel()">Book now</button>
+              <p class="price" id="240">$240/night</p>
+              <div class="card__buttons">
+                <button class="button--secondary-action accordion">More info</button>
+                <button class="button--primary type" value="House" onclick="showBookingForm()">Book now</button>
               </div>
+              <p id="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </div>
         </div>
@@ -135,11 +150,11 @@
 
     <!-- Booking form -->
     <div class="screen" id="screen-js" style="display:none">
-      <div class="screen-darkenBackground"></div>
-      <div class="screen-details">
-        <ul class="screen-details-progress">
+      <div class="screen__darkenBackground"></div>
+      <div class="screen__details">
+        <ul class="screen__details-progress">
           <div class="cross">
-            <img class="cross-img" src="img/close.png" onclick="cancelFormStep1()">
+            <img class="cross__img" src="img/close.png" onclick="cancelFormStep1()">
             <img src="img/close_hover.png" class="hover" onclick="cancelFormStep1()">
           </div>
           <li><img src="img/tick.png"></li>
@@ -155,9 +170,9 @@
             <p>Review Booking</p>
           </li>
         </ul>
-        <div class="screen-details-bookingform">
+        <div class="screen__details-bookingform">
           <form id="bookingform-js" class="bookingform" action="">
-            <div class="flex-layout">
+            <div class="flexlayout">
               <div class="flex-col"><label for="fname">First name *</label></div>
               <div class="flex-col"><input type="text" name="firstname" id="firstname"></div>
             </div>
@@ -260,10 +275,9 @@
             </div>
 
         </div>
-        <div class="screen-details-buttons">
-          <div class="flex-col"><button type="button" value="Cancel" class="button--secondary"
-              onclick="cancelFormStep1()">Cancel</button></div>
-          <div class="flex-col"><button class="button--primary" onclick="guestDetails()" id="display">Review</button></div>
+        <div class="screen__details__buttons">
+          <button type="button" value="Cancel" class="button--secondary" onclick="cancelFormStep1()">Cancel</button>
+          <button class="button--primary" onclick="guestDetails()" id="display">Review</button>
         </div>
 
 
@@ -274,9 +288,9 @@
     <div class="reviewScreen" id="reviewScreen-js" style="display:none">
       <div class="screen-darkenBackground"></div>
       <div class="review">
-        <ul class="review-progress">
+        <ul class="review__progress">
           <div class="cross">
-            <img class="cross-img" src="img/close.png" onclick="cancelFormStep2()">
+            <img class="cross__img" src="img/close.png" onclick="cancelFormStep2()">
             <img src="img/close_hover.png" class="hover" onclick="cancelFormStep2()">
           </div>
           <li><img src="img/tick.png"></li>
@@ -315,22 +329,24 @@
           <h2>Dietary Requirements</h2>
           <div id="dietaryRequirementsResult"></div>
           <div id="dietaryResult"></div>
+          <h2>Total</h2>
+          <div id="bookingCosts"></div>
         </div>
 
-        <div class="details-btns">
-          <div class="flex-col"><button class="button--secondary" onclick="backToHostel()">Back</button></div>
-          <div class="flex-col"><button class="button--primary" onclick="book()" onclick="clearBookingFields()">Book</button></div>
+        <div class="details__btns">
+          <button class="button--secondary" onclick="backToBook()">Back</button>
+          <button class="button--primary" onclick="showBooked()" onclick="clearBookingFields()">Book</button>
         </div>
       </div>
     </div>
 
     <!-- Book booking -->
     <div class="bookBooking" id="bookBooking" style="display:none">
-      <div class="popUp-black3"></div>
+      <div class="popUp__black3"></div>
       <div class="book">
-        <ul class="review-progress">
+        <ul class="review__progress">
           <div class="cross">
-            <img class="cross-img" src="img/close.png" onclick="cancelFormStep3()">
+            <img class="cross__img" src="img/close.png" onclick="cancelFormStep3()">
             <img src="img/close_hover.png" class="hover" onclick="cancelFormStep3()">
           </div>
           <li><img src="img/tick.png"></li>
@@ -362,11 +378,12 @@
 
         </div>
 
-        <div class="details-btns">
+        <div class="details__btns">
           <div class="flex-col"><button class="button--primary" onclick="exitBooking()">Exit</button></div>
         </div>
       </div>
     </div>
+
 
   </div>
 
@@ -374,6 +391,7 @@
   </div>
   </div>
   <script src="js/main.js"></script>
+  <script src="js/filters.js"></script>
 </body>
 
 </html>

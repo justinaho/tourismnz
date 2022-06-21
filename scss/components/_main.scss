@@ -34,10 +34,14 @@
         flex-direction: column;
     }
 
-    .hostel-card,
-    .hotel-card,
-    .motel-card,
-    .house-card {
+    .sidebar__searchform {
+        align-items: center;
+    }
+
+    .hostel__card,
+    .hotel__card,
+    .motel__card,
+    .house__card {
         width: 400px;
     }
 
@@ -67,10 +71,10 @@
         flex-direction: row;
     }
 
-    .hostel-card,
-    .hotel-card,
-    .motel-card,
-    .house-card{
+    .hostel__card,
+    .hotel__card,
+    .motel__card,
+    .house__card {
         width: 400px;
     }
 

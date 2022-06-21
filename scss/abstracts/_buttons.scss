@@ -43,3 +43,10 @@
     }
 }
 
+.card__buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: left;
+    gap: 10px;
+}

@@ -1,11 +1,11 @@
-.sidebar-logo {
+.sidebar__logo {
     margin-left: auto;
     margin-right: auto;
     align-items: center;
     width: 300px;
 }
 
-.sidebar-title {
+.sidebar__title {
     display: flex;
     padding-bottom: 10px;
     justify-content: center;
@@ -14,15 +14,14 @@
     font-weight: $heavy-weight;
 }
 
-.sidebar-searchform {
+.sidebar__searchform {
     display: flex;
-    align-items: center;
     width: 100%;
     position: relative;
     height: auto;
     flex-direction: column;
 
-    &-label {
+    &__label {
         display: inline-block;
         font-size: $font-small;
         text-align: left;
@@ -30,21 +29,24 @@
         width: auto;
     }
 
-    &-select {
+    &__select {
         width: 100%;
         border: none;
         padding: 2px 4px 2px 4px;
     }
 
-    &-input {
+    &__input {
         width: 100%;
         border: none;
         padding: 5px 4px 5px 4px;
         align-items: right;
     }
 
-    &-buttons {
-        margin-left: auto;
+    &__buttons {
+        display: flex;
+        padding-bottom: 10px;
+        justify-content: flex-end;
+        flex-direction: row;
      
     }
 

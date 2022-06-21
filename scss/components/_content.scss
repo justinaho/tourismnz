@@ -3,37 +3,39 @@
     margin-top: 0;
     height: 100vh;
 
-    &-image {
+    &__image {
         width: 100%;
         height: auto;
         position: relative;
     }
 
-    &-results {
+    &__results {
         background-color: $white;
         height: 100vh;
+        align-items: center;
 
-        &-accomodations {
+        &__accomodations {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-evenly;
+            justify-content: space-between;
         }
-        
     }
-   
+
 }
 
 
-.hostel-card,
-.hotel-card,
-.motel-card,
-.house-card {
+.hostel__card,
+.hotel__card,
+.motel__card,
+.house__card {
     background-color: transparent;
     border: 1px solid $orange-dark;
     padding: 10px;
     font-size: 30px;
     margin: 20px;
+    // display: flex;
+    flex-direction: column;
 
     & .title {
         text-align: left;
@@ -57,10 +59,19 @@
 }
 
 
-.card-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: left;
-    gap: 10px;
+.accordion {
+    transition: 0.1s;
+}
+
+.active,
+.accordion:hover {
+    border: 1px solid $blue-light;
+    color: $blue-light;
+}
+
+#panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
 }

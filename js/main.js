@@ -8,7 +8,7 @@ function clearForm() {
   document.getElementById('dateTimes').value = '';
   document.getElementById('guests').value = '';
   document.getElementById('rooms').value = '';
-  document.getElementById('content-results-js').style.display = 'none';
+  //document.getElementById('content-results-js').style.display = 'none';
 }
 
 
@@ -71,13 +71,13 @@ function cancelFormStep3() {
 
 
 function toggleResults() {
-  const results = document.getElementById('content-results-js');
+  const results = document.getElementById('content__results-js');
   if (results.style.display === 'none') {
     results.style.display = 'block';
   }
 }
 
-function bookHostel() {
+function showBookingForm() {
   if (userDetails.style.display === 'none') {
     userDetails.style.display = 'block';
   }
@@ -90,14 +90,7 @@ function review() {
   }
 }
 
-// function backToHostel() {
-//   if (userDetailsHostel.style.display === 'none') {
-//    userDetailsHostel.style.display = 'block';
-//     document.getElementById('reviewBooking').style.display = 'none';
-//   }
-// }
-
-function backToHostel() {
+function backToBook() {
   if (reviewBooking.style.display === 'block') {
     reviewBooking.style.display = 'none';
     userDetails.style.display = 'block';
@@ -105,7 +98,7 @@ function backToHostel() {
 }
 
 
-function book() {
+function showBooked() {
   if (reviewBooking.style.display === 'block') {
     reviewBooking.style.display = 'none';
     bookBooking.style.display = 'block';
@@ -194,9 +187,9 @@ $(document).ready(function () {
 });
 
 let buttonList = document.querySelectorAll(".type");
-buttonList.forEach(function(i){
-  i.addEventListener("click", function(e){
-   document.getElementById('acommodationType').innerHTML = 'Acommodation type: ' + e.target.value;
+buttonList.forEach(function (i) {
+  i.addEventListener("click", function (e) {
+    document.getElementById('acommodationType').innerHTML = 'Acommodation type: ' + e.target.value;
   })
 })
 
@@ -214,7 +207,7 @@ function guestDetails() {
   const dateTimes = document.getElementById('sidebar-searchform-js').elements['dateTimes'].value;
   const guests = document.getElementById('sidebar-searchform-js').elements['guests'].value;
   const rooms = document.getElementById('sidebar-searchform-js').elements['rooms'].value;
-  
+
   document.getElementById('searchDestination').innerHTML = 'Destination: ' + destination;
   document.getElementById('searchDateTimes').innerHTML = 'Check in/Check out: ' + dateTimes;
   document.getElementById('searchGuests').innerHTML = 'No. of guests: ' + guests;
@@ -222,39 +215,17 @@ function guestDetails() {
 
 }
 
-//window.onload = function () {
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-//   document.querySelector("#bookingForm").addEventListener('submit', function (event) {
-//     event.preventDefault();
-//     var obj = {};
-//     event.target.querySelectorAll('input', 'select', 'textarea')
-//       .forEach((v) => {
-//         if (v.type !== 'sumbit' && v.name) {
-//           obj[v.name] = v.value;
-//         }
-//         console.log(obj);
-//         document.getElementById("guestDetails").innerHTML = obj;
-//       });
-
-
-//   obj
-//         {
-//             firstname: "",
-//             lastname: "",
-//         }
-//   });
-// }
-
-// eslint-disable-next-line require-jsdoc
-// function guestDetails() {
-//   const elements = document.getElementById('bookingForm').elements;
-//   const obj = {};
-//   for (let i = 0; i < elements.length; i++) {
-//     const item = elements.item(i);
-//     obj[item.name] = item.value;
-//   }
-//   console.log(JSON.stringify(obj));
-//   document.getElementById('guestDetails').innerHTML = JSON.stringify(obj);
-// }
-
-
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var panel = document.getElementById('panel');
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
