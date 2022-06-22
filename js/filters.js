@@ -1,3 +1,5 @@
+/* eslint-disable no-invalid-this */
+/* eslint-disable require-jsdoc */
 filterSelection('all');
 function filterSelection(c) {
   const x = document.getElementsByClassName('filterDiv');

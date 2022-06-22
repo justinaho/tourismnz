@@ -5,12 +5,10 @@
 
     &__image {
         width: 100%;
-        height: auto;
         position: relative;
     }
 
     &__results {
-        background-color: $white;
         height: 100vh;
         align-items: center;
 
@@ -24,18 +22,40 @@
 
 }
 
+#content__results-js {
+    background-color: $white;
+    height: 100vh;
+}
+
+
+
+.hostel__panel, .hotel__panel, .motel__panel, .house__panel {
+    background-color: $orange-dark;
+    border: 1px solid $orange-dark;
+    padding: 10px;
+    font-size: 30px;
+    margin: 20px;
+    width: 400px;
+
+    img{
+        width: 25px;
+        height: 25px;
+    }
+}
 
 .hostel__card,
 .hotel__card,
 .motel__card,
 .house__card {
-    background-color: transparent;
+
+    background-color:$white;
     border: 1px solid $orange-dark;
     padding: 10px;
     font-size: 30px;
     margin: 20px;
-    // display: flex;
+    display: flex;
     flex-direction: column;
+    height: 480px;
 
     & .title {
         text-align: left;
@@ -54,6 +74,7 @@
 
     & img {
         width: 100%;
+        height: 260px;
         grid-area: pic;
     }
 }
@@ -65,7 +86,6 @@
 
 .active,
 .accordion:hover {
-    border: 1px solid $blue-light;
     color: $blue-light;
 }
 

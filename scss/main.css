@@ -8,7 +8,7 @@ h2 {
 
 h3 {
   font-size: 0.875rem;
-  color: #292929;
+  color: #ffffff;
   margin: 5px;
 }
 
@@ -85,9 +85,9 @@ html {
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 10px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -241,24 +241,14 @@ html {
 }
 
 .cross {
-  width: auto;
+  width: 10px;
   margin-top: 5px;
 }
 
 .cross__img {
-  width: auto;
-  height: auto;
   position: absolute;
   top: 10;
   right: 0;
-}
-
-.cross .hover {
-  display: none;
-}
-
-.cross__img:hover .hover {
-  display: block;
 }
 
 .bookingform {
@@ -460,6 +450,16 @@ html {
           flex-direction: column;
 }
 
+.book__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 15px;
+}
+
 .book__progress {
   list-style-type: none;
   text-align: center;
@@ -485,15 +485,6 @@ html {
           align-items: center;
   vertical-align: middle;
   padding-right: 5px;
-}
-
-.book .details-btns {
-  margin-left: auto;
-  margin-right: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
 }
 
 .popUp__black3 {
@@ -583,10 +574,14 @@ html {
           justify-content: end;
 }
 
-.filterDiv, .ratingFilter {
+.content__filter {
+  margin-left: 20px;
+}
+
+.filterDiv,
+.ratingFilter {
   float: left;
   color: #292929;
-  width: 100px;
   text-align: center;
   margin: 2px;
   display: none;
@@ -597,7 +592,8 @@ html {
 }
 
 /* Style the buttons */
-.btn, .ratingBtn {
+.btn,
+.ratingBtn {
   border: none;
   outline: none;
   padding: 12px 16px;
@@ -605,11 +601,13 @@ html {
   cursor: pointer;
 }
 
-.btn:hover, .ratingBtn:hover {
+.btn:hover,
+.ratingBtn:hover {
   background-color: #DA937E;
 }
 
-.btn.active, .ratingBtn.active {
+.btn.active,
+.ratingBtn.active {
   background-color: #C9684B;
   color: white;
 }
@@ -680,13 +678,15 @@ html {
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 10px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin-top: 20px;
+  gap: 20px;
 }
 
 .content {
@@ -697,12 +697,10 @@ html {
 
 .content__image {
   width: 100%;
-  height: auto;
   position: relative;
 }
 
 .content__results {
-  background-color: #ffffff;
   height: 100vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -724,19 +722,42 @@ html {
           justify-content: space-between;
 }
 
-.hostel__card,
-.hotel__card,
-.motel__card,
-.house__card {
-  background-color: transparent;
+#content__results-js {
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.hostel__panel, .hotel__panel, .motel__panel, .house__panel {
+  background-color: #C9684B;
   border: 1px solid #C9684B;
   padding: 10px;
   font-size: 30px;
   margin: 20px;
+  width: 400px;
+}
+
+.hostel__panel img, .hotel__panel img, .motel__panel img, .house__panel img {
+  width: 25px;
+  height: 25px;
+}
+
+.hostel__card,
+.hotel__card,
+.motel__card,
+.house__card {
+  background-color: #ffffff;
+  border: 1px solid #C9684B;
+  padding: 10px;
+  font-size: 30px;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 480px;
 }
 
 .hostel__card .title,
@@ -768,6 +789,7 @@ html {
 .motel__card img,
 .house__card img {
   width: 100%;
+  height: 260px;
   grid-area: pic;
 }
 
@@ -778,7 +800,6 @@ html {
 
 .active,
 .accordion:hover {
-  border: 1px solid #529FBE;
   color: #529FBE;
 }
 
@@ -840,6 +861,17 @@ html {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .content__results__accomodations {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: hidden;
+  }
+  .content__image {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
   .sidebar__searchform {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -872,6 +904,33 @@ html {
     text-align: center;
     display: block;
     width: 350px;
+  }
+  .screen__details {
+    width: 80%;
+    height: 90%;
+  }
+  #menuOptions {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .screen__details-bookingform {
+    height: 880px;
+  }
+  .review {
+    width: 80%;
+    height: 90%;
+  }
+  .bookingResults {
+    height: 880px;
+  }
+  .book {
+    width: 80%;
+    height: 90%;
+  }
+  .bookingMessage {
+    height: 880px;
   }
 }
 

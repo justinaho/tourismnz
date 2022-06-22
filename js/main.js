@@ -1,3 +1,8 @@
+/* eslint-disable no-invalid-this */
+/* eslint-disable no-unused-vars */
+/* eslint-disable require-jsdoc */
+/* eslint-disable max-len */
+
 window.addEventListener('load', (event) => {
   clearForm();
 });
@@ -8,7 +13,7 @@ function clearForm() {
   document.getElementById('dateTimes').value = '';
   document.getElementById('guests').value = '';
   document.getElementById('rooms').value = '';
-  //document.getElementById('content-results-js').style.display = 'none';
+  document.getElementById('content__results-js').style.display = 'none';
 }
 
 
@@ -51,21 +56,28 @@ function clearBookingFields() {
   hideMealOptions();
   hideDietaryOptions();
 
-  document.getElementById('menuOptions').style.display = "none";
+  document.getElementById('menuOptions').style.display = 'none';
 }
 
+// function backToDetails() {
+//   if (reviewBooking.style.display === 'block') {
+//     reviewBooking.style.display = 'none';
+//     document.getElementById('screen-js').style.display = 'block';
+//   }
+// }
+
 function cancelFormStep1() {
-  userDetails.style.display = "none";
+  userDetails.style.display = 'none';
   clearBookingFields();
 }
 
 function cancelFormStep2() {
-  reviewBooking.style.display = "none";
+  reviewBooking.style.display = 'none';
   clearBookingFields();
 }
 
 function cancelFormStep3() {
-  bookBooking.style.display = "none";
+  bookBooking.style.display = 'none';
   clearBookingFields();
 }
 
@@ -90,14 +102,6 @@ function review() {
   }
 }
 
-function backToBook() {
-  if (reviewBooking.style.display === 'block') {
-    reviewBooking.style.display = 'none';
-    userDetails.style.display = 'block';
-  }
-}
-
-
 function showBooked() {
   if (reviewBooking.style.display === 'block') {
     reviewBooking.style.display = 'none';
@@ -113,27 +117,27 @@ function exitBooking() {
 }
 
 
-
-$(document).ready(function () {
-  $('input[type="checkbox"]').click(function () {
+$(document).ready(function() {
+  $('input[type="checkbox"]').click(function() {
     const inputValue = $(this).attr('value');
     $('.' + inputValue).toggle();
   });
 });
 
 
-$(document).ready(function () {
-  $('#display').click(function () {
-    var meals = [];
-    $.each($('input[name=\'mealOptions\']:checked'), function () {
+$(document).ready(function() {
+  $('#display').click(function() {
+    const meals = [];
+    $.each($('input[name=\'mealOptions\']:checked'), function() {
       meals.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('result').innerHTML = 'Complimentary meals: ' + meals.join(', ');
       }
     });
 
-    var lunchOptions = [];
-    $.each($('input[name=\'lunch\']:checked'), function () {
+
+    const lunchOptions = [];
+    $.each($('input[name=\'lunch\']:checked'), function() {
       lunchOptions.push($(this).val());
 
       if ($(this).is(':checked')) {
@@ -141,8 +145,8 @@ $(document).ready(function () {
       }
     });
 
-    var starterOptions = [];
-    $.each($('input[name=\'starter\']:checked'), function () {
+    const starterOptions = [];
+    $.each($('input[name=\'starter\']:checked'), function() {
       starterOptions.push($(this).val());
 
       if ($(this).is(':checked')) {
@@ -150,16 +154,8 @@ $(document).ready(function () {
       }
     });
 
-    var dessertOptions = [];
-    $.each($('input[name=\'dessert\']:checked'), function () {
-      dessertOptions.push($(this).val());
-      if ($(this).is(':checked')) {
-        document.getElementById('dessertResult').innerHTML = 'Dessert: ' + dessertOptions.join(', ');
-      }
-    });
-
-    var mainOptions = [];
-    $.each($('input[name=\'main\']:checked'), function () {
+    const mainOptions = [];
+    $.each($('input[name=\'main\']:checked'), function() {
       mainOptions.push($(this).val());
 
       if ($(this).is(':checked')) {
@@ -167,9 +163,18 @@ $(document).ready(function () {
       }
     });
 
+    const dessertOptions = [];
+    $.each($('input[name=\'dessert\']:checked'), function() {
+      dessertOptions.push($(this).val());
+      if ($(this).is(':checked')) {
+        document.getElementById('dessertResult').innerHTML = 'Dessert: ' + dessertOptions.join(', ');
+      }
+    });
+
+
     let dietaryResult = document.getElementById('dietaryRequirementsResult').innerHTML;
     const dietaryRequirementsOptions = [];
-    $.each($('input[name=\'dietaryRequirements\']:checked'), function () {
+    $.each($('input[name=\'dietaryRequirements\']:checked'), function() {
       dietaryRequirementsOptions.push($(this).val());
       if ($(this).is(':checked')) {
         dietaryResult = 'Dietary requirements: ' + dietaryRequirementsOptions.join(', ');
@@ -177,21 +182,27 @@ $(document).ready(function () {
     });
 
     const dietaryOptions = [];
-    $.each($('input[name=\'dietary\']:checked'), function () {
+    $.each($('input[name=\'dietary\']:checked'), function() {
       dietaryOptions.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('dietaryResult').innerHTML = dietaryOptions;
       }
     });
+
+    if (meals.length === 0) {
+      document.getElementById('result').innerHTML = 'none';
+    }
+
+    if (dietaryRequirementsOptions[0] === 'no') {
+      document.getElementById('dietaryRequirementsResult').innerHTML = 'none';
+    }
+
+    const otherOption = document.getElementById('otherOption').value;
+    if (document.getElementById('otherOption').value !== '') {
+      document.getElementById('dietaryResult').innerHTML = otherOption;
+    }
   });
 });
-
-let buttonList = document.querySelectorAll(".type");
-buttonList.forEach(function (i) {
-  i.addEventListener("click", function (e) {
-    document.getElementById('acommodationType').innerHTML = 'Acommodation type: ' + e.target.value;
-  })
-})
 
 function guestDetails() {
   const firstName = document.getElementById('bookingform-js').elements['firstname'].value;
@@ -203,29 +214,54 @@ function guestDetails() {
   document.getElementById('guestEmail').innerHTML = 'Email: ' + email;
   document.getElementById('guestPhone').innerHTML = 'Phone: ' + phone;
 
-  const destination = document.getElementById('sidebar-searchform-js').elements['city'].value;
-  const dateTimes = document.getElementById('sidebar-searchform-js').elements['dateTimes'].value;
-  const guests = document.getElementById('sidebar-searchform-js').elements['guests'].value;
-  const rooms = document.getElementById('sidebar-searchform-js').elements['rooms'].value;
+  const destination = document.getElementById('sidebar__searchform-js').elements['city'].value;
+  const dateTimes = document.getElementById('sidebar__searchform-js').elements['dateTimes'].value;
+  const guests = document.getElementById('sidebar__searchform-js').elements['guests'].value;
+  const rooms = document.getElementById('sidebar__searchform-js').elements['rooms'].value;
 
   document.getElementById('searchDestination').innerHTML = 'Destination: ' + destination;
   document.getElementById('searchDateTimes').innerHTML = 'Check in/Check out: ' + dateTimes;
   document.getElementById('searchGuests').innerHTML = 'No. of guests: ' + guests;
   document.getElementById('searchRooms').innerHTML = 'No. of rooms: ' + rooms;
-
 }
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+function showHostelInfo() {
+  const showHostel = document.getElementById('hostel__panel');
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var panel = document.getElementById('panel');
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
+  if (showHostel.style.display === 'none') {
+    showHostel.style.display = 'block';
+  } else {
+    showHostel.style.display = 'none';
+  }
+}
+
+function showHotelInfo() {
+  const showHotel = document.getElementById('hotel__panel');
+
+  if (showHotel.style.display === 'none') {
+    showHotel.style.display = 'block';
+  } else {
+    showHotel.style.display = 'none';
+  }
+}
+
+
+function showMotelInfo() {
+  const showMotel = document.getElementById('motel__panel');
+
+  if (showMotel.style.display === 'none') {
+    showMotel.style.display = 'block';
+  } else {
+    showMotel.style.display = 'none';
+  }
+}
+
+function showHouseInfo() {
+  const showHouse = document.getElementById('house__panel');
+
+  if (showHouse.style.display === 'none') {
+    showHouse.style.display = 'block';
+  } else {
+    showHouse.style.display = 'none';
+  }
 }

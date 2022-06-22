@@ -51,7 +51,8 @@
         </div>
 
         <div class="flex-layout">
-          <div class="flex-col"><label class="sidebar__searchform__label" for="daterange">Check In/Check Out</label></div>
+          <div class="flex-col"><label class="sidebar__searchform__label" for="daterange">Check In/Check Out</label>
+          </div>
           <div class="flex-col"><input class="sidebar__searchform__input" id="dateTimes" type="text" name="dateTimes" />
           </div>
         </div>
@@ -75,74 +76,120 @@
 
     <div class="content section2" style="background-image: url(img/cover.jpg);">
       <div class="content__image">
-        <div class="content__results" id="content__results-js" style="display:block;">
+        <div class="content__results">
+          <div id="content__results-js" style="display:block;">
+            <div id="content__filter" class="content__filter">
+              <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+              <button class="btn" onclick="filterSelection('hostel')"> Hostel</button>
+              <button class="btn" onclick="filterSelection('hotel')"> Hotel</button>
+              <button class="btn" onclick="filterSelection('motel')"> Motel</button>
+              <button class="btn" onclick="filterSelection('house')"> House</button>
+            </div>
 
-          <div id="content__filter">
-            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn" onclick="filterSelection('hostel')"> Hostel</button>
-            <button class="btn" onclick="filterSelection('hotel')"> Hotel</button>
-            <button class="btn" onclick="filterSelection('motel')"> Motel</button>
-            <button class="btn" onclick="filterSelection('house')"> House</button>
-          </div>
+            <div class="content__results__accomodations">
 
-          <div class="content__results__accomodations">
-            <div class="hostel__card filterDiv hostel" data-hostel="hostel" name="hostel">
-              <img src="img/hostel.jpg">
-              <div class="title">
-                <h1 class="name">Hostel</h1>
-                <p>min 1 night, max 10 nights</p>
-                <p>1 person</p>
+              <div class="hostel__extra filterDiv hostel">
+                <div class="hostel__card" data-hostel="hostel" name="hostel">
+                  <img src="img/hostel.jpg">
+                  <div class="title">
+                    <h1 class="name">Hostel</h1>
+                    <p>min 1 night, max 10 nights</p>
+                    <p>1 person</p>
+                  </div>
+                  <p class="price">$30/night</p>
+                  <div class="card__buttons">
+                    <button class="button--secondary-action accordion" onclick="showHostelInfo()">More info</button>
+                    <button class="button--primary type" id="hostelBtn" value="Hostel" onclick="showBookingForm()">Book
+                      now</button>
+                  </div>
+                </div>
+                <div class="hostel__extra">
+                  <div id="hostel__panel" class="hostel__panel" style="display: none;">
+                    <img src="/img/wifi.png">
+                    <p>Wifi</p>
+                    <img src="/img/gym.png">
+                    <p>Gym</p>
+                  </div>
+                </div>
               </div>
-              <p class="price">$30/night</p>
-              <div class="card__buttons">
-                <button class="button--secondary-action accordion">More info</button>
-                <button class="button--primary type" id="hostelBtn" value="Hostel" onclick="showBookingForm()">Book
-                  now</button>
+
+              <div class="hotel__extra filterDiv hotel">
+                <div class="hotel__card" data-hotel="hotel" name="hotel">
+                  <img src="img/hotel.jpg">
+                  <div class="title">
+                    <h1 class="name">Hotel</h1>
+                    <p>min 1 night, max 5 nights</p>
+                    <p>1-2 people</p>
+                  </div>
+                  <p class="price">$157/night</p>
+                  <div class="card__buttons">
+                    <button class="button--secondary-action accordion" onclick="showHotelInfo()">More info</button>
+                    <button class="button--primary type" value="Hotel" onclick="showBookingForm()">Book now</button>
+                  </div>
+
+                </div>
+                <div class="extra">
+                  <div id="hotel__panel" class="hotel__panel" style="display: none;">
+                    <img src="/img/wifi.png">
+                    <p>Wifi</p>
+                    <img src="/img/gym.png">
+                    <p>Gym</p>
+                  </div>
+                </div>
               </div>
-                <p id="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+
+              <div class="motel__extra filterDiv motel">
+                <div class="motel__card" data-motel="motel" name="motel">
+                  <img src="img/motel.jpg">
+                  <div class="title">
+                    <h1 class="name">Motel</h1>
+                    <p>min 3 night, max 10 nights</p>
+                    <p>2-4 people</p>
+                  </div>
+                  <p class="price">$90/night</p>
+                  <div class="card__buttons">
+                    <button class="button--secondary-action accordion" onclick="showMotelInfo()">More info</button>
+                    <button class="button--primary type" value="Motel" onclick="showBookingForm()">Book now</button>
+                  </div>
+                </div>
+                <div class="motel__extra">
+                  <div id="motel__panel" class="motel__panel" style="display: none;">
+                    <img src="/img/wifi.png">
+                    <p>Wifi</p>
+                    <img src="/img/gym.png">
+                    <p>Gym</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="house__extra filterDiv house">
+                <div class="house__card" data-house="house" name="house">
+                  <img src="img/house.jpg">
+                  <div class="title">
+                    <h1 class="name">House</h1>
+                    <p>min 2 night, max 15 nights</p>
+                    <p>1-4 people</p>
+                  </div>
+                  <p class="price" id="240">$240/night</p>
+                  <div class="card__buttons">
+                    <button class="button--secondary-action accordion" onclick="showHouseInfo()">More info</button>
+                    <button class="button--primary type" value="House" onclick="showBookingForm()">Book now</button>
+                  </div>
+                </div>
+
+                <div class="house__extra">
+                  <div id="house__panel" class="house__panel" style="display: none;">
+                    <img src="/img/wifi.png">
+                    <p>Wifi</p>
+                    <img src="/img/gym.png">
+                    <p>Gym</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="hotel__card filterDiv hotel" data-hotel="hotel" name="hotel">
-              <img src="img/hotel.jpg">
-              <div class="title">
-                <h1 class="name">Hotel</h1>
-                <p>min 1 night, max 5 nights</p>
-                <p>1-2 people</p>
-              </div>
-              <p class="price">$157/night</p>
-              <div class="card__buttons">
-                <button class="button--secondary-action accordion">More info</button>
-                <button class="button--primary type" value="Hotel" onclick="showBookingForm()">Book now</button>
-              </div>
-              <p id="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <div class="motel__card filterDiv motel" data-motel="motel" name="motel">
-              <img src="img/motel.jpg">
-              <div class="title">
-                <h1 class="name">Motel</h1>
-                <p>min 3 night, max 10 nights</p>
-                <p>2-4 people</p>
-              </div>
-              <p class="price">$90/night</p>
-              <div class="card__buttons">
-                <button class="button--secondary-action accordion">More info</button>
-                <button class="button--primary type" value="Motel" onclick="showBookingForm()">Book now</button>
-              </div>
-              <p id="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <div class="house__card filterDiv house" data-house="house" name="house">
-              <img src="img/house.jpg">
-              <div class="title">
-                <h1 class="name">House</h1>
-                <p>min 2 night, max 15 nights</p>
-                <p>1-4 people</p>
-              </div>
-              <p class="price" id="240">$240/night</p>
-              <div class="card__buttons">
-                <button class="button--secondary-action accordion">More info</button>
-                <button class="button--primary type" value="House" onclick="showBookingForm()">Book now</button>
-              </div>
-              <p id="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+
+
           </div>
         </div>
       </div>
@@ -152,10 +199,9 @@
     <div class="screen" id="screen-js" style="display:none">
       <div class="screen__darkenBackground"></div>
       <div class="screen__details">
-        <ul class="screen__details-progress">
+        <ul class="screen__details__progress">
           <div class="cross">
             <img class="cross__img" src="img/close.png" onclick="cancelFormStep1()">
-            <img src="img/close_hover.png" class="hover" onclick="cancelFormStep1()">
           </div>
           <li><img src="img/tick.png"></li>
           <li>
@@ -172,7 +218,7 @@
         </ul>
         <div class="screen__details-bookingform">
           <form id="bookingform-js" class="bookingform" action="">
-            <div class="flexlayout">
+            <div class="flex-layout">
               <div class="flex-col"><label for="fname">First name *</label></div>
               <div class="flex-col"><input type="text" name="firstname" id="firstname"></div>
             </div>
@@ -270,7 +316,7 @@
                 <label for="2">Diabetic</label>
                 <input type="checkbox" id="yes" name="dietary" value="Other">
                 <label for="2">Other</label>
-                <input type="text" id="yes" name="dietary">
+                <input type="text" name="dietary" id="otherOption" value="">
               </div>
             </div>
 
@@ -286,12 +332,11 @@
 
     <!-- Review booking -->
     <div class="reviewScreen" id="reviewScreen-js" style="display:none">
-      <div class="screen-darkenBackground"></div>
+      <div class="screen__darkenBackground"></div>
       <div class="review">
         <ul class="review__progress">
           <div class="cross">
             <img class="cross__img" src="img/close.png" onclick="cancelFormStep2()">
-            <img src="img/close_hover.png" class="hover" onclick="cancelFormStep2()">
           </div>
           <li><img src="img/tick.png"></li>
           <li>
@@ -331,10 +376,11 @@
           <div id="dietaryResult"></div>
           <h2>Total</h2>
           <div id="bookingCosts"></div>
+          <div id="calculated"></div>
         </div>
 
         <div class="details__btns">
-          <button class="button--secondary" onclick="backToBook()">Back</button>
+          <button class="button--secondary" onclick="backToDetails()">Back</button>
           <button class="button--primary" onclick="showBooked()" onclick="clearBookingFields()">Book</button>
         </div>
       </div>
@@ -347,7 +393,6 @@
         <ul class="review__progress">
           <div class="cross">
             <img class="cross__img" src="img/close.png" onclick="cancelFormStep3()">
-            <img src="img/close_hover.png" class="hover" onclick="cancelFormStep3()">
           </div>
           <li><img src="img/tick.png"></li>
           <li>
@@ -378,8 +423,8 @@
 
         </div>
 
-        <div class="details__btns">
-          <div class="flex-col"><button class="button--primary" onclick="exitBooking()">Exit</button></div>
+        <div class="book__btns">
+          <button class="button--primary" onclick="exitBooking()">Exit</button>
         </div>
       </div>
     </div>
@@ -392,6 +437,7 @@
   </div>
   <script src="js/main.js"></script>
   <script src="js/filters.js"></script>
+  <script src="js/price.js"></script>
 </body>
 
 </html>

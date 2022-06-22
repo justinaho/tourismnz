@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 
+
     & .section1 {
         flex: 1;
     }
@@ -34,6 +35,19 @@
         flex-direction: column;
     }
 
+    .content__results {
+
+        &__accomodations {
+            justify-content: center;
+            overflow: hidden;
+        }
+    }
+
+    .content__image {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
     .sidebar__searchform {
         align-items: center;
     }
@@ -49,7 +63,7 @@
         display: flex;
         padding-bottom: 10px;
         justify-content: space-between;
-        flex-direction: column;    
+        flex-direction: column;
     }
 
     .popUp {
@@ -63,12 +77,43 @@
         }
     }
 
+    .screen__details {
+        width: 80%;
+        height: 90%;
+    }
+
+    #menuOptions {
+        flex-direction: row;
+    }
+
+    .screen__details-bookingform{
+        height: 880px;
+    }
+
+    .review{
+        width: 80%;
+        height: 90%;
+    }
+
+    .bookingResults{
+        height: 880px;
+    }
+
+    .book{
+        width: 80%;
+        height: 90%;
+    }
+    .bookingMessage{
+        height: 880px;
+    }
+
 }
 
 //desktop
 @media only screen and (min-width: 1200px) {
     .container {
         flex-direction: row;
+
     }
 
     .hostel__card,
