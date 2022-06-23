@@ -1,4 +1,13 @@
 /* eslint-disable max-len */
+/* eslint-disable require-jsdoc */
+// // eslint-disable-next-line require-jsdoc
+function parseDate(input) {
+  const parts = input.match(/(\d+)/g);
+  // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+  return new Date(parts[2], parts[1]-1, parts[0]); // months are 0-based
+}
+
+
 $(function() {
   $('input[name="dateTimes"]').daterangepicker({
     timePicker: false,
@@ -9,76 +18,26 @@ $(function() {
     autoApply: true,
     locale: {
       format: 'DD/MM/YYYY',
-      // format: 'DD/MM/YYYY hh:mm A',
     },
   });
 
   $('input[name="dateTimes"]').on('apply.daterangepicker', function(ev, picker) {
-    const date1 = new Date(start.format('DD/MM/YYYY'));
-    const date2 = new Date(end.format('DD/MM/YYYY'));
-    const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24) + 1);
-    $('#calculated').html(diffDays + ' Days');
+    const date1 = parseDate(picker.startDate.format('DD/MM/YYYY'));
+    const date2 = parseDate(picker.endDate.format('DD/MM/YYYY'));
+
+    // To calculate the time difference of two dates
+    const DifferenceInTime = date2.getTime() - date1.getTime();
+
+    // To calculate the no. of days between two dates
+    const DifferenceInDays = DifferenceInTime / (1000 * 3600 * 24);
+
+    //To display the final no. of days (result)
+    alert(DifferenceInDays);
+
+    if (DifferenceInDays === 1){
+      document.getElementsByClassName('motel__card').element.classList.remove('show');
+    }
   });
 });
 
-// $(function() {
-//   $('input[name="dateTimes"]').daterangepicker({
-//     opens: 'left',
-//   }, function(start, end, label) {
-//     document.getElementById('start').innerHTML = start.format('DD-MM-YYYY');
-//     document.getElementById('end').innerHTML = end.format('DD-MM-YYYY');
-
-//     // Calculation of Duration:
-//     const date1 = new Date(start.format('YYYY-MM-DD'));
-//     const date2 = new Date(end.format('YYYY-MM-DD'));
-//     const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-//     const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24) + 1);
-//     $('.duration_days').html(diffDays + ' Days');
-//     // console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-//   });
-// });
-
-// $( function() {
-//   const dateFormat = 'dd/mm/yy',
-//     from = $( '#from' )
-//         .datepicker({
-//           defaultDate: '+1w',
-//           changeMonth: true,
-//           numberOfMonths: 1,
-//         })
-//         .on( 'change', function() {
-//           to.datepicker( 'option', 'minDate', getDate( this ) );
-//         }),
-//     to = $( '#to' ).datepicker({
-//       defaultDate: '+1w',
-//       changeMonth: true,
-//       numberOfMonths: 1,
-//     })
-//         .on( 'change', function() {
-//           from.datepicker( 'option', 'maxDate', getDate( this ) );
-//         });
-
-//   function getDate( element ) {
-//     let date;
-//     try {
-//       date = $.datepicker.parseDate( dateFormat, element.value );
-//     } catch (error) {
-//       date = null;
-//     }
-
-//     return date;
-//   }
-// } );
-
-// $(function() {
-//   $('#from').datepicker({dateFormat: 'dd-mm-yy'});
-//   $('#to').datepicker({dateFormat: 'dd-mm-yy'});
-// });
-// $('#submit').click(function() {
-//   const start = $('#from').datepicker('getDate');
-//   const end = $('#to').datepicker('getDate');
-//   const days = (end - start)/1000/60/60/24;
-//   console.log(days);
-// });
 
