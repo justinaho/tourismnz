@@ -74,7 +74,7 @@
     <div class="content section2" style="background-image: url(img/cover.jpg);">
       <div class="content__image">
         <div class="content__results">
-          <div id="content__results-js" style="display:block;">
+          <div id="content__results-js" style="display: none">
             <div id="content__filter" class="content__filter">
               <button class="btn active" onclick="filterSelection('all')"> Show all</button>
               <button class="btn" onclick="filterSelection('hostel')"> Hostel</button>
@@ -85,8 +85,8 @@
 
             <div class="content__results__accomodations">
 
-              <div class="hostel__extra filterDiv hostel">
-                <div class="hostel__card" data-hostel="hostel" name="hostel">
+              <div class="hostel__extra filterDiv hostel" id="hostelCard">
+                <div class="hostel__card" data-hostel="hostel" name="hostel" id="showHostel">
                   <img src="img/hostel.jpg">
                   <div class="title">
                     <h1 class="name">Hostel</h1>
@@ -110,8 +110,8 @@
                 </div>
               </div>
 
-              <div class="hotel__extra filterDiv hotel">
-                <div class="hotel__card" data-hotel="hotel" name="hotel">
+              <div class="hotel__extra filterDiv hotel" id="hotelCard">
+                <div class="hotel__card" data-hotel="hotel" name="hotel" id="showHotel">
                   <img src="img/hotel.jpg">
                   <div class="title">
                     <h1 class="name">Hotel</h1>
@@ -125,7 +125,7 @@
                   </div>
 
                 </div>
-                <div class="extra">
+                <div class="hotel__extra">
                   <div id="hotel__panel" class="hotel__panel" style="display: none;">
                     <img src="/img/wifi.png">
                     <p>Wifi</p>
@@ -136,8 +136,8 @@
               </div>
 
 
-              <div class="motel__extra filterDiv motel">
-                <div class="motel__card" data-motel="motel" name="motel">
+              <div class="motel__extra filterDiv motel" id="motelCard">
+                <div class="motel__card" data-motel="motel" name="motel" id="showMotel">
                   <img src="img/motel.jpg">
                   <div class="title">
                     <h1 class="name">Motel</h1>
@@ -160,8 +160,8 @@
                 </div>
               </div>
 
-              <div class="house__extra filterDiv house">
-                <div class="house__card" data-house="house" name="house">
+              <div class="house__extra filterDiv house" id="houseCard">
+                <div class="house__card" data-house="house" name="house" id="showHouse">
                   <img src="img/house.jpg">
                   <div class="title">
                     <h1 class="name">House</h1>
@@ -261,11 +261,11 @@
                 <p>and 7am – 10.30am weekends and public holidays.</p>
                 <p>Fuel-up on scrumptious hot or cold dishes.</p>
               </div>
-              <div class="lunch box">
+              <div class="lunch box" id="lunchBox">
                 <h2>Lunch</h2>
-                <label><input type="radio" value="Beef Lasagna" name="lunch">
+                <label><input type="radio" name="lunch" id="hostelLunch1">
                   Beef Lasagna</label>
-                <label><input type="radio" value="Pumpkin ravioli (vg)" name="lunch">
+                <label><input type="radio" name="lunch" id="hostelLunch2">
                   Pumpkin ravioli (vg)</label>
               </div>
               <div class="dinner box">
@@ -433,6 +433,7 @@
   </div>
   </div>
   <script src="js/main.js"></script>
+  <script src="js/meals.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/price.js"></script>
   <script src="js/date-picker.js"></script>
