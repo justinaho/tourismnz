@@ -255,168 +255,171 @@
               </div>
             </div>
             <div class="flex-layout" id="menuOptions">
-              <div class="buffet-breakfast box" name="buffet-breakfast">
-                <h2>Buffet breakfast</h2>
-                <p>Our famous buffet breakfast is available from 6am – 10am Monday-Friday </p>
-                <p>and 7am – 10.30am weekends and public holidays.</p>
-                <p>Fuel-up on scrumptious hot or cold dishes.</p>
-              </div>
-              <div class="lunch box" id="lunchBox">
-                <h2>Lunch</h2>
-                <input type="radio" name="lunch"><label id="lunch1"></label><br>
-                <input type="radio" name="lunch"><label id="lunch2"></label>
-              </div>
-              <div class="dinner box">
-                <h2>Dinner</h2>
-                <h3>Starter</h3>
-                <input type="radio" name="starter"><label id="starter1"></label><br>
-                <input type="radio" name="starter"><label id="starter2"></label>
-                <h3>Main</h3>
-                <input type="radio" name="main"><label id="main1"></label><br>
-                <input type="radio" name="main"><label id="main2"></label>
-                <h3>Dessert</h3>
-                <input type="radio" name="dessert"><label id="dessert1"></label><br>
-                <input type="radio" name="dessert"><label id="dessert2"></label>
-              </div>
-
+            <div class="buffet-breakfast box" name="buffet-breakfast">
+              <h2>Buffet breakfast</h2>
+              <p>Our famous buffet breakfast is available from 6am – 10am Monday-Friday </p>
+              <p>and 7am – 10.30am weekends and public holidays.</p>
+              <p>Fuel-up on scrumptious hot or cold dishes.</p>
             </div>
 
 
-            <!-- Dietary Requirements -->
-            <div class="flex-layout">
-              <div class="flex-col"><label for="meals" name="diet">Dietary requirements *</label></div>
-              <div class="flex-col">
-                <label><input type="radio" name="dietaryRequirements" value="yes" onclick="showDietaryOptions();">
-                  Yes</label>
 
-                <label><input type="radio" name="dietaryRequirements" value="no" onclick="hideDietaryOptions();" />
-                  No</label>
-              </div>
+            <div class="lunch box" id="lunchBox">
+              <h2>Lunch</h2>
+              <input type="radio" name="lunch" value="1"><label id="lunch1"></label><br>
+              <input type="radio" name="lunch" value="2"><label id="lunch2"></label>
             </div>
-            <div class="flex-layout">
-              <div id="dietaryOptions" class="hide">
-                <input type="checkbox" id="yes" name="dietary" value="Gluten Free">
-                <label for="1">Gluten Free</label>
-                <input type="checkbox" id="yes" name="dietary" value="Vegan">
-                <label for="2">Vegan</label>
-                <input type="checkbox" id="yes" name="dietary" value="Vegetarian">
-                <label for="2">Vegetarian</label><br><br>
-                <input type="checkbox" id="yes" name="dietary" value="Diabetic">
-                <label for="2">Diabetic</label>
-                <input type="checkbox" id="yes" name="dietary" value="Other">
-                <label for="2">Other</label>
-                <input type="text" name="dietary" id="otherOption" value="">
-              </div>
+            <div class="dinner box">
+              <h2>Dinner</h2>
+              <h3>Starter</h3>
+              <input type="radio" name="starter"><label id="starter1"></label><br>
+              <input type="radio" name="starter"><label id="starter2"></label>
+              <h3>Main</h3>
+              <input type="radio" name="main"><label id="main1"></label><br>
+              <input type="radio" name="main"><label id="main2"></label>
+              <h3>Dessert</h3>
+              <input type="radio" name="dessert"><label id="dessert1"></label><br>
+              <input type="radio" name="dessert"><label id="dessert2"></label>
             </div>
 
         </div>
-        <div class="screen__details__buttons">
-          <button type="button" value="Cancel" class="button--secondary" onclick="cancelFormStep1()">Cancel</button>
-          <button class="button--primary" onclick="guestDetails()" id="display">Review</button>
-        </div>
 
+
+        <!-- Dietary Requirements -->
+        <div class="flex-layout">
+          <div class="flex-col"><label for="meals" name="diet">Dietary requirements *</label></div>
+          <div class="flex-col">
+            <label><input type="radio" name="dietaryRequirements" value="yes" onclick="showDietaryOptions();">
+              Yes</label>
+
+            <label><input type="radio" name="dietaryRequirements" value="no" onclick="hideDietaryOptions();" />
+              No</label>
+          </div>
+        </div>
+        <div class="flex-layout">
+          <div id="dietaryOptions" class="hide">
+            <input type="checkbox" id="yes" name="dietary" value="Gluten Free">
+            <label for="1">Gluten Free</label>
+            <input type="checkbox" id="yes" name="dietary" value="Vegan">
+            <label for="2">Vegan</label>
+            <input type="checkbox" id="yes" name="dietary" value="Vegetarian">
+            <label for="2">Vegetarian</label><br><br>
+            <input type="checkbox" id="yes" name="dietary" value="Diabetic">
+            <label for="2">Diabetic</label>
+            <input type="checkbox" id="yes" name="dietary" value="Other">
+            <label for="2">Other</label>
+            <input type="text" name="dietary" id="otherOption" value="">
+          </div>
+        </div>
 
       </div>
+      <div class="screen__details__buttons">
+        <button type="button" value="Cancel" class="button--secondary" onclick="cancelFormStep1()">Cancel</button>
+        <button class="button--primary" onclick="guestDetails()" id="display">Review</button>
+      </div>
+
+
     </div>
+  </div>
 
-    <!-- Review booking -->
-    <div class="reviewScreen" id="reviewScreen-js" style="display:none">
-      <div class="screen__darkenBackground"></div>
-      <div class="review">
-        <ul class="review__progress">
-          <div class="cross">
-            <img class="cross__img" src="img/close.png" onclick="cancelFormStep2()">
-          </div>
-          <li><img src="img/tick.png"></li>
-          <li>
-            <p>Selected Accomodation</p>
-          </li>
-          <li><img src="img/tick.png"></li>
-          <li>
-            <p>Your Details</p>
-          </li>
-
-          <li><img class="step3" style="display: none" src="img/tick.png"></li>
-          <li>
-            <p class="currentStep">Review Booking</p>
-          </li>
-        </ul>
-
-        <div class="bookingResults">
-          <h2>Booking details</h2>
-          <div id="acommodationType"></div>
-          <div id="searchDestination"></div>
-          <div id="searchDateTimes"></div>
-          <div id="searchGuests"></div>
-          <div id="searchRooms"></div>
-          <h2>Personal Details</h2>
-          <div id="guestFirstName"></div>
-          <div id="guestLastName"></div>
-          <div id="guestEmail"></div>
-          <div id="guestPhone"></div>
-          <h2>Complimentary Meals</h2>
-          <div id="result"></div>
-          <div id="lunchResult"></div>
-          <div id="starterResult"></div>
-          <div id="mainResult"></div>
-          <div id="dessertResult"></div>
-          <h2>Dietary Requirements</h2>
-          <div id="dietaryRequirementsResult"></div>
-          <div id="dietaryResult"></div>
-          <h2>Total</h2>
-          <div id="bookingCosts"></div>
-          <div id="calculated"></div>
+  <!-- Review booking -->
+  <div class="reviewScreen" id="reviewScreen-js" style="display:none">
+    <div class="screen__darkenBackground"></div>
+    <div class="review">
+      <ul class="review__progress">
+        <div class="cross">
+          <img class="cross__img" src="img/close.png" onclick="cancelFormStep2()">
         </div>
+        <li><img src="img/tick.png"></li>
+        <li>
+          <p>Selected Accomodation</p>
+        </li>
+        <li><img src="img/tick.png"></li>
+        <li>
+          <p>Your Details</p>
+        </li>
 
-        <div class="details__btns">
-          <button class="button--secondary" onclick="backToDetails()">Back</button>
-          <button class="button--primary" onclick="showBooked()" onclick="clearBookingFields()">Book</button>
-        </div>
+        <li><img class="step3" style="display: none" src="img/tick.png"></li>
+        <li>
+          <p class="currentStep">Review Booking</p>
+        </li>
+      </ul>
+
+      <div class="bookingResults">
+        <h2>Booking details</h2>
+        <div id="acommodationType"></div>
+        <div id="searchDestination"></div>
+        <div id="searchDateTimes"></div>
+        <div id="searchGuests"></div>
+        <div id="searchRooms"></div>
+        <h2>Personal Details</h2>
+        <div id="guestFirstName"></div>
+        <div id="guestLastName"></div>
+        <div id="guestEmail"></div>
+        <div id="guestPhone"></div>
+        <h2>Complimentary Meals</h2>
+        <div id="result"></div>
+        <div id="lunchResult"></div>
+        <div id="starterResult"></div>
+        <div id="mainResult"></div>
+        <div id="dessertResult"></div>
+        <h2>Dietary Requirements</h2>
+        <div id="dietaryRequirementsResult"></div>
+        <div id="dietaryResult"></div>
+        <h2>Total</h2>
+        <div id="bookingCosts"></div>
+        <div id="calculated"></div>
+      </div>
+
+      <div class="details__btns">
+        <button class="button--secondary" onclick="backToDetails() ">Back</button>
+        <button class="button--primary" onclick="showBooked()" onclick="clearBookingFields()">Book</button>
       </div>
     </div>
+  </div>
 
-    <!-- Book booking -->
-    <div class="bookBooking" id="bookBooking" style="display:none">
-      <div class="popUp__black3"></div>
-      <div class="book">
-        <ul class="review__progress">
-          <div class="cross">
-            <img class="cross__img" src="img/close.png" onclick="cancelFormStep3()">
-          </div>
-          <li><img src="img/tick.png"></li>
-          <li>
-            <p class="confirm">Selected Accomodation</p>
-          </li>
-          <li><img src="img/tick.png"></li>
-          <li>
-            <p class="confirm">Your Details</p>
-          </li>
-          <li><img src="img/tick.png"></li>
-          <li>
-            <p class="confirm">Review Booking</p>
-          </li>
-        </ul>
-
-        <div class="bookingMessage">
-          <img class="tick" src="img/tick.png">
-          <div class="flex-col">
-            <h1>Booking confirmed!</h1>
-          </div>
-          <div class="flex-col">
-            <h3 class="booked">Your itinerary will be sent to your email address<h3>
-          </div>
-          <div class="flex-col">
-            <h3 class="booked">Thank you for booking with</h3>
-          </div>
-          <img class="logoConfirm" src="img/logo.png">
-
+  <!-- Book booking -->
+  <div class="bookBooking" id="bookBooking" style="display:none">
+    <div class="popUp__black3"></div>
+    <div class="book">
+      <ul class="review__progress">
+        <div class="cross">
+          <img class="cross__img" src="img/close.png" onclick="cancelFormStep3()">
         </div>
+        <li><img src="img/tick.png"></li>
+        <li>
+          <p class="confirm">Selected Accomodation</p>
+        </li>
+        <li><img src="img/tick.png"></li>
+        <li>
+          <p class="confirm">Your Details</p>
+        </li>
+        <li><img src="img/tick.png"></li>
+        <li>
+          <p class="confirm">Review Booking</p>
+        </li>
+      </ul>
 
-        <div class="book__btns">
-          <button class="button--primary" onclick="exitBooking()">Exit</button>
+      <div class="bookingMessage">
+        <img class="tick" src="img/tick.png">
+        <div class="flex-col">
+          <h1>Booking confirmed!</h1>
         </div>
+        <div class="flex-col">
+          <h3 class="booked">Your itinerary will be sent to your email address<h3>
+        </div>
+        <div class="flex-col">
+          <h3 class="booked">Thank you for booking with</h3>
+        </div>
+        <img class="logoConfirm" src="img/logo.png">
+
+      </div>
+
+      <div class="book__btns">
+        <button class="button--primary" onclick="exitBooking()">Exit</button>
       </div>
     </div>
+  </div>
 
 
   </div>

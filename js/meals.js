@@ -1,14 +1,15 @@
 /* eslint-disable no-invalid-this */
 /* eslint-disable max-len */
+
 // Hostel meals: Lunch, Starter, Main, Dessert
 const hotelMeals1 = ['Beef Lasagna', 'Salt and pepper squid', 'Angus scotch fillet', 'Tiramisu'];
 const hotelMeals2 = ['Pumpkin ravioli (vg)', 'Garlic bread (vg)', 'Grilled portobello mushroom steak (v)', 'Salted caramel chocolate tart (v)'];
 
-const motelMeals1 = ['Beef Lasagna', 'Cheeseburger', 'Quiche', 'Caesar Salad'];
-const motelMeals2 = ['Pumpkin ravioli (vg)', 'Buffalo Cauliflower(v)', 'Pesto Gnocchi(vg)', 'Tofu Green Curry'];
+const motelMeals1 = ['1', 'Cheeseburger', 'Quiche', 'Caesar Salad'];
+const motelMeals2 = ['2', 'Buffalo Cauliflower(v)', 'Pesto Gnocchi(vg)', 'Tofu Green Curry'];
 
-const houseMeals1 = ['Beef Lasagna', 'Cheeseburger', 'Quiche', 'Caesar Salad'];
-const houseMeals2 = ['Pumpkin ravioli (vg)', 'Buffalo Cauliflower(v)', 'Pesto Gnocchi(vg)', 'Tofu Green Curry'];
+const houseMeals1 = ['3', '4', '5', '6'];
+const houseMeals2 = ['7', '8', '9', '10'];
 
 const hotelLunch1 = hotelMeals1[0];
 const hotelLunch2 = hotelMeals2[0];
@@ -46,8 +47,8 @@ const housePrice = price[3];
 
 
 const buttonList = document.querySelectorAll('.type');
-buttonList.forEach(function(i) {
-  i.addEventListener('click', function(e) {
+buttonList.forEach(function (i) {
+  i.addEventListener('click', function (e) {
     const type = e.target.value;
     document.getElementById('acommodationType').innerHTML = 'Acommodation type: ' + type;
 
@@ -67,6 +68,23 @@ buttonList.forEach(function(i) {
       document.getElementById('main2').innerHTML = hotelMain2;
       document.getElementById('dessert1').innerHTML = hotelDessert1;
       document.getElementById('dessert2').innerHTML = hotelDessert2;
+
+
+
+
+
+
+      // if (document.querySelector('input[name="lunch"]:checked'){
+      //   if (value === 1) {
+      //     document.getElementById('lunchResult').innerHTML = 'Lunch: ' + hotelLunch1;
+      //   } else {
+      //     document.getElementById('lunchResult').innerHTML = 'Lunch: ' + hotelLunch2;
+      //   }
+      // }
+
+
+
+
     }
 
     if (type === 'Motel') {
@@ -95,27 +113,28 @@ buttonList.forEach(function(i) {
   });
 });
 
-$(document).ready(function() {
-  $('#display').click(function() {
+$(document).ready(function () {
+  $('#display').click(function () {
     const meals = [];
-    $.each($('input[name=\'mealOptions\']:checked'), function() {
+    $.each($('input[name=\'mealOptions\']:checked'), function () {
       meals.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('result').innerHTML = 'Complimentary meals: ' + meals.join(', ');
       }
     });
 
+    var ele = document.getElementsByName('lunch');
 
-    const lunchBox = [hotelLunch1, hotelLunch2, motelLunch1, motelLunch2, houseLunch1, houseLunch2];
-    $.each($('lunchBox:checked'), function() {
-      lunchBox.push($(this).val());
-      if ($(this).is(':checked')) {
-        document.getElementById('lunchResult').innerHTML = 'Lunch: ' + lunchBox;
+    for (i = 0; i < ele.length; i++) {
+      if (ele[i].checked && ele[i].value === 1) {
+        document.getElementById("lunchResult").innerHTML = "Lunch: " + hotelLunch1;
+      } else {
+        document.getElementById("lunchResult").innerHTML = "Lunch: " + hotelLunch2;
       }
-    });
+    }
 
-    const starterOptions = [hotelStarter1, hotelStarter2, motelStarter1, motelStarter2, houseStarter1, houseStarter2];
-    $.each($('input[name=\'starter\']:checked'), function() {
+    const starterOptions = [];
+    $.each($('input[name=\'starter\']:checked'), function () {
       starterOptions.push($(this).val());
 
       if ($(this).is(':checked')) {
@@ -124,7 +143,7 @@ $(document).ready(function() {
     });
 
     const mainOptions = [];
-    $.each($('input[name=\'main\']:checked'), function() {
+    $.each($('input[name=\'main\']:checked'), function () {
       mainOptions.push($(this).val());
 
       if ($(this).is(':checked')) {
@@ -133,7 +152,7 @@ $(document).ready(function() {
     });
 
     const dessertOptions = [];
-    $.each($('input[name=\'dessert\']:checked'), function() {
+    $.each($('input[name=\'dessert\']:checked'), function () {
       dessertOptions.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('dessertResult').innerHTML = 'Dessert: ' + dessertOptions.join(', ');
@@ -143,7 +162,7 @@ $(document).ready(function() {
 
     // const dietaryResult = document.getElementById('dietaryRequirementsResult').innerHTML;
     const dietaryRequirementsOptions = [];
-    $.each($('input[name=\'dietaryRequirements\']:checked'), function() {
+    $.each($('input[name=\'dietaryRequirements\']:checked'), function () {
       dietaryRequirementsOptions.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('dietaryRequirementsResult').innerHTML = 'Dietary requirements: ' + dietaryRequirementsOptions.join(', ');
@@ -151,7 +170,7 @@ $(document).ready(function() {
     });
 
     const dietaryOptions = [];
-    $.each($('input[name=\'dietary\']:checked'), function() {
+    $.each($('input[name=\'dietary\']:checked'), function () {
       dietaryOptions.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('dietaryResult').innerHTML = dietaryOptions;
@@ -170,5 +189,11 @@ $(document).ready(function() {
     if (document.getElementById('otherOption').value !== '') {
       document.getElementById('dietaryResult').innerHTML = otherOption;
     }
+
+
   });
 });
+
+
+
+

@@ -722,6 +722,7 @@ html {
 #content__results-js {
   background-color: #ffffff;
   height: 100vh;
+  overflow: scroll;
 }
 
 .hostel__panel, .hotel__panel, .motel__panel, .house__panel {
@@ -863,6 +864,9 @@ html {
         -ms-flex-pack: center;
             justify-content: center;
     overflow: hidden;
+  }
+  #content__results-js {
+    overflow: auto;
   }
   .content__image {
     background-repeat: no-repeat;

@@ -59,12 +59,13 @@ function clearBookingFields() {
   document.getElementById('menuOptions').style.display = 'none';
 }
 
-// function backToDetails() {
-//   if (reviewBooking.style.display === 'block') {
-//     reviewBooking.style.display = 'none';
-//     document.getElementById('screen-js').style.display = 'block';
-//   }
-// }
+function backToDetails() {
+  if (reviewBooking.style.display === 'block') {
+    alert('hi');
+    reviewBooking.style.display = 'none';
+    document.getElementById('screen-js').style.display = 'block';
+  }
+}
 
 function cancelFormStep1() {
   userDetails.style.display = 'none';
