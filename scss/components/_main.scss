@@ -35,6 +35,10 @@
         flex-direction: column;
     }
 
+    .screen__details__buttons {
+        flex-direction: column;
+    }
+
     .content__results {
 
         &__accomodations {
@@ -66,9 +70,15 @@
     .flex-layout {
         display: flex;
         padding-bottom: 10px;
-        justify-content: space-between;
+        justify-content: center;
         flex-direction: column;
     }
+
+    .flex-col {
+        width: 250px;
+
+    }
+    
 
     .popUp {
         width: 400px;
@@ -83,15 +93,12 @@
 
     .screen__details {
         width: 80%;
-        height: 90%;
+        overflow: scroll;
+        overflow-x: hidden;
     }
 
     #menuOptions {
-        flex-direction: row;
-    }
-
-    .screen__details-bookingform{
-        height: 880px;
+        flex-direction: column;
     }
 
     .review{
@@ -125,6 +132,10 @@
     .motel__card,
     .house__card {
         width: 400px;
+    }
+
+    #menuOptions {
+        flex-direction: row;
     }
 
 }

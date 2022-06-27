@@ -1,42 +1,46 @@
 /* eslint-disable no-invalid-this */
 /* eslint-disable max-len */
 
-// Hostel meals: Lunch, Starter, Main, Dessert
-const hotelMeals1 = ['Beef Lasagna', 'Salt and pepper squid', 'Angus scotch fillet', 'Tiramisu'];
-const hotelMeals2 = ['Pumpkin ravioli (vg)', 'Garlic bread (vg)', 'Grilled portobello mushroom steak (v)', 'Salted caramel chocolate tart (v)'];
+// Hostel meals: Lunch, Main, Dessert
+const hostelMeals1 = ['Grilled Cheese Toastie', 'Butter Chicken', 'Chocolate Cake'];
+const hostelMeals2 = ['Pumpkin Soup (v)', 'Chickpea curry (v)', 'Berry Sorbet (v)'];
 
-const motelMeals1 = ['1', 'Cheeseburger', 'Quiche', 'Caesar Salad'];
-const motelMeals2 = ['2', 'Buffalo Cauliflower(v)', 'Pesto Gnocchi(vg)', 'Tofu Green Curry'];
+const hotelMeals1 = ['Beef Lasagna', 'Angus scotch fillet', 'Tiramisu'];
+const hotelMeals2 = ['Pumpkin ravioli (vg)', 'Buffalo Cauliflower (v)', 'Salted caramel chocolate tart (v)'];
 
-const houseMeals1 = ['3', '4', '5', '6'];
-const houseMeals2 = ['7', '8', '9', '10'];
+const motelMeals1 = ['Cheeseburger', 'Quiche', 'Crème Brûlée'];
+const motelMeals2 = ['Buffalo Cauliflower(v)', 'Pesto Gnocchi(vg)', 'Vegan Apple Tarte Tatin (v)'];
+
+const houseMeals1 = ['Caesar Salad', 'Steak and Mushroom Pie', 'Chocolate Mouse'];
+const houseMeals2 = ['Tofu Green Curry (v)', 'Jackfruit Burger (v)', 'Dark Chocolate and Berry Cake (v)'];
+
+const hostelLunch1 = hostelMeals1[0];
+const hostelLunch2 = hostelMeals2[0];
+const hostelMain1 = hostelMeals1[1];
+const hostelMain2 = hostelMeals2[1];
+const hostelDessert1 = hostelMeals1[2];
+const hostelDessert2 = hostelMeals2[2];
 
 const hotelLunch1 = hotelMeals1[0];
 const hotelLunch2 = hotelMeals2[0];
-const hotelStarter1 = hotelMeals1[1];
-const hotelStarter2 = hotelMeals2[1];
-const hotelMain1 = hotelMeals1[2];
-const hotelMain2 = hotelMeals2[2];
-const hotelDessert1 = hotelMeals1[3];
-const hotelDessert2 = hotelMeals2[3];
+const hotelMain1 = hotelMeals1[1];
+const hotelMain2 = hotelMeals2[1];
+const hotelDessert1 = hotelMeals1[2];
+const hotelDessert2 = hotelMeals2[2];
 
 const motelLunch1 = motelMeals1[0];
 const motelLunch2 = motelMeals2[0];
-const motelStarter1 = motelMeals1[1];
-const motelStarter2 = motelMeals2[1];
-const motelMain1 = motelMeals1[2];
-const motelMain2 = motelMeals2[2];
-const motelDessert1 = motelMeals1[3];
-const motelDessert2 = motelMeals2[3];
+const motelMain1 = motelMeals1[1];
+const motelMain2 = motelMeals2[1];
+const motelDessert1 = motelMeals1[2];
+const motelDessert2 = motelMeals2[2];
 
 const houseLunch1 = houseMeals1[0];
 const houseLunch2 = houseMeals2[0];
-const houseStarter1 = houseMeals1[1];
-const houseStarter2 = houseMeals2[1];
-const houseMain1 = houseMeals1[2];
-const houseMain2 = houseMeals2[2];
-const houseDessert1 = houseMeals1[3];
-const houseDessert2 = houseMeals2[3];
+const houseMain1 = houseMeals1[1];
+const houseMain2 = houseMeals2[1];
+const houseDessert1 = houseMeals1[2];
+const houseDessert2 = houseMeals2[2];
 
 
 const price = [30, 157, 90, 240];
@@ -47,8 +51,8 @@ const housePrice = price[3];
 
 
 const buttonList = document.querySelectorAll('.type');
-buttonList.forEach(function (i) {
-  i.addEventListener('click', function (e) {
+buttonList.forEach(function(i) {
+  i.addEventListener('click', function(e) {
     const type = e.target.value;
     document.getElementById('acommodationType').innerHTML = 'Acommodation type: ' + type;
 
@@ -56,43 +60,28 @@ buttonList.forEach(function (i) {
 
     if (type === 'Hostel') {
       document.getElementById('bookingCosts').innerHTML = 'Total cost: $' + roomsAmount * hostelPrice;
+      document.getElementById('lunch1').innerHTML = hostelLunch1;
+      document.getElementById('lunch2').innerHTML = hostelLunch2;
+      document.getElementById('main1').innerHTML = hostelMain1;
+      document.getElementById('main2').innerHTML = hostelMain2;
+      document.getElementById('dessert1').innerHTML = hostelDessert1;
+      document.getElementById('dessert2').innerHTML = hostelDessert2;
     }
 
     if (type === 'Hotel') {
       document.getElementById('bookingCosts').innerHTML = 'Total cost: $' + roomsAmount * hotelPrice;
       document.getElementById('lunch1').innerHTML = hotelLunch1;
       document.getElementById('lunch2').innerHTML = hotelLunch2;
-      document.getElementById('starter1').innerHTML = hotelStarter1;
-      document.getElementById('starter2').innerHTML = hotelStarter2;
       document.getElementById('main1').innerHTML = hotelMain1;
       document.getElementById('main2').innerHTML = hotelMain2;
       document.getElementById('dessert1').innerHTML = hotelDessert1;
       document.getElementById('dessert2').innerHTML = hotelDessert2;
-
-
-
-
-
-
-      // if (document.querySelector('input[name="lunch"]:checked'){
-      //   if (value === 1) {
-      //     document.getElementById('lunchResult').innerHTML = 'Lunch: ' + hotelLunch1;
-      //   } else {
-      //     document.getElementById('lunchResult').innerHTML = 'Lunch: ' + hotelLunch2;
-      //   }
-      // }
-
-
-
-
     }
 
     if (type === 'Motel') {
       document.getElementById('bookingCosts').innerHTML = 'Total cost: $' + roomsAmount * motelPrice;
       document.getElementById('lunch1').innerHTML = motelLunch1;
       document.getElementById('lunch2').innerHTML = motelLunch2;
-      document.getElementById('starter1').innerHTML = motelStarter1;
-      document.getElementById('starter2').innerHTML = motelStarter2;
       document.getElementById('main1').innerHTML = motelMain1;
       document.getElementById('main2').innerHTML = motelMain2;
       document.getElementById('dessert1').innerHTML = motelDessert1;
@@ -103,8 +92,6 @@ buttonList.forEach(function (i) {
       document.getElementById('bookingCosts').innerHTML = 'Total cost: $' + roomsAmount * housePrice;
       document.getElementById('lunch1').innerHTML = houseLunch1;
       document.getElementById('lunch2').innerHTML = houseLunch2;
-      document.getElementById('starter1').innerHTML = houseStarter1;
-      document.getElementById('starter2').innerHTML = houseStarter2;
       document.getElementById('main1').innerHTML = houseMain1;
       document.getElementById('main2').innerHTML = houseMain2;
       document.getElementById('dessert1').innerHTML = houseDessert1;
@@ -113,56 +100,138 @@ buttonList.forEach(function (i) {
   });
 });
 
-$(document).ready(function () {
-  $('#display').click(function () {
+$(document).ready(function() {
+  $('#display').click(function() {
     const meals = [];
-    $.each($('input[name=\'mealOptions\']:checked'), function () {
+    $.each($('input[name=\'mealOptions\']:checked'), function() {
       meals.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('result').innerHTML = 'Complimentary meals: ' + meals.join(', ');
       }
     });
 
-    var ele = document.getElementsByName('lunch');
-
-    for (i = 0; i < ele.length; i++) {
-      if (ele[i].checked && ele[i].value === 1) {
-        document.getElementById("lunchResult").innerHTML = "Lunch: " + hotelLunch1;
-      } else {
-        document.getElementById("lunchResult").innerHTML = "Lunch: " + hotelLunch2;
-      }
+    // Selected Hostel meals
+    // Lunch
+    const selectedHostelLunch = $('input[name=\'lunch\']:checked').val();
+    if (selectedHostelLunch == 1) {
+      document.getElementById('lunchResult').innerHTML = 'Lunch: ' + hostelLunch1;
+    }
+    if (selectedHostelLunch == 2) {
+      document.getElementById('lunchResult').innerHTML = 'Lunch: ' + hostelLunch2;
     }
 
-    const starterOptions = [];
-    $.each($('input[name=\'starter\']:checked'), function () {
-      starterOptions.push($(this).val());
+    // Main
 
-      if ($(this).is(':checked')) {
-        document.getElementById('starterResult').innerHTML = 'Starter: ' + starterOptions.join(', ');
-      }
-    });
+    const selectedHostelMain = $('input[name=\'main\']:checked').val();
+    if (selectedHostelMain == 1) {
+      document.getElementById('mainResult').innerHTML = 'Main: ' + hostelMain1;
+    }
+    if (selectedHostelMain == 2) {
+      document.getElementById('mainResult').innerHTML = 'Main: ' + hostelMain2;
+    }
 
-    const mainOptions = [];
-    $.each($('input[name=\'main\']:checked'), function () {
-      mainOptions.push($(this).val());
+    // Dessert
 
-      if ($(this).is(':checked')) {
-        document.getElementById('mainResult').innerHTML = 'Main: ' + mainOptions.join(', ');
-      }
-    });
+    const selectedHostelDessert = $('input[name=\'dessert\']:checked').val();
+    if (selectedHostelDessert == 1) {
+      document.getElementById('dessertResult').innerHTML = 'Dessert: ' + hostelDessert1;
+    }
+    if (selectedHostelDessert == 2) {
+      document.getElementById('dessertResult').innerHTML = 'Dessert: ' + hostelDessert2;
+    }
 
-    const dessertOptions = [];
-    $.each($('input[name=\'dessert\']:checked'), function () {
-      dessertOptions.push($(this).val());
-      if ($(this).is(':checked')) {
-        document.getElementById('dessertResult').innerHTML = 'Dessert: ' + dessertOptions.join(', ');
-      }
-    });
+    // Selected Hotel meals
+    // Lunch
+    const selectedHotelLunch = $('input[name=\'lunch\']:checked').val();
+    if (selectedHotelLunch == 1) {
+      document.getElementById('lunchResult').innerHTML = 'Lunch: ' + hotelLunch1;
+    }
+    if (selectedHotelLunch == 2) {
+      document.getElementById('lunchResult').innerHTML = 'Lunch: ' + hotelLunch2;
+    }
 
+    // Main
 
-    // const dietaryResult = document.getElementById('dietaryRequirementsResult').innerHTML;
+    const selectedHotelMain = $('input[name=\'main\']:checked').val();
+    if (selectedHotelMain == 1) {
+      document.getElementById('mainResult').innerHTML = 'Main: ' + hotelMain1;
+    }
+    if (selectedHotelMain == 2) {
+      document.getElementById('mainResult').innerHTML = 'Main: ' + hotelMain2;
+    }
+
+    // Dessert
+
+    const selectedHotelDessert = $('input[name=\'dessert\']:checked').val();
+    if (selectedHotelDessert == 1) {
+      document.getElementById('dessertResult').innerHTML = 'Dessert: ' + hotelDessert1;
+    }
+    if (selectedHotelDessert == 2) {
+      document.getElementById('dessertResult').innerHTML = 'Dessert: ' + hotelDessert2;
+    }
+
+    // Selected Motel meals
+    // Lunch
+    const selectedMotelLunch = $('input[name=\'lunch\']:checked').val();
+    if (selectedMotelLunch == 1) {
+      document.getElementById('lunchResult').innerHTML = 'Lunch: ' + motelLunch1;
+    }
+    if (selectedMotelLunch == 2) {
+      document.getElementById('lunchResult').innerHTML = 'Lunch: ' + motelLunch2;
+    }
+
+    // Main
+
+    const selectedMotelMain = $('input[name=\'main\']:checked').val();
+    if (selectedMotelMain == 1) {
+      document.getElementById('mainResult').innerHTML = 'Main: ' + motelMain1;
+    }
+    if (selectedMotelMain == 2) {
+      document.getElementById('mainResult').innerHTML = 'Main: ' + motelMain2;
+    }
+
+    // Dessert
+
+    const selectedMotelDessert = $('input[name=\'dessert\']:checked').val();
+    if (selectedMotelDessert == 1) {
+      document.getElementById('dessertResult').innerHTML = 'Dessert: ' + motelDessert1;
+    }
+    if (selectedMotelDessert == 2) {
+      document.getElementById('dessertResult').innerHTML = 'Dessert: ' + motelDessert2;
+    }
+
+    // Selected House meals
+    // Lunch
+    const selectedHouseLunch = $('input[name=\'lunch\']:checked').val();
+    if (selectedHouseLunch == 1) {
+      document.getElementById('lunchResult').innerHTML = 'Lunch: ' + houseLunch1;
+    }
+    if (selectedHouseLunch == 2) {
+      document.getElementById('lunchResult').innerHTML = 'Lunch: ' + houseLunch2;
+    }
+
+    // Main
+
+    const selectedHouseMain = $('input[name=\'main\']:checked').val();
+    if (selectedHouseMain == 1) {
+      document.getElementById('mainResult').innerHTML = 'Main: ' + houseMain1;
+    }
+    if (selectedHouseMain == 2) {
+      document.getElementById('mainResult').innerHTML = 'Main: ' + houseMain2;
+    }
+
+    // Dessert
+
+    const selectedHouseDessert = $('input[name=\'dessert\']:checked').val();
+    if (selectedHouseDessert == 1) {
+      document.getElementById('dessertResult').innerHTML = 'Dessert: ' + houseDessert1;
+    }
+    if (selectedHouseDessert == 2) {
+      document.getElementById('dessertResult').innerHTML = 'Dessert: ' + houseDessert2;
+    }
+
     const dietaryRequirementsOptions = [];
-    $.each($('input[name=\'dietaryRequirements\']:checked'), function () {
+    $.each($('input[name=\'dietaryRequirements\']:checked'), function() {
       dietaryRequirementsOptions.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('dietaryRequirementsResult').innerHTML = 'Dietary requirements: ' + dietaryRequirementsOptions.join(', ');
@@ -170,7 +239,7 @@ $(document).ready(function () {
     });
 
     const dietaryOptions = [];
-    $.each($('input[name=\'dietary\']:checked'), function () {
+    $.each($('input[name=\'dietary\']:checked'), function() {
       dietaryOptions.push($(this).val());
       if ($(this).is(':checked')) {
         document.getElementById('dietaryResult').innerHTML = dietaryOptions;
@@ -189,11 +258,7 @@ $(document).ready(function () {
     if (document.getElementById('otherOption').value !== '') {
       document.getElementById('dietaryResult').innerHTML = otherOption;
     }
-
-
   });
 });
-
-
 
 

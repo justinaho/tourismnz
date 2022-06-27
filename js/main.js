@@ -60,9 +60,9 @@ function clearBookingFields() {
 }
 
 function backToDetails() {
-  if (reviewBooking.style.display === 'block') {
-    alert('hi');
-    reviewBooking.style.display = 'none';
+  if (reviewBooking.style.display == 'block') {
+    reviewBooking.toggle = 'none';
+
     document.getElementById('screen-js').style.display = 'block';
   }
 }
