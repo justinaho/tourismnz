@@ -50,34 +50,15 @@
 
     }
 
-    & .details__btns {
-        margin-left: auto;
-        margin-right: 15px;
-        display: flex;
-        gap: 10px;
-    }
-
 }
 
-.popUp__black2 {
-    background-color: $primary;
-    opacity: 0.8;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    right: 0;
+.details__btns {
     margin-left: auto;
-    margin-right: auto;
-}
-
-.bookingDetails {
+    margin-right: 15px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 10px;
 }
+
 
 .bookingResults {
     display: flex;

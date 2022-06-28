@@ -1,0 +1,65 @@
+.bookingScreen {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book {
+    background-color: $primary;
+    border: 10px solid $white;
+    width: 700px;
+    height: 790px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+
+    &__btns {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 15px;
+    }
+
+}
+
+
+.bookingMessage {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    height: 660px;
+}
+
+.tickConfirm {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.confirm {
+    color: $white;
+}
+
+.logoConfirm {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.booked {
+    font-size: $font-small;
+    color: $white;
+    margin: 5px;
+}

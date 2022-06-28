@@ -8,28 +8,24 @@
         position: relative;
     }
 
-    &__results {
-        height: 100vh;
-        align-items: center;
-
-        &__accomodations {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-    }
-
 }
 
+.content__results {
+    height: 100vh;
+    align-items: center;
+}
 
+.accomodationType {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 #content__results-js {
     background-color: $white;
     height: 100vh;
     overflow: scroll;
 }
-
-
 
 .hostel__panel, .hotel__panel, .motel__panel, .house__panel {
     background-color: $orange-dark;
@@ -38,11 +34,23 @@
     font-size: 30px;
     margin: 20px;
     width: 400px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
 
-    img{
+    img {
         width: 25px;
         height: 25px;
     }
+}
+
+.icon {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
 }
 
 .hostel__card,
@@ -89,11 +97,4 @@
 .active,
 .accordion:hover {
     color: $blue-light;
-}
-
-#panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
 }

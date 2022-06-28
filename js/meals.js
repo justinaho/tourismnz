@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 /* eslint-disable no-invalid-this */
 /* eslint-disable max-len */
 
@@ -49,6 +50,9 @@ const hotelPrice = price[1];
 const motelPrice = price[2];
 const housePrice = price[3];
 
+price.sort(function(a, b) {
+  return a - b;
+});
 
 const buttonList = document.querySelectorAll('.type');
 buttonList.forEach(function(i) {

@@ -23,5 +23,16 @@
 
 .flex-col {
     width: 200px;
+}
 
+.screen__filter {
+    background-color: $primary;
+    opacity: 0.8;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }

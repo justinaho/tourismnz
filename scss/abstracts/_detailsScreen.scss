@@ -1,5 +1,5 @@
 
-.screen {
+.detailsScreen {
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -8,21 +8,9 @@
     margin-left: auto;
     margin-right: auto;
     
-
-    &__darkenBackground {
-        background-color: $primary;
-        opacity: 0.8;
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
-.screen__details {
+.detailsScreen__details {
     background-color: $orange-dark;
     border: 10px solid $white;
     width: 700px;
@@ -35,16 +23,16 @@
     margin-top: 10%;
     display: flex;
     flex-direction: column;
-
-    &__buttons {
-        margin-left: auto;
-        margin-right: 15px;
-        display: flex;
-        gap: 10px;
-    }
 }
 
-.screen__details__progress {
+.detailsScreen__buttons {
+    margin-left: auto;
+    margin-right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.detailsScreen__progress {
     list-style-type: none;
     text-align: center;
     width: 100%;
@@ -76,8 +64,6 @@
     margin-top: 5px;
 
     &__img {
-        // width: auto;
-        // height: auto;
         position: absolute;
         top: 10;
         right: 0;
@@ -115,7 +101,7 @@
 }
 
 .box {
-    color: #fff;
+    color: $white;
     padding: 20px;
     display: none;
     margin-top: 20px;

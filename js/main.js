@@ -13,14 +13,13 @@ function clearForm() {
   document.getElementById('dateTimes').value = '';
   document.getElementById('guests').value = '';
   document.getElementById('rooms').value = '';
-  document.getElementById('content__results-js').style.display = 'none';
+  // document.getElementById('content__results-js').style.display = 'none';
 }
 
 
-const userDetails = document.getElementById('screen-js');
+const userDetails = document.getElementById('detailsScreen-js');
 const reviewBooking = document.getElementById('reviewScreen-js');
-const bookBooking = document.getElementById('bookBooking');
-
+const bookBooking = document.getElementById('bookingScreen-js');
 function hideMealOptions() {
   document.getElementById('mealOptions').style.display = 'none';
 }
@@ -55,7 +54,6 @@ function clearBookingFields() {
   $('input[type="radio"]').prop('checked', false);
   hideMealOptions();
   hideDietaryOptions();
-
   document.getElementById('menuOptions').style.display = 'none';
 }
 
@@ -63,7 +61,7 @@ function backToDetails() {
   if (reviewBooking.style.display == 'block') {
     reviewBooking.toggle = 'none';
 
-    document.getElementById('screen-js').style.display = 'block';
+    userDetails.style.display = 'block';
   }
 }
 
@@ -71,6 +69,7 @@ function cancelFormStep1() {
   userDetails.style.display = 'none';
   clearBookingFields();
 }
+
 
 function cancelFormStep2() {
   reviewBooking.style.display = 'none';
@@ -147,7 +146,7 @@ function guestDetails() {
 }
 
 function showHostelInfo() {
-  const showHostel = document.getElementById('hostel__panel');
+  const showHostel = document.getElementById('hostel__extra');
 
   if (showHostel.style.display === 'none') {
     showHostel.style.display = 'block';
@@ -157,7 +156,7 @@ function showHostelInfo() {
 }
 
 function showHotelInfo() {
-  const showHotel = document.getElementById('hotel__panel');
+  const showHotel = document.getElementById('hotel__extra');
 
   if (showHotel.style.display === 'none') {
     showHotel.style.display = 'block';
@@ -168,7 +167,7 @@ function showHotelInfo() {
 
 
 function showMotelInfo() {
-  const showMotel = document.getElementById('motel__panel');
+  const showMotel = document.getElementById('motel__extra');
 
   if (showMotel.style.display === 'none') {
     showMotel.style.display = 'block';
@@ -178,7 +177,7 @@ function showMotelInfo() {
 }
 
 function showHouseInfo() {
-  const showHouse = document.getElementById('house__panel');
+  const showHouse = document.getElementById('house__extra');
 
   if (showHouse.style.display === 'none') {
     showHouse.style.display = 'block';
