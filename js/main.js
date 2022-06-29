@@ -3,37 +3,48 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable max-len */
 
-window.addEventListener('load', (event) => {
-  clearForm();
-});
-
-
-function clearForm() {
-  document.getElementById('city').value = '';
-  document.getElementById('dateTimes').value = '';
-  document.getElementById('guests').value = '';
-  document.getElementById('rooms').value = '';
-  // document.getElementById('content__results-js').style.display = 'none';
-}
-
-
 const userDetails = document.getElementById('detailsScreen-js');
 const reviewBooking = document.getElementById('reviewScreen-js');
 const bookBooking = document.getElementById('bookingScreen-js');
+
+userDetails.style.display = 'none';
+reviewBooking.style.display = 'none';
+bookBooking.style.display = 'none';
+document.getElementById('content__results-js').style.display = 'none';
+document.getElementById('city').value = null;
+document.getElementById('dateTimes').value = '';
+document.getElementById('guests').value = '';
+document.getElementById('rooms').value = '';
+window.addEventListener('load', (event) => {
+  document.getElementById('city').value = null;
+  document.getElementById('dateTimes').value = '';
+  document.getElementById('guests').value = '';
+  document.getElementById('rooms').value = '';
+});
+
+// reset button sidebar
+function clearForm() {
+  document.getElementById('city').value = null;
+  document.getElementById('dateTimes').value = '';
+  document.getElementById('guests').value = '';
+  document.getElementById('rooms').value = '';
+  document.getElementById('content__results-js').style.display = 'none';
+}
+
 function hideMealOptions() {
   document.getElementById('mealOptions').style.display = 'none';
 }
 
-// eslint-disable-next-line require-jsdoc
+
 function showMealOptions() {
   document.getElementById('mealOptions').style.display = 'block';
 }
 
-// eslint-disable-next-line require-jsdoc
+
 function hideDietaryOptions() {
   document.getElementById('dietaryOptions').style.display = 'none';
 }
-// eslint-disable-next-line require-jsdoc
+
 function showDietaryOptions() {
   document.getElementById('dietaryOptions').style.display = 'block';
 }
@@ -55,14 +66,6 @@ function clearBookingFields() {
   hideMealOptions();
   hideDietaryOptions();
   document.getElementById('menuOptions').style.display = 'none';
-}
-
-function backToDetails() {
-  if (reviewBooking.style.display == 'block') {
-    reviewBooking.toggle = 'none';
-
-    userDetails.style.display = 'block';
-  }
 }
 
 function cancelFormStep1() {
@@ -87,6 +90,7 @@ function toggleResults() {
   if (results.style.display === 'none') {
     results.style.display = 'block';
   }
+  showGuests();
 }
 
 function showBookingForm() {
@@ -94,6 +98,17 @@ function showBookingForm() {
     userDetails.style.display = 'block';
   }
 }
+
+function backToDetails() {
+  if (reviewBooking.style.display === 'block') {
+    reviewBooking.style.display = 'none';
+  }
+
+  // if (reviewBooking.style.display === 'none') {
+  //   userDetails.style.display = 'block';
+  // }
+}
+
 
 function review() {
   if (userDetails.style.display === 'block') {
@@ -138,13 +153,13 @@ function guestDetails() {
   const dateTimes = document.getElementById('sidebar__searchform-js').elements['dateTimes'].value;
   const guests = document.getElementById('sidebar__searchform-js').elements['guests'].value;
   const rooms = document.getElementById('sidebar__searchform-js').elements['rooms'].value;
-
   document.getElementById('searchDestination').innerHTML = 'Destination: ' + destination;
   document.getElementById('searchDateTimes').innerHTML = 'Check in/Check out: ' + dateTimes;
   document.getElementById('searchGuests').innerHTML = 'No. of guests: ' + guests;
   document.getElementById('searchRooms').innerHTML = 'No. of rooms: ' + rooms;
 }
 
+// accodion more info tabs
 function showHostelInfo() {
   const showHostel = document.getElementById('hostel__extra');
 
@@ -183,5 +198,40 @@ function showHouseInfo() {
     showHouse.style.display = 'block';
   } else {
     showHouse.style.display = 'none';
+  }
+}
+
+function showGuests() {
+  const guests = document.getElementById('sidebar__searchform-js').elements['guests'].value;
+  const rooms = document.getElementById('sidebar__searchform-js').elements['rooms'].value;
+
+  // Hostel min 1 night, max 5 nights, max 1 guest
+  if (guests !== 1) {
+    document.getElementById('hostelCard').classList.remove('show');
+  }
+
+  // if (guests === rooms) {
+  //   document.getElementById('hostelCard').classList.add('show');
+  //   document.getElementById('hotelCard').classList.add('show');
+  //   document.getElementById('motelCard').classList.add('show');
+  //   document.getElementById('houseCard').classList.add('show');
+  // }
+
+  // Hotel min 1 night, max 5 nights, max 1-2 people
+
+  if (guests > 2) {
+    document.getElementById('hotelCard').classList.remove('show');
+  }
+
+  // Motel min 3 nights, max 10 nights,  max 2-4 people
+
+  if (guests === 1 && guests > 4) {
+    document.getElementById('motelCard').classList.remove('show');
+  }
+
+  // House min 2 nights, max 15 nights, 1-4 people
+
+  if (guests > 4) {
+    document.getElementById('houseCard').classList.remove('show');
   }
 }

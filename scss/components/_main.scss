@@ -49,6 +49,7 @@
 
     #content__results-js {
         overflow:auto;
+        overflow-x: hidden;
     }
     
     .content__image {
@@ -136,6 +137,11 @@
 
     #menuOptions {
         flex-direction: row;
+    }
+
+    #content__results-js {
+        overflow:auto;
+        overflow-x: hidden;
     }
 
 }

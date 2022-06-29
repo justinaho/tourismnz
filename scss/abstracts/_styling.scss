@@ -12,7 +12,7 @@ $font-xxlarge: 5rem;
 h2 {
     font-size: $font-medium;
     color: $white;
-    border-bottom: 1px solid  $white;
+    border-bottom: 1px solid $white;
     padding: 5px;
     margin-bottom: 5px;
 }
@@ -33,14 +33,14 @@ p {
     font-weight: $heavy-weight;
 }
 
-h1{
+h1 {
     color: $white;
     font-weight: $heavy-weight;
     font-size: large;
     text-align: center;
 }
 
-.name{
+.name {
     color: $primary;
     font-weight: $regular-weight;
     font-size: large;
@@ -50,8 +50,8 @@ h1{
 .price {
     text-align: left;
     font-size: $font-large;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     color: $orange-dark;
 }
 

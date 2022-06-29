@@ -31,9 +31,6 @@ $(function() {
     // To calculate the no. of days between two dates
     const DifferenceInDays = DifferenceInTime / (1000 * 3600 * 24);
 
-    // const guests = document.getElementById('sidebar__searchform-js').elements['guests'].value;
-    // const rooms = document.getElementById('sidebar__searchform-js').elements['rooms'].value;
-
     // Hostel min 1 night, max 5 nights
     if (DifferenceInDays >= 1 && DifferenceInDays <= 10) {
       document.getElementById('hostelCard').classList.add('show');

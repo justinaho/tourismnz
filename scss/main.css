@@ -38,8 +38,8 @@ h1 {
 .price {
   text-align: left;
   font-size: 1.75rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   color: #C9684B;
 }
 
@@ -808,6 +808,7 @@ html {
   }
   #content__results-js {
     overflow: auto;
+    overflow-x: hidden;
   }
   .content__image {
     background-repeat: no-repeat;
@@ -895,6 +896,10 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+  #content__results-js {
+    overflow: auto;
+    overflow-x: hidden;
   }
 }
 /*# sourceMappingURL=main.css.map */

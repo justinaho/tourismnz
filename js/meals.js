@@ -3,17 +3,17 @@
 /* eslint-disable max-len */
 
 // Hostel meals: Lunch, Main, Dessert
-const hostelMeals1 = ['Grilled Cheese Toastie', 'Butter Chicken', 'Chocolate Cake'];
-const hostelMeals2 = ['Pumpkin Soup (v)', 'Chickpea curry (v)', 'Berry Sorbet (v)'];
+const hostelMeals1 = ['Cheese rolls', 'Butter chicken', 'Chocolate cake'];
+const hostelMeals2 = ['Pumpkin soup (v)', 'Chickpea curry (v)', 'Berry sorbet (v)'];
 
-const hotelMeals1 = ['Beef Lasagna', 'Angus scotch fillet', 'Tiramisu'];
-const hotelMeals2 = ['Pumpkin ravioli (vg)', 'Buffalo Cauliflower (v)', 'Salted caramel chocolate tart (v)'];
+const hotelMeals1 = ['Beef lasagna', 'Angus scotch fillet', 'Tiramisu'];
+const hotelMeals2 = ['Pumpkin ravioli (vg)', 'Buffalo cauliflower (v)', 'Salted caramel chocolate tart (v)'];
 
-const motelMeals1 = ['Cheeseburger', 'Quiche', 'Crème Brûlée'];
-const motelMeals2 = ['Buffalo Cauliflower(v)', 'Pesto Gnocchi(vg)', 'Vegan Apple Tarte Tatin (v)'];
+const motelMeals1 = ['Cheeseburger', 'Quiche', 'Crème brûlée'];
+const motelMeals2 = ['Buffalo cauliflower(v)', 'Pesto gnocchi(vg)', 'Vegan apple tarte tatin (v)'];
 
-const houseMeals1 = ['Caesar Salad', 'Steak and Mushroom Pie', 'Chocolate Mouse'];
-const houseMeals2 = ['Tofu Green Curry (v)', 'Jackfruit Burger (v)', 'Dark Chocolate and Berry Cake (v)'];
+const houseMeals1 = ['Caesar salad', 'Steak and mushroom pie', 'Chocolate mouse'];
+const houseMeals2 = ['Tofu green curry (v)', 'Jackfruit burger (v)', 'Dark chocolate and berry cake (v)'];
 
 const hostelLunch1 = hostelMeals1[0];
 const hostelLunch2 = hostelMeals2[0];
@@ -50,9 +50,22 @@ const hotelPrice = price[1];
 const motelPrice = price[2];
 const housePrice = price[3];
 
-price.sort(function(a, b) {
-  return a - b;
-});
+
+// $('#sort').on('click', function() {
+//   $('.accomodationType .filterDiv .sortPrice .price').map(function() {
+//     return {val: parseFloat($(this).text(), 10), el: this.parentNode};
+//   }).sort(function(a, b) {
+//     return a.val - b.val;
+//   })
+//       .map(function() {
+//         return this.el;
+//       })
+//       .appendTo('.accomodationType');
+//   // $('.accomodationType .filterDiv .sortPrice .price').sort(function(a, b) {
+//   //   return $(a).data('sort') - $(b).data('sort');
+//   // }).appendTo('.accomodationType');
+// });
+
 
 const buttonList = document.querySelectorAll('.type');
 buttonList.forEach(function(i) {
@@ -128,10 +141,10 @@ $(document).ready(function() {
 
     const selectedHostelMain = $('input[name=\'main\']:checked').val();
     if (selectedHostelMain == 1) {
-      document.getElementById('mainResult').innerHTML = 'Main: ' + hostelMain1;
+      document.getElementById('mainResult').innerHTML = 'Dinner: ' + hostelMain1;
     }
     if (selectedHostelMain == 2) {
-      document.getElementById('mainResult').innerHTML = 'Main: ' + hostelMain2;
+      document.getElementById('mainResult').innerHTML = 'Dinner: ' + hostelMain2;
     }
 
     // Dessert
@@ -158,10 +171,10 @@ $(document).ready(function() {
 
     const selectedHotelMain = $('input[name=\'main\']:checked').val();
     if (selectedHotelMain == 1) {
-      document.getElementById('mainResult').innerHTML = 'Main: ' + hotelMain1;
+      document.getElementById('mainResult').innerHTML = 'Dinner: ' + hotelMain1;
     }
     if (selectedHotelMain == 2) {
-      document.getElementById('mainResult').innerHTML = 'Main: ' + hotelMain2;
+      document.getElementById('mainResult').innerHTML = 'Dinner: ' + hotelMain2;
     }
 
     // Dessert
@@ -188,10 +201,10 @@ $(document).ready(function() {
 
     const selectedMotelMain = $('input[name=\'main\']:checked').val();
     if (selectedMotelMain == 1) {
-      document.getElementById('mainResult').innerHTML = 'Main: ' + motelMain1;
+      document.getElementById('mainResult').innerHTML = 'Dinner: ' + motelMain1;
     }
     if (selectedMotelMain == 2) {
-      document.getElementById('mainResult').innerHTML = 'Main: ' + motelMain2;
+      document.getElementById('mainResult').innerHTML = 'Dinner: ' + motelMain2;
     }
 
     // Dessert
@@ -218,10 +231,10 @@ $(document).ready(function() {
 
     const selectedHouseMain = $('input[name=\'main\']:checked').val();
     if (selectedHouseMain == 1) {
-      document.getElementById('mainResult').innerHTML = 'Main: ' + houseMain1;
+      document.getElementById('mainResult').innerHTML = 'Dinner: ' + houseMain1;
     }
     if (selectedHouseMain == 2) {
-      document.getElementById('mainResult').innerHTML = 'Main: ' + houseMain2;
+      document.getElementById('mainResult').innerHTML = 'Dinner: ' + houseMain2;
     }
 
     // Dessert
