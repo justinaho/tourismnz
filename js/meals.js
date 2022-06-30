@@ -44,11 +44,11 @@ const houseDessert1 = houseMeals1[2];
 const houseDessert2 = houseMeals2[2];
 
 
-const price = [30, 157, 90, 240];
-const hostelPrice = price[0];
-const hotelPrice = price[1];
-const motelPrice = price[2];
-const housePrice = price[3];
+// const price = [30, 157, 90, 240];
+// const hostelPrice = price[0];
+// const hotelPrice = price[1];
+// const motelPrice = price[2];
+// const housePrice = price[3];
 
 
 // $('#sort').on('click', function() {
@@ -61,61 +61,57 @@ const housePrice = price[3];
 //         return this.el;
 //       })
 //       .appendTo('.accomodationType');
-//   // $('.accomodationType .filterDiv .sortPrice .price').sort(function(a, b) {
-//   //   return $(a).data('sort') - $(b).data('sort');
-//   // }).appendTo('.accomodationType');
 // });
 
+// const buttonList = document.querySelectorAll('.type');
+// buttonList.forEach(function(i) {
+//   i.addEventListener('click', function(e) {
+//     const type = e.target.value;
+//     document.getElementById('acommodationType').innerHTML = 'Acommodation type: ' + type;
 
-const buttonList = document.querySelectorAll('.type');
-buttonList.forEach(function(i) {
-  i.addEventListener('click', function(e) {
-    const type = e.target.value;
-    document.getElementById('acommodationType').innerHTML = 'Acommodation type: ' + type;
+//     const roomsAmount = document.getElementById('sidebar__searchform-js').elements['rooms'].value;
 
-    const roomsAmount = document.getElementById('sidebar__searchform-js').elements['rooms'].value;
+//     if (type === 'Hostel') {
+//       document.getElementById('bookingCosts').innerHTML = '$' + roomsAmount * hostelPrice;
+//       document.getElementById('lunch1').innerHTML = hostelLunch1;
+//       document.getElementById('lunch2').innerHTML = hostelLunch2;
+//       document.getElementById('main1').innerHTML = hostelMain1;
+//       document.getElementById('main2').innerHTML = hostelMain2;
+//       document.getElementById('dessert1').innerHTML = hostelDessert1;
+//       document.getElementById('dessert2').innerHTML = hostelDessert2;
+//     }
 
-    if (type === 'Hostel') {
-      document.getElementById('bookingCosts').innerHTML = 'Total cost: $' + roomsAmount * hostelPrice;
-      document.getElementById('lunch1').innerHTML = hostelLunch1;
-      document.getElementById('lunch2').innerHTML = hostelLunch2;
-      document.getElementById('main1').innerHTML = hostelMain1;
-      document.getElementById('main2').innerHTML = hostelMain2;
-      document.getElementById('dessert1').innerHTML = hostelDessert1;
-      document.getElementById('dessert2').innerHTML = hostelDessert2;
-    }
+//     if (type === 'Hotel') {
+//       document.getElementById('bookingCosts').innerHTML = '$' + roomsAmount * hotelPrice;
+//       document.getElementById('lunch1').innerHTML = hotelLunch1;
+//       document.getElementById('lunch2').innerHTML = hotelLunch2;
+//       document.getElementById('main1').innerHTML = hotelMain1;
+//       document.getElementById('main2').innerHTML = hotelMain2;
+//       document.getElementById('dessert1').innerHTML = hotelDessert1;
+//       document.getElementById('dessert2').innerHTML = hotelDessert2;
+//     }
 
-    if (type === 'Hotel') {
-      document.getElementById('bookingCosts').innerHTML = 'Total cost: $' + roomsAmount * hotelPrice;
-      document.getElementById('lunch1').innerHTML = hotelLunch1;
-      document.getElementById('lunch2').innerHTML = hotelLunch2;
-      document.getElementById('main1').innerHTML = hotelMain1;
-      document.getElementById('main2').innerHTML = hotelMain2;
-      document.getElementById('dessert1').innerHTML = hotelDessert1;
-      document.getElementById('dessert2').innerHTML = hotelDessert2;
-    }
+//     if (type === 'Motel') {
+//       document.getElementById('bookingCosts').innerHTML = '$' + roomsAmount * motelPrice;
+//       document.getElementById('lunch1').innerHTML = motelLunch1;
+//       document.getElementById('lunch2').innerHTML = motelLunch2;
+//       document.getElementById('main1').innerHTML = motelMain1;
+//       document.getElementById('main2').innerHTML = motelMain2;
+//       document.getElementById('dessert1').innerHTML = motelDessert1;
+//       document.getElementById('dessert2').innerHTML = motelDessert2;
+//     }
 
-    if (type === 'Motel') {
-      document.getElementById('bookingCosts').innerHTML = 'Total cost: $' + roomsAmount * motelPrice;
-      document.getElementById('lunch1').innerHTML = motelLunch1;
-      document.getElementById('lunch2').innerHTML = motelLunch2;
-      document.getElementById('main1').innerHTML = motelMain1;
-      document.getElementById('main2').innerHTML = motelMain2;
-      document.getElementById('dessert1').innerHTML = motelDessert1;
-      document.getElementById('dessert2').innerHTML = motelDessert2;
-    }
-
-    if (type === 'House') {
-      document.getElementById('bookingCosts').innerHTML = 'Total cost: $' + roomsAmount * housePrice;
-      document.getElementById('lunch1').innerHTML = houseLunch1;
-      document.getElementById('lunch2').innerHTML = houseLunch2;
-      document.getElementById('main1').innerHTML = houseMain1;
-      document.getElementById('main2').innerHTML = houseMain2;
-      document.getElementById('dessert1').innerHTML = houseDessert1;
-      document.getElementById('dessert2').innerHTML = houseDessert2;
-    }
-  });
-});
+//     if (type === 'House') {
+//       document.getElementById('bookingCosts').innerHTML = ' $' + roomsAmount * housePrice;
+//       document.getElementById('lunch1').innerHTML = houseLunch1;
+//       document.getElementById('lunch2').innerHTML = houseLunch2;
+//       document.getElementById('main1').innerHTML = houseMain1;
+//       document.getElementById('main2').innerHTML = houseMain2;
+//       document.getElementById('dessert1').innerHTML = houseDessert1;
+//       document.getElementById('dessert2').innerHTML = houseDessert2;
+//     }
+//   });
+// });
 
 $(document).ready(function() {
   $('#display').click(function() {

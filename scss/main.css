@@ -47,6 +47,33 @@ label {
   margin-right: 20px;
 }
 
+.amount {
+  color: #292929;
+  font-weight: 400;
+  font-size: large;
+  padding: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #292929;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #C9684B;
+}
+
 *, *:before, *:after {
   margin: 0;
   padding: 0;
@@ -296,14 +323,17 @@ html {
 
 .buffet-breakfast {
   background: #21627C;
+  border: 1px solid #ffffff;
 }
 
 .lunch {
   background: #529FBE;
+  border: 1px solid #ffffff;
 }
 
 .dinner {
   background: #21627C;
+  border: 1px solid #ffffff;
 }
 
 .reviewScreen {
@@ -795,10 +825,12 @@ html {
             flex-direction: column;
   }
   .detailsScreen__buttons {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .content__results__accomodations {
     -webkit-box-pack: center;
@@ -842,19 +874,9 @@ html {
   .flex-col {
     width: 250px;
   }
-  .popUp {
-    width: 400px;
-  }
-  .popUp .progress {
-    list-style-type: none;
-    text-align: center;
-    display: block;
-    width: 350px;
-  }
   .detailsScreen__details {
     width: 80%;
-    overflow: scroll;
-    overflow-x: hidden;
+    height: auto;
   }
   #menuOptions {
     -webkit-box-orient: vertical;
@@ -864,14 +886,18 @@ html {
   }
   .review {
     width: 80%;
-    height: 90%;
+    height: auto;
+    overflow: scroll;
+    overflow-x: hidden;
   }
-  .bookingResults {
-    height: 880px;
+  .bookingform {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 500px;
   }
-  .book {
-    width: 80%;
-    height: 90%;
+  .details__btns, .book__btns {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .bookingMessage {
     height: 880px;

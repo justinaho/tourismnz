@@ -60,12 +60,12 @@
           <div class="flex-col"><input class="sidebar__searchform__input" type="text" name="guests" id="guests"></div>
         </div>
 
-        <div class="flex-layout">
+        <!-- <div class="flex-layout">
           <div class="flex-col"><label class="sidebar__searchform__label" for="rooms">No. of rooms</label></div>
           <div class="flex-col">
             <input class="sidebar__searchform__input" type="text" name="rooms" id="rooms">
           </div>
-        </div>
+        </div> -->
 
         <div class="sidebar__searchform__buttons">
           <button class="button--secondary" type="reset" onclick="clearForm()">Reset</button>
@@ -436,7 +436,7 @@
           <div id="searchDestination"></div>
           <div id="searchDateTimes"></div>
           <div id="searchGuests"></div>
-          <div id="searchRooms"></div>
+          <!-- <div id="searchRooms"></div> -->
           <h2>Personal Details</h2>
           <div id="guestFirstName"></div>
           <div id="guestLastName"></div>
@@ -450,13 +450,12 @@
           <h2>Dietary Requirements</h2>
           <div id="dietaryRequirementsResult"></div>
           <div id="dietaryResult"></div>
-          <h2>Total</h2>
-          <div id="bookingCosts"></div>
-          <div id="calculated"></div>
+          <h2>Total cost</h2>
+          <div class="amount" id="bookingCosts"></div>
         </div>
 
         <div class="details__btns">
-          <button class="button--secondary" onclick="backToDetails()">Back</button>
+          <button class="button--secondary" onclick="backToDetails()">Cancel</button>
           <button class="button--primary" onclick="showBooked()" onclick="clearBookingFields()">Book</button>
         </div>
       </div>
@@ -514,7 +513,7 @@
   <script src="js/main.js"></script>
   <script src="js/meals.js"></script>
   <script src="js/filters.js"></script>
-  <script src="js/date-picker.js"></script>
+  <script type="module" src="js/date-picker.js"></script>
 </body>
 
 </html>

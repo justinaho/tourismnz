@@ -58,3 +58,30 @@ h1 {
 label {
     margin-right: 20px;
 }
+
+.amount{
+    color: $primary;
+    font-weight: $regular-weight;
+    font-size: large;
+    padding: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $off-white; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $orange-dark; 
+  }

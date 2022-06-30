@@ -14,11 +14,11 @@ $(document).ready(function() {
         min: 1,
         digits: true,
       },
-      rooms: {
-        required: true,
-        min: 1,
-        digits: true,
-      },
+      // rooms: {
+      //   required: true,
+      //   min: 1,
+      //   digits: true,
+      // },
     },
 
     messages: {
@@ -34,10 +34,10 @@ $(document).ready(function() {
         required: 'This field is required',
         min: 'A number greater than 0 is required',
       },
-      rooms: {
-        required: 'This field is required',
-        min: 'A number greater than 0 is required',
-      },
+      // rooms: {
+      //   required: 'This field is required',
+      //   min: 'A number greater than 0 is required',
+      // },
     },
 
     submitHandler: function(form) {

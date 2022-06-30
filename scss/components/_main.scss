@@ -36,11 +36,12 @@
     }
 
     .detailsScreen__buttons {
-        flex-direction: column;
+        flex-direction: row;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .content__results {
-
         &__accomodations {
             justify-content: center;
             overflow: hidden;
@@ -80,22 +81,9 @@
 
     }
     
-
-    .popUp {
-        width: 400px;
-
-        & .progress {
-            list-style-type: none;
-            text-align: center;
-            display: block;
-            width: 350px;
-        }
-    }
-
     .detailsScreen__details {
         width: 80%;
-        overflow: scroll;
-        overflow-x: hidden;
+        height: auto;
     }
 
     #menuOptions {
@@ -104,17 +92,22 @@
 
     .review{
         width: 80%;
-        height: 90%;
+        height: auto;
+        overflow: scroll;
+        overflow-x: hidden;
     }
 
-    .bookingResults{
-        height: 880px;
+    .bookingform{
+        overflow: scroll;
+        overflow-x: hidden;
+        height: 500px;
     }
 
-    .book{
-        width: 80%;
-        height: 90%;
+    .details__btns, .book__btns{
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
+
     .bookingMessage{
         height: 880px;
     }
