@@ -56,7 +56,7 @@ $(document).ready(function() {
         required: true,
         digits: true,
         minlength: 8,
-        maxlength: 10,
+        maxlength: 13,
       },
       meals: {
         required: true,

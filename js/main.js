@@ -67,7 +67,16 @@ function clearBookingFields() {
 
 function cancelFormStep1() {
   userDetails.style.display = 'none';
-  clearBookingFields();
+  document.getElementById('firstname').value = '';
+  document.getElementById('lastname').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('phone').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('phone').value = '';
+  $('input[type="checkbox"]').prop('checked', false);
+  $('input[type="radio"]').prop('checked', false);
+  hideMealOptions();
+  hideDietaryOptions();
 }
 
 
@@ -100,12 +109,7 @@ function backToDetails() {
   if (reviewBooking.style.display === 'block') {
     reviewBooking.style.display = 'none';
     clearBookingFields();
-    // userDetails.style.display = 'block';
   }
-
-  // if (reviewBooking.style.display === 'none') {
-  //   userDetails.style.display = 'block';
-  // }
 }
 
 
@@ -153,7 +157,7 @@ function guestDetails() {
   const guests = document.getElementById('sidebar__searchform-js').elements['guests'].value;
   document.getElementById('searchDestination').innerHTML = 'Destination: ' + destination;
   document.getElementById('searchDateTimes').innerHTML = 'Check in/Check out: ' + dateTimes;
-  document.getElementById('searchGuests').innerHTML = 'No. of guests: ' + guests;
+  document.getElementById('searchGuests').innerHTML = 'No. of guest(s): ' + guests;
 }
 
 // accodion more info tabs

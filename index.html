@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
   <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-
+  
   <link rel="stylesheet" href="scss/main.css" />
   <link rel="stylesheet" href="https://use.typekit.net/nge1zlk.css">
 
@@ -72,7 +72,7 @@
         <div class="content__results">
           <div id="content__results-js">
             <div id="content__filter" class="content__filter">
-              <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+              <button class="btn" onclick="filterSelection('all')"> Show all</button>
               <button class="btn" onclick="filterSelection('hostel')"> Hostel</button>
               <button class="btn" onclick="filterSelection('hotel')"> Hotel</button>
               <button class="btn" onclick="filterSelection('motel')"> Motel</button>
@@ -350,7 +350,8 @@
               </div>
               <div class="lunch box flex-col" id="lunchBox">
                 <h2>Lunch</h2>
-                <input type="radio" name="lunch" value="1"><label id="lunch1"></label><br>
+                <input type="radio" name="lunch" value="1"><label id="lunch1"></label>
+                <br>
                 <input type="radio" name="lunch" value="2"><label id="lunch2"></label>
               </div>
               <div class="dinner box flex-col">
@@ -505,7 +506,7 @@
   <script src="js/main.js"></script>
   <script src="js/meals.js"></script>
   <script src="js/filters.js"></script>
-  <script type="module" src="js/date-picker.js"></script>
+  <script src="js/date-picker.js"></script>
 </body>
 
 </html>

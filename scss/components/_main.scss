@@ -82,7 +82,7 @@
     }
     
     .detailsScreen__details {
-        width: 80%;
+        width: 95%;
         height: auto;
     }
 
@@ -91,7 +91,7 @@
     }
 
     .review{
-        width: 80%;
+        width: 95%;
         height: auto;
         overflow: scroll;
         overflow-x: hidden;
@@ -109,7 +109,12 @@
     }
 
     .bookingMessage{
-        height: 880px;
+        height: 800px;
+    }
+
+    .book {
+        width: 95%;
+        height: auto;
     }
 
 }

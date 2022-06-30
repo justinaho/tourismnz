@@ -875,7 +875,7 @@ html {
     width: 250px;
   }
   .detailsScreen__details {
-    width: 80%;
+    width: 95%;
     height: auto;
   }
   #menuOptions {
@@ -885,7 +885,7 @@ html {
             flex-direction: column;
   }
   .review {
-    width: 80%;
+    width: 95%;
     height: auto;
     overflow: scroll;
     overflow-x: hidden;
@@ -900,7 +900,11 @@ html {
     margin-bottom: 10px;
   }
   .bookingMessage {
-    height: 880px;
+    height: 800px;
+  }
+  .book {
+    width: 95%;
+    height: auto;
   }
 }
 
