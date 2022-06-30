@@ -14,13 +14,11 @@ document.getElementById('content__results-js').style.display = 'none';
 document.getElementById('city').value = null;
 document.getElementById('dateTimes').value = '';
 document.getElementById('guests').value = '';
-// document.getElementById('rooms').value = '';
 
 window.addEventListener('load', (event) => {
   document.getElementById('city').value = null;
   document.getElementById('dateTimes').value = '';
   document.getElementById('guests').value = '';
-  // document.getElementById('rooms').value = '';
 });
 
 // reset button sidebar
@@ -28,7 +26,6 @@ function clearForm() {
   document.getElementById('city').value = null;
   document.getElementById('dateTimes').value = '';
   document.getElementById('guests').value = '';
-  // document.getElementById('rooms').value = '';
   document.getElementById('content__results-js').style.display = 'none';
 }
 
@@ -60,7 +57,6 @@ function clearBookingFields() {
   document.getElementById('searchDestination').value = '';
   document.getElementById('searchDateTimes').value = '';
   document.getElementById('searchGuests').value = '';
-  // document.getElementById('searchRooms').value = '';
 
   $('input[type="checkbox"]').prop('checked', false);
   $('input[type="radio"]').prop('checked', false);
@@ -155,11 +151,9 @@ function guestDetails() {
   const destination = document.getElementById('sidebar__searchform-js').elements['city'].value;
   const dateTimes = document.getElementById('sidebar__searchform-js').elements['dateTimes'].value;
   const guests = document.getElementById('sidebar__searchform-js').elements['guests'].value;
-  // const rooms = document.getElementById('sidebar__searchform-js').elements['rooms'].value;
   document.getElementById('searchDestination').innerHTML = 'Destination: ' + destination;
   document.getElementById('searchDateTimes').innerHTML = 'Check in/Check out: ' + dateTimes;
   document.getElementById('searchGuests').innerHTML = 'No. of guests: ' + guests;
-  // document.getElementById('searchRooms').innerHTML = 'No. of rooms: ' + rooms;
 }
 
 // accodion more info tabs
