@@ -41,7 +41,9 @@ function hideMealOptions() {
   document.getElementById('dinner').checked = false;
 
   // uncheck menu radio buttons
-  $('input[type="radio"]').prop('checked', false);
+  document.getElementById('mealsRadio').checked = true;
+  $('input[name="lunch"]').prop('checked', false);
+  $('input[name="main"]').prop('checked', false);
 }
 
 function showMealOptions() {
@@ -51,6 +53,7 @@ function showMealOptions() {
 
 function hideDietaryOptions() {
   document.getElementById('dietaryOptions').style.display = 'none';
+  $('input[name="dietary"]').prop('checked', false);
 }
 
 function showDietaryOptions() {
