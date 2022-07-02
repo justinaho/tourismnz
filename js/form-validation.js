@@ -65,7 +65,26 @@ $(document).ready(function() {
         required: true,
       },
     },
-
+    errorPlacement: function(error, element) {
+      if (element.attr('name') == 'meals') {
+        error.appendTo('#meals-error');
+      }
+      if (element.attr('name') == 'dietaryRequirements') {
+        error.appendTo('#errorBox2');
+      }
+      if (element.attr('name') == 'firstname') {
+        error.insertAfter(element);
+      }
+      if (element.attr('name') == 'lastname') {
+        error.insertAfter(element);
+      }
+      if (element.attr('name') == 'email') {
+        error.insertAfter(element);
+      }
+      if (element.attr('name') == 'phone') {
+        error.insertAfter(element);
+      }
+    },
     messages: {
 
       firstname: {

@@ -323,26 +323,26 @@
             </div>
 
             <!-- Complimentary Meals -->
-            <div class="flex-layout" id="meals-error">
+            <div class="flex-layout">
               <div class="flex-col"><label for="meals" name="complimentaryMeals">Complimentary meals *</label></div>
               <div class="flex-col">
                 <label><input type="radio" name="meals" value="meals" onclick="showMealOptions();">
                   Yes</label>
 
-                <label><input type="radio" name="meals" value="meals" onclick="hideMealOptions();" />
-                  No</label>
+                <label><input type="radio" name="meals" value="meals" onclick="hideMealOptions();">
+                  No</label><label id="meals-error"></label>
               </div>
             </div>
 
             <div class="flex-layout">
               <div id="mealOptions" class="hide">
-                <label><input type="checkbox" name="mealOptions" value="buffet-breakfast"> Buffet breakfast</label>
-                <label><input type="checkbox" name="mealOptions" value="lunch"> Lunch</label>
-                <label><input type="checkbox" name="mealOptions" value="dinner"> Dinner</label>
+                <label><input type="checkbox" name="mealOptions" id="breakfast" value="buffet-breakfast"> Buffet breakfast</label>
+                <label><input type="checkbox" name="mealOptions" id="lunch" value="lunch"> Lunch</label>
+                <label><input type="checkbox" name="mealOptions" id="dinner" value="dinner"> Dinner</label>
               </div>
             </div>
             <div class="flex-layout" id="menuOptions">
-              <div class="buffet-breakfast box flex-col" name="buffet-breakfast">
+              <div class="buffet-breakfast box flex-col" id="breakfastBox" name="buffet-breakfast">
                 <h2>Buffet breakfast</h2>
                 <p>Our famous buffet breakfast is available from <br> 6am – 10am Monday-Friday and <br> 7am – 10.30am
                   weekends and
@@ -354,7 +354,7 @@
                 <br>
                 <input type="radio" name="lunch" value="2"><label id="lunch2"></label>
               </div>
-              <div class="dinner box flex-col">
+              <div class="dinner box flex-col" id="dinnerBox">
                 <h2>Dinner</h2>
                 <h3>Main</h3>
                 <input type="radio" name="main" value="1"><label id="main1"></label><br>
@@ -365,7 +365,6 @@
               </div>
             </div>
 
-
             <!-- Dietary Requirements -->
             <div class="flex-layout">
               <div class="flex-col"><label for="meals" name="diet">Dietary requirements *</label></div>
@@ -374,8 +373,9 @@
                   Yes</label>
 
                 <label><input type="radio" name="dietaryRequirements" value="no" onclick="hideDietaryOptions();" />
-                  No</label>
+                  No</label> <label id="errorBox2"></label>
               </div>
+          
             </div>
             <div class="flex-layout">
               <div id="dietaryOptions" class="hide">

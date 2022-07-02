@@ -31,8 +31,18 @@ function clearForm() {
 
 function hideMealOptions() {
   document.getElementById('mealOptions').style.display = 'none';
-}
+  document.getElementById('breakfastBox').style.display = 'none';
+  document.getElementById('lunchBox').style.display = 'none';
+  document.getElementById('dinnerBox').style.display = 'none';
 
+  // uncheck meals check box
+  document.getElementById('breakfast').checked = false;
+  document.getElementById('lunch').checked = false;
+  document.getElementById('dinner').checked = false;
+
+  // uncheck menu radio buttons
+  $('input[type="radio"]').prop('checked', false);
+}
 
 function showMealOptions() {
   document.getElementById('mealOptions').style.display = 'block';
@@ -62,21 +72,11 @@ function clearBookingFields() {
   $('input[type="radio"]').prop('checked', false);
   hideMealOptions();
   hideDietaryOptions();
-  document.getElementById('menuOptions').style.display = 'none';
 }
 
 function cancelFormStep1() {
   userDetails.style.display = 'none';
-  document.getElementById('firstname').value = '';
-  document.getElementById('lastname').value = '';
-  document.getElementById('email').value = '';
-  document.getElementById('phone').value = '';
-  document.getElementById('email').value = '';
-  document.getElementById('phone').value = '';
-  $('input[type="checkbox"]').prop('checked', false);
-  $('input[type="radio"]').prop('checked', false);
-  hideMealOptions();
-  hideDietaryOptions();
+  clearBookingFields();
 }
 
 
