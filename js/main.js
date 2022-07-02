@@ -41,7 +41,6 @@ function hideMealOptions() {
   document.getElementById('dinner').checked = false;
 
   // uncheck menu radio buttons
-  document.getElementById('mealsRadio').checked = true;
   $('input[name="lunch"]').prop('checked', false);
   $('input[name="main"]').prop('checked', false);
 }
